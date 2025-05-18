@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Credito :: Zcero</title>
+    <link rel="stylesheet" href="../CCSs/requestcredstyles.css">
+    <link rel="stylesheet" href="../CCSs/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html"><img class="logo" src="../IMGs/txtlogo.png"></a>
+        <ul class="nav-links">
+            <li><a href="blog.html" title="Blog">Blog</a></li>
+            <li><a href="aboutus.html" title="About">Nosotros</a></li>
+            <li class="dropdown">
+                <a href="requestcredit.html" target="_blank" title="Products">Servicios</a>
+                <ul class="dropdown-menu">
+                    <li><a href="requestcredit.html" target="_blank" title="Creditos">Creditos</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="credit-hero">
+        <h1>Créditos a tu medida</h1>
+        <p>Elige entre nuestras opciones y solicita en minutos.</p>
+    </section>
+
+    <section class="credit-options">
+        <a href="#vivienda" class="credit-option" id="cred-vivienda">
+            <h2>🏠 Crédito Vivienda</h2>
+        </a>
+
+        <a href="#personal" class="credit-option" id="cred-personal">
+            <h2>💰 Crédito Personal</h2>
+        </a>
+    </section>
+
+    <div id="vivienda" class="credit-form">
+        <h2>Solicitud de Crédito de Vivienda</h2>
+        
+        <div class="form-step">
+            <h3>1. Tus datos</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="nombre-v" required>
+                </div>
+                <div class="form-group">
+                    <label>DNI</label>
+                    <input type="text" id="dni-v" required>
+                </div>
+                <div class="form-group">
+                    <label>Correo electrónico</label>
+                    <input type="email" id="email-v" required>
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input type="tel" id="telefono-v" required>
+                </div>
+            </div>
+            <a href="#vivienda-paso2" class="btn-next">Siguiente</a>
+        </div>
+
+        <div class="form-step">
+            <h3>2. Detalles del crédito</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Monto solicitado (S/)</label>
+                    <input type="number" id="monto-v" required>
+                </div>
+                <div class="form-group">
+                    <label>Plazo (años)</label>
+                    <select>
+                        <option>10 años</option>
+                        <option>15 años</option>
+                        <option>20 años</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <a href="#vivienda" class="btn-back">Atrás</a>
+                <a href="#vivienda-paso3" class="btn-next">Siguiente</a>
+            </div>
+        </div>
+
+        <div id="vivienda-paso3" class="form-step">
+            <h3>3. Confirmación</h3>
+            <div class="summary">
+                <p>Revisa que tus datos sean correctos antes de enviar.</p>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms-v" required>
+                    <label>Acepto los términos y condiciones</label>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <a href="#vivienda-paso2" class="btn-back">Atrás</a>
+                <button type="submit" class="btn-submit">Enviar solicitud</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="personal" class="credit-form">
+        <h2>Solicitud de Crédito Personal</h2>
+        
+        <div class="form-step">
+            <h3>1. Tus datos</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Nombre completo</label>
+                    <input type="text" id="nombre-p" required>
+                </div>
+                <div class="form-group">
+                    <label>DNI</label>
+                    <input type="text" id="dni-p" required>
+                </div>
+            </div>
+            <a href="#personal-paso2" class="btn-next">Siguiente</a>
+        </div>
+
+        <div id="personal-paso2" class="form-step">
+            <h3>2. Detalles del crédito</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Monto solicitado (S/)</label>
+                    <input type="number" id="monto-p" required>
+                </div>
+                <div class="form-group">
+                    <label>Plazo (meses)</label>
+                    <select id="plazo-p">
+                        <option>12 meses</option>
+                        <option>24 meses</option>
+                        <option>36 meses</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <a href="#personal" class="btn-back">Atrás</a>
+                <a href="#personal-paso3" class="btn-next">Siguiente</a>
+            </div>
+        </div>
+
+        <div id="personal-paso3" class="form-step">
+            <h3>3. Confirmación</h3>
+            <div class="summary">
+                <p>Revisa que tus datos sean correctos antes de enviar.</p>
+                <div class="form-group checkbox">
+                    <input type="checkbox" id="terms-p" required>
+                    <label>Acepto los términos y condiciones</label>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <a href="#personal-paso2" class="btn-back">Atrás</a>
+                <button type="submit" class="btn-submit">Enviar solicitud</button>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img class="logo" src="../IMGs/txtlogo.png">
+                <p>Empieza desde Zcero. Crece sin limites.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Compañía</h3>
+                <ul>
+                    <li><a href="aboutus.html">Nosotros</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Contacto</h3>
+                <ul>
+                    <li>Dudas@eZCero.com</li>
+                    <li>555-9000</li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Ubicación</h3>
+                <ul>
+                    <li><a href="">UTP, Chimbote</a></li>
+                    <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15756.842644603028!2d-78.53118970401306!3d-9.135436914839213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab85c1464b4aab%3A0xd19ed3540f83710c!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1747024290511!5m2!1ses-419!2spe"></iframe></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Zcero. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
