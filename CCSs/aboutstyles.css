@@ -1,5 +1,22 @@
+body {
+    background: rgba(248, 249, 250, 0.95);
+}
+
+.navbar {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    width: 100% !important;
+}
+
+.nav-links a {
+    color: rgba(248, 249, 250, 0.95) !important;
+}
+
+.nav-links a:hover {
+    color: #f39c12 !important;
+}
+
 .heroa {
-    background: linear-gradient(190deg, #8ab6b1 5%, #748aa3 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
     color: white;
     padding: 160px 20px;
     text-align: center;
@@ -8,6 +25,20 @@
 .heroa h1 {
     font-size: 52px;
     line-height: 1.2;
+    overflow: hidden;
+    border-right: 3px solid #333;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ffffff }
 }
 
 .history {
@@ -48,12 +79,12 @@
 .number {
     font-size: 34px;
     font-weight: bold;
-    color: #678f94;
+    color: var(--primary-color);
     display: block;
 }
 
 .values {
-    background-color: #f8f9fa;
+    background-color: var(--accent-color);
     padding: 80px 10%;
     text-align: center;
 }
@@ -67,7 +98,7 @@
 }
 
 .value-card {
-    background: #fffdf8;
+    background: rgba(248, 249, 250, 0.95);
     padding: 30px;
     border-radius: 10px;
     width: 300px;
@@ -92,7 +123,7 @@
 .testimonial-card {
     max-width: 600px;
     margin: 0 auto;
-    background: white;
+    background: rgba(248, 249, 250, 0.95);
     padding: 40px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
@@ -112,78 +143,4 @@
 .author span {
     color: #7f8c8d;
     font-weight: normal;
-}
-
-.footer {
-    background-color: #7494a3;
-    color: #fffbef;
-    padding: 50px 0 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 0 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-brand {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-brand .logo {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #fffbef;
-}
-
-.footer-brand p {
-    opacity: 0.8;
-}
-
-.footer-links {
-    flex: 1;
-    min-width: 150px;
-}
-
-.footer-links h3 {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #fffbef;
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links li {
-    margin-bottom: 10px;
-}
-
-.footer-links a {
-    color: #fffbef;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    color: #fffbef;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 20px;
-    background-color: #7494a3;
-    margin-top: 50px;
-}
-
-.footer-bottom p {
-    opacity: 0.7;
-    font-size: 14px;
 }
