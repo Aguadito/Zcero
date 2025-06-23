@@ -1,0 +1,207 @@
+/* Hero del artículo */
+.article-hero {
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 102, 204, 0.8) 100%);
+    color: white;
+    padding: 160px 0 80px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; /* Compensar header fijo */
+}
+
+.article-hero__content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.article-hero__title {
+    font-size: 42px;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.article-hero__description {
+    font-size: 20px;
+    margin: 0 auto 30px;
+    font-weight: 300;
+    max-width: 600px;
+}
+
+.article-hero__meta {
+    background: rgba(255, 255, 255, 0.15);
+    display: inline-block;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+}
+
+/* Contenido principal del artículo */
+.article-content {
+    padding: 80px 0;
+    background: #ffffff;
+}
+
+.article-main {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #333;
+}
+
+.article-main h2 {
+    color: var(--primary);
+    margin: 40px 0 20px;
+    font-size: 28px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.article-main h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--accent);
+}
+
+.article-list {
+    list-style-type: none;
+    margin: 20px 0 30px;
+    padding-left: 0;
+}
+
+.article-list li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.article-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* Tabla de tasas */
+.rates-table {
+    margin: 30px 0 40px;
+    overflow-x: auto;
+}
+
+.rates-table__inner {
+    width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.rates-table__inner th {
+    background: var(--primary);
+    color: white;
+    padding: 16px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.rates-table__inner td {
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--dark);
+}
+
+.rates-table__inner tr:nth-child(even) {
+    background-color: rgba(0, 102, 204, 0.03);
+}
+
+.rates-table__inner tr:hover {
+    background-color: rgba(0, 102, 204, 0.08);
+}
+
+.rates-table__highlight {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 18px;
+}
+
+/* Advertencia */
+.article-warning {
+    background: #fff9e6;
+    border-left: 4px solid #ffcc00;
+    padding: 20px;
+    border-radius: 4px;
+    margin: 40px 0;
+    font-size: 16px;
+}
+
+.article-warning strong {
+    color: #e6a700;
+}
+
+/* Artículos relacionados */
+.related-articles {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .article-hero {
+        padding: 130px 0 60px;
+        margin-top: 70px;
+    }
+    
+    .article-hero__title {
+        font-size: 32px;
+    }
+    
+    .article-hero__description {
+        font-size: 18px;
+    }
+    
+    .article-main {
+        font-size: 16px;
+    }
+    
+    .article-main h2 {
+        font-size: 24px;
+    }
+    
+    .rates-table__inner th {
+        font-size: 16px;
+    }
+    
+    .rates-table__inner td {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .article-hero {
+        padding: 110px 0 40px;
+    }
+    
+    .article-hero__title {
+        font-size: 28px;
+    }
+    
+    .article-hero__description {
+        font-size: 16px;
+    }
+    
+    .article-hero__meta {
+        font-size: 14px;
+    }
+}

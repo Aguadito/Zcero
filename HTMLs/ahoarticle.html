@@ -1,36 +1,69 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Articulos :: Zcero</title>
+    <meta name="description" content="Consejos prácticos para ahorrar dinero en 2025 con Zcero">
+    <title>Top 5 Consejos para Ahorrar en 2025 | Zcero</title>
     <link rel="stylesheet" href="../CCSs/styles.css">
-    <link rel="stylesheet" href="../CCSs/articlestyles.css">
+    <link rel="stylesheet" href="../CCSs/ahoarticle.css">
+    <link rel="preload" href="../CCSs/styles.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html"><img class="logo" src="../IMGs/txtlogo.png"></a>
-        <ul class="nav-links">
-            <li><a href="blog.html" title="Blog">Blog</a></li>
-            <li><a href="aboutus.html" title="About">Nosotros</a></li>
-            <li class="dropdown">
-                <a href="requestcredit.html" target="_blank" title="Products">Servicios</a>
-                <ul class="dropdown-menu">
-                    <li><a href="requestcredit.html" target="_blank" title="Creditos">Creditos</a></li>
+    <!-- Header consistente con index.html -->
+    <header class="header">
+        <div class="u-container header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                </div>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
                 </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <article class="full-article">
-        <h1>Top 5 Consejos para Ahorrar en 2025</h1>
-        <div class="article-meta">
-            <span>Por <strong>Equipo Zcero</strong> | 21 Abril 2025</span>
+            </nav>
+            
+            <div class="header__actions">
+                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+            </div>
+            
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
+    </header>
 
+    <!-- Hero mejorado para artículos - Estilo consistente con index.html -->
+    <section class="hero hero--article">
+        <div class="u-container">
+            <h1 class="hero__title">Top 5 Consejos para Ahorrar en 2025</h1>
+            <p class="hero__description">Estrategias efectivas para mejorar tus finanzas personales</p>
+            <div class="article-meta">
+                <span>Por <strong>Equipo Zcero</strong> | 21 Abril 2025</span>
+                <span class="article-reading-time"><i class="far fa-clock"></i> 5 min de lectura</span>
+            </div>
+        </div>
+    </section>
+
+    <article class="full-article u-container">
         <div class="article-content">
             <h2>1. Automatiza tus ahorros con el "20% mágico"</h2>
             <p>Configura una transferencia automática del 20% de tu sueldo a una <strong>cuenta de ahorros separada</strong>. Así evitas la tentación de gastarlo. En 2025, las apps bancarias permitirán ajustar este porcentaje según tus metas.</p>
+            
+            <div class="article-image">
+                <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=600" alt="Automatización de ahorros">
+                <p class="image-caption">Herramientas de automatización financiera</p>
+            </div>
 
             <h2>2. Mata los "gastos zombis"</h2>
             <p>Esos servicios que pagas y no usas (gimnasio, suscripciones olvidadas). En promedio, los peruanos pierden <strong>S/ 120 al mes</strong> en ellos.</p>
@@ -40,53 +73,96 @@
 
             <h2>4. Ahorro por objetivos visuales</h2>
             <p>Crea un álbum de fotos con imágenes de tu meta (ej: tu casa soñada, carro). Quienes usan este método ahorran <strong>47% más</strong></p>
+            
+            <div class="article-tip">
+                <i class="fas fa-lightbulb"></i>
+                <p><strong>Consejo experto:</strong> Coloca estas imágenes como fondo de pantalla en tu celular para recordatorios diarios.</p>
+            </div>
 
             <h2>5. Usa tu tarjeta de crédito como aliada</h2>
-            <p>Con nuestra <strong>Tarjeta Zcero:</strong>
-                <ul>
-                    <li>Cashback del 2% en supermercados.</li>
-                    <li>Sin intereses si pagas el 100% al corte.</li>
-                    <li>Alertas cuando gastes más de tu presupuesto.</li>
-                </ul>
-            </p>
+            <p>Con nuestra <strong>Tarjeta Zcero:</strong></p>
+            <ul class="feature-list">
+                <li><i class="fas fa-check-circle"></i> Cashback del 2% en supermercados</li>
+                <li><i class="fas fa-check-circle"></i> Sin intereses si pagas el 100% al corte</li>
+                <li><i class="fas fa-check-circle"></i> Alertas cuando gastes más de tu presupuesto</li>
+            </ul>
 
-            <div class="article-tip">
-                <p>🚀 <strong>Bonus:</strong> Abre una cuenta de ahorros Zcero antes de julio 2025 y recibe <strong>5% menos interés</strong> por 1 dia</p>
+            <div class="article-cta">
+                <p>🚀 <strong>Oferta exclusiva:</strong> Abre una cuenta de ahorros Zcero antes de julio 2025 y recibe <strong>5% menos interés</strong> en tu primer crédito</p>
+                <a href="#" class="btn">Abrir cuenta ahora</a>
             </div>
         </div>
     </article>
 
+    <!-- Footer consistente con index.html -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img class="logo" src="../IMGs/txtlogo.png">
-                <p>Empieza desde Zcero. Crece sin limites.</p>
+        <div class="u-container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <div class="header__logo-icon">
+                            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                        </div>
+                        <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
+                    </div>
+                    <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Compañía</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="aboutus.html" class="footer__link">Nosotros</a></li>
+                        <li class="footer__item"><a href="blog.html" class="footer__link">Blog</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Servicios</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="requestcredit.html" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@eZCero.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone-alt footer__contact-icon"></i>
+                            <span>555-9000</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h3>Compañía</h3>
-                <ul>
-                    <li><a href="aboutus.html">Nosotros</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | <a href="#">Términos y condiciones</a> | <a href="#">Política de privacidad</a></p>
             </div>
-            <div class="footer-links">
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Dudas@eZCero.com</li>
-                    <li>555-9000</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Ubicación</h3>
-                <ul>
-                    <li><a href="">UTP, Chimbote</a></li>
-                    <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15756.842644603028!2d-78.53118970401306!3d-9.135436914839213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab85c1464b4aab%3A0xd19ed3540f83710c!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1747024290511!5m2!1ses-419!2spe"></iframe></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Zcero. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        // Menú móvil
+        document.querySelector('.header__menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
 </body>
 </html>

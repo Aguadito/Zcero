@@ -1,103 +1,182 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog :: Zcero</title>
-    <link rel="stylesheet" href="../CCSs/blogstyles.css">
+    <meta name="description" content="ZCERO - Servicios de crédito personal y vivienda con tasas justas y atención personalizada">
+    <title>Blog | ZCERO</title>
     <link rel="stylesheet" href="../CCSs/styles.css">
+    <link rel="stylesheet" href="../CCSs/blogstyles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html"><img class="logo" src="../IMGs/txtlogo.png"></a>
-        <ul class="nav-links">
-            <li><a href="aboutus.html" title="About">Nosotros</a></li>
-            <li class="dropdown">
-                <a href="requestcredit.html" target="_blank" title="Products">Servicios</a>
-                <ul class="dropdown-menu">
-                    <li><a href="requestcredit.html" target="_blank" title="Creditos">Creditos</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <section class="blog-hero">
-        <h1>Blog Financiero</h1>
-        <p>Tips y actualizaciones para manejar mejor tu dinero.</p>
-    </section>
-
-    <section class="articles">
-        <a class="art-lin1" href="../HTMLs/ahoarticle.html">
-            <article class="article-card">
-                <div class="article-image">
-                    <img src="../IMGs/ahorrojpg.jpg" alt="Consejos para ahorrar">
+    <!-- Header consistente con el sitio principal -->
+    <header class="header">
+        <div class="u-container header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
                 </div>
-                <div class="article-content">
-                    <span class="article-date">21 Abril 2025</span>
-                    <h2>Consejos para ahorrar en 2025</h2>
-                    <p>Descubre estrategias comprobadas para guardar dinero sin sacrificar tu calidad de vida...</p>
-                </div>
-            </article>
-        </a>
-
-        <a class="art-lin2" href="../HTMLs/tasarticle.html">
-            <article class="article-card">
-                <div class="article-image">
-                    <img src="../IMGs/tasas.jpg" alt="Tasas de interés">
-                </div>
-                <div class="article-content">
-                    <span class="article-date">21 Abril 2025</span>
-                    <h2>Nuestras tasas de interés 2025</h2>
-                    <p>Te explicamos cómo nuestras nuevas tasas benefician tus préstamos y tarjetas...</p>
-                </div>
-            </article>
-        </a>
-
-        <a class="art-lin3" href="../HTMLs/ularticle.html">
-            <article class="article-card">
-                <div class="article-image">
-                    <img src="../IMGs/prestamo.jpg" alt="Consejos para ahorrar">
-                </div>
-                <div class="article-content">
-                    <span class="article-date">21 Abril 2025</span>
-                    <h2>¿Vale la pena pedir un préstamo en 2025?</h2>
-                    <p>Analiza los pros o contras de solicitar un prestamo.</p>
-                </div>
-            </article> 
-        </a>
-    </section>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img class="logo" src="../IMGs/txtlogo.png">
-                <p>Empieza desde Zcero. Crece sin limites.</p>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
             </div>
-            <div class="footer-links">
-                <h3>Compañía</h3>
-                <ul>
-                    <li><a href="">Nosotros</a></li>
-                    <li><a href="">Blog</a></li>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
                 </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
             </div>
-            <div class="footer-links">
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Dudas@eZCero.com</li>
-                    <li>555-9000</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Ubicación</h3>
-                <ul>
-                    <li><a href="">UTP, Chimbote</a></li>
-                    <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15756.842644603028!2d-78.53118970401306!3d-9.135436914839213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab85c1464b4aab%3A0xd19ed3540f83710c!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1747024290511!5m2!1ses-419!2spe"></iframe></li>
-                </ul>
-            </div>
+            
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Zcero. Todos los derechos reservados.</p>
+    </header>
+
+    <!-- Hero Section para Blog -->
+    <section class="blog-hero">
+        <div class="u-container">
+            <h1>Blog Financiero ZCERO</h1>
+            <p>Consejos, novedades y estrategias para tu crecimiento económico</p>
+        </div>
+    </section>
+
+    <!-- Artículos del Blog -->
+    <section class="blog-articles u-container">
+        <div class="section-title">
+            <h2 class="section-title__heading">Artículos Recientes</h2>
+            <p class="section-title__description">Conoce las últimas novedades y consejos financieros</p>
+        </div>
+        
+        <div class="articles-grid">
+            <a href="../HTMLs/ahoarticle.html" class="article-card">
+                <div class="article-card__image">
+                    <img src="../IMGs/ahorrojpg.webp" alt="Consejos para ahorrar">
+                </div>
+                <div class="article-card__content">
+                    <span class="article-card__date">21 Abril 2025</span>
+                    <h3 class="article-card__title">Consejos para ahorrar en 2025</h3>
+                    <p class="article-card__excerpt">Descubre estrategias comprobadas para guardar dinero sin sacrificar tu calidad de vida...</p>
+                    <div class="article-card__cta">Leer más <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="../HTMLs/tasarticle.html" class="article-card">
+                <div class="article-card__image">
+                    <img src="../IMGs/tasas.webp" alt="Tasas de interés">
+                </div>
+                <div class="article-card__content">
+                    <span class="article-card__date">20 Abril 2025</span>
+                    <h3 class="article-card__title">Nuestras tasas de interés 2025</h3>
+                    <p class="article-card__excerpt">Te explicamos cómo nuestras nuevas tasas benefician tus préstamos y tarjetas...</p>
+                    <div class="article-card__cta">Leer más <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+
+            <a href="presarticle.html" class="article-card">
+                <div class="article-card__image">
+                    <img src="../IMGs/prestamo.webp" alt="Préstamos 2025">
+                </div>
+                <div class="article-card__content">
+                    <span class="article-card__date">19 Abril 2025</span>
+                    <h3 class="article-card__title">¿Vale la pena pedir un préstamo en 2025?</h3>
+                    <p class="article-card__excerpt">Analiza los pros y contras de solicitar un préstamo en el contexto económico actual...</p>
+                    <div class="article-card__cta">Leer más <i class="fas fa-arrow-right"></i></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer consistente con el sitio principal -->
+    <footer class="footer">
+        <div class="u-container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <div class="header__logo-icon">
+                            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                        </div>
+                        <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
+                    </div>
+                    <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Servicios</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Enlaces útiles</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone-alt footer__contact-icon"></i>
+                            <span>555-9000</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@eZCero.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock footer__contact-icon"></i>
+                            <span>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Menú móvil
+        document.querySelector('.header__menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

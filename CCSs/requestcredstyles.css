@@ -1,217 +1,287 @@
+:root {
+            --primary: #003366;
+            --secondary: #0066cc;
+            --accent: #00a859;
+            --light: #f4f7fa;
+            --dark: #222222;
+            --gray: #5a6d80;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
-}
+        /* Estilos específicos para la página de créditos */
+        .credit-hero {
+            background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 102, 204, 0.8) 100%);
+            padding: 180px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
 
-body {
-    background-color: #fffdf8;
-    color: #333;
-    line-height: 1.6;
-}
+        .credit-options {
+            padding: 100px 0;
+            background-color: var(--light);
+        }
 
-.header {
-    background: linear-gradient(190deg, #8ab6b1 5%, #748aa3 100%);
-    color: white;
-    padding: 30px 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-}
+        .credit-options__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
 
-header h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    position: relative;
-    z-index: 1;
-}
+        .credit-option-card {
+            background: white;
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
 
-.credit-hero {
-    text-align: center;
-    padding: 60px 0;
-    background: linear-gradient(190deg, #8ab6b1 5%, #748aa3 100%);
-    color: #fffbef;
-    margin-bottom: 40px;
-}
+        .credit-option-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
 
-.credit-hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
+        .credit-option-card__icon {
+            background: var(--accent);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 36px;
+        }
 
-.credit-hero p {
-    font-size: 18px;
-    max-width: 600px;
-    margin: 0 auto;
-}
-.credit-options {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin: 0 auto 60px;
-    max-width: 1100px;
-}
+        .credit-option-card__title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
 
-.credit-option {
-    flex: 1;
-    max-width: 400px;
-    height: 200px;
-    background: linear-gradient(35deg, #748aa3, #678f94);
-    border: none;
-    border-radius: 15px;
-    padding: 30px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fffbef;
-    text-decoration: none;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-}
+        .credit-option-card__description {
+            color: var(--gray);
+            margin-bottom: 10px;
+        }
 
-.credit-option:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
+        .credit-option-card__rate {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
 
-.credit-option h2 {
-    font-size: 24px;
-}
+        .credit-option-card__features {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            color: var(--dark);
+            font-size: 16px;
+        }
 
-.credit-form {
-    max-width: 800px;
-    margin: 0 auto 80px;
-    background-color: #f8f6ee;
-    border-radius: 15px;
-    padding: 40px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-}
+        .credit-forms {
+            padding: 0 0 100px;
+        }
 
-.credit-form h2 {
-    color: #2c3e50;
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 28px;
-}
+        .credit-form {
+            background: white;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            padding: 40px;
+            margin-top: 50px;
+            position: relative;
+        }
 
-.form-step {
-    margin-bottom: 30px;
-}
+        .credit-form__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
 
-.form-step h3 {
-    color: #748aa3;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #e6e2dd;
-}
+        .credit-form__title {
+            font-size: 28px;
+            color: var(--primary);
+        }
 
-.form-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+        .credit-form__close {
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
 
-.form-group {
-    margin-bottom: 20px;
-}
+        .credit-form__close:hover {
+            color: var(--primary);
+        }
 
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-}
+        .credit-form__progress {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+            position: relative;
+        }
 
-.form-group input,
-.form-group select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: all 0.3s;
-}
+        .credit-form__progress::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 1;
+            transform: translateY(-50%);
+        }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: #748aa3;
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(116, 138, 163, 0.2);
-}
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s;
+        }
 
-.checkbox {
-    display: flex;
-    align-items: center;
-}
+        .progress-step.active {
+            background: var(--accent);
+        }
 
-.checkbox input {
-    width: auto;
-    margin-right: 10px;
-}
+        .progress-step.completed {
+            background: var(--accent);
+        }
 
-.form-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-}
+        .form-step {
+            display: none;
+        }
 
-.btn-next, 
-.btn-back, 
-.btn-submit {
-    padding: 12px 25px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: all 0.3s ease;
-}
+        .form-step.active {
+            display: block;
+        }
 
-.btn-next {
-    background: linear-gradient(35deg, #748aa3, #678f94);
-    color: #fffbef;
-    margin-left: auto;
-    display: block;
-}
+        .form-step__title {
+            font-size: 22px;
+            margin-bottom: 30px;
+            color: var(--primary);
+        }
 
-.btn-back {
-    background-color: transparent;
-    color: #678f94;
-    border: 2px solid #678f94;
-}
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 30px;
+        }
 
-.btn-submit {
-    background: linear-gradient(35deg, #748aa3, #678f94);
-    color: #fffbef;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-}
+        .form-group {
+            margin-bottom: 15px;
+        }
 
-.btn-next:hover, 
-.btn-submit:hover {
-    transform: translateX(5px);
-    background: linear-gradient(35deg, #8ab6b1, #678f94);
-}
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--dark);
+        }
 
-.btn-back:hover {
-    transform: translateX(-5px);
-    color: #2c3e50;
-    border-color: #2c3e50;
-}
+        .form-input {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
 
-.summary {
-    background-color: #fffdf8;
-    padding: 20px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-}
+        .form-input:focus {
+            border-color: var(--secondary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(0, 102, 204, 0.1);
+        }
 
-.summary p {
-    margin-bottom: 20px;
-}
+        .form-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 15px;
+            margin-top: 30px;
+        }
 
-:target {
-    display: block !important;
-}
+        .form-summary {
+            background: rgba(0, 102, 204, 0.05);
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+        }
 
+        .form-summary p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .summary-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+        }
+
+        .checkbox-label {
+            display: flex;
+            align-items: flex-start;
+            cursor: pointer;
+            color: var(--dark);
+        }
+
+        .checkbox-label input {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        .link {
+            color: var(--secondary);
+            text-decoration: none;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .credit-hero {
+                padding: 160px 0 80px;
+            }
+            
+            .form-grid, .summary-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-buttons {
+                flex-direction: column;
+            }
+            
+            .form-buttons .btn {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }

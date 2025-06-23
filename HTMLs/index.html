@@ -3,188 +3,415 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zcero : Créditos Personales y Vivienda</title>
+    <meta name="description" content="ZCERO - Servicios de crédito personal y vivienda con tasas justas y atención personalizada">
+    <title>ZCERO | Créditos Personales y Vivienda</title>
     <link rel="stylesheet" href="../CCSs/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preload" href="../CCSs/styles.css" as="style">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="index.html"><img class="logo" src="../IMGs/txtlogo.png" alt="Logo Zcero"></a>
-            <ul class="nav-links">
-                <li><a href="blog.html" title="Blog">Blog</a></li>
-                <li><a href="aboutus.html" title="About">Nosotros</a></li>
-                <li class="dropdown">
-                    <a href="requestcredit.html" title="Products">Servicios</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="requestcredit.html" target="_blank" title="Creditos">Creditos</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+    <!-- Header -->
+    <header class="header">
+        <div class="u-container header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                </div>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#" class="nav__link nav__link--active">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+            </div>
+            
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Agil. <span>Confiable.</span> <br>Hecho para ti.</h1>
-                <p>Solicita tu crédito en minutos, sin complicaciones.
-                    Respaldamos tus proyectos con tasas justas, atención personalizada y el respaldo de una comunidad que cree en tu crecimiento.</p>
-                <div class="hero-buttons">
-                    <a href="../HTMLs/requestcredit.html" title="Solicitar Credito" class="btn-primary">Solicitar credito</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="u-container hero__content">
+            <h2 class="hero__title">Agil. <span class="hero__title-highlight">Confiable.</span> Hecho para ti.</h2>
+            <p class="hero__description">Solicita tu crédito en minutos, sin complicaciones. Respaldamos tus proyectos con tasas justas, atención personalizada y el respaldo de una comunidad que cree en tu crecimiento.</p>
+            <div class="hero__buttons">
+                <a href="#" class="btn">Solicitar crédito</a>
+                <a href="#" class="btn btn--secondary">Abrir una cuenta</a>
+            </div>
+        </div>
+        
+        <div class="hero__image-container">
+            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=300" alt="Servicios financieros ZCERO" class="hero__image">
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="u-container">
+            <div class="section-title">
+                <h2 class="section-title__heading">¿Por qué elegirnos?</h2>
+                <p class="section-title__description">En ZCERO trabajamos para ofrecerte las mejores condiciones y un servicio cercano</p>
+            </div>
+            
+            <div class="features__grid">
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="feature-card__title">Tasas competitivas</h3>
+                    <p>Ofrecemos las tasas de interés más bajas del mercado para créditos personales y vivienda</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3 class="feature-card__title">Beneficios exclusivos</h3>
+                    <p>Como cliente, disfrutas de beneficios exclusivos y atención personalizada</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-card__title">Seguridad garantizada</h3>
+                    <p>Tus operaciones están protegidas con los más altos estándares de seguridad</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-card__icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-card__title">Comunidad</h3>
+                    <p>Formas parte de un proyecto que impulsa tu crecimiento financiero</p>
                 </div>
             </div>
-            <div class="hero-image-container led">
-                <img class="hero-image" src="../IMGs/Tarjeta.png"alt="Tarjeta de crédito Zcero" width="260" height="380">
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services">
+        <div class="u-container">
+            <div class="section-title">
+                <h2 class="section-title__heading">Nuestros servicios financieros</h2>
+                <p class="section-title__description">Soluciones adaptadas a tus necesidades personales</p>
             </div>
-        </section>
-
-        <div class="whytab">
-            <section class="table">
-                <h2>Tasas de Interés</h2>
-                <div class="table-responsive">
-                    <table class="row-table">
-                        <thead>
-                            <tr><th colspan="5" scope="colgroup">Zcero</th></tr>
-                            <tr>
-                                <th scope="col">Tipo de Crédito</th>
-                                <th scope="col">Plazo Máximo</th>
-                                <th scope="col">Monto Máximo</th>
-                                <th scope="col">Tasa de Interés Anual</th>
-                                <th scope="col">Beneficios</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>Crédito Personal</td>
-                                <td>Hasta 48 meses</td>
-                                <td>S/50,000</td>
-                                <td class="rate">10.5%</td>
-                                <td>Aprobación rápida y flexible</td>
-                            </tr>
-                            <tr class="bo-table">
-                                <td>Crédito para Vivienda</td>
-                                <td>Hasta 15 años</td>
-                                <td>Según Capacidad</td>
-                                <td class="rate">8.55%</td>
-                                <td>Cuotas Fijas</td>
-                            </tr>
-                        </tbody>
-                    </table>
+            
+            <div class="services__grid">
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Crédito Personal</h3>
+                        <p>Financia tus proyectos personales con condiciones ventajosas.</p>
+                        <ul class="service-card__list">
+                            <li class="service-card__item">Hasta 48 meses de plazo</li>
+                            <li class="service-card__item">Monto máximo S/50,000</li>
+                            <li class="service-card__item">Tasa de interés anual 10.5%</li>
+                            <li class="service-card__item">Aprobación rápida y flexible</li>
+                        </ul>
+                        <a href="#" class="btn">Solicitar ahora</a>
+                    </div>
                 </div>
-            </section>
-
-        <div class="why-us">
-                <h2>¿Por qué elegirnos?</h2>
-                <div class="reasons">
-                    <div class="reason-card">
-                        <div class="image-card">
-                            <img src="../IMGs/tasascard.jpg" alt="Tasas claras y transparentes" width="220" height="130">
-                        </div>
-                        <h3>Tasas claras</h3>
-                        <p>Sin letra chica ni sorpresas. Te explicamos todo desde el principio.</p>
+                
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <i class="fas fa-home"></i>
                     </div>
-                    <div class="reason-card">
-                        <div class="image-card">
-                            <img src="../IMGs/confianza.jpeg" alt="Confianza y seguridad" width="220" height="130">
-                        </div>
-                        <h3>Confianza</h3>
-                        <p>No nacimos ayer. Llevamos años en el mercado brindando seguridad.</p>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Crédito para Vivienda</h3>
+                        <p>Haz realidad el sueño de tu vivienda con créditos flexibles.</p>
+                        <ul class="service-card__list">
+                            <li class="service-card__item">Hasta 15 años de plazo</li>
+                            <li class="service-card__item">Monto según capacidad</li>
+                            <li class="service-card__item">Tasa de interés anual 8.55%</li>
+                            <li class="service-card__item">Cuotas Fijas</li>
+                        </ul>
+                        <a href="#" class="btn">Calcular crédito</a>
                     </div>
-                    <div class="reason-card">
-                        <div class="image-card">
-                            <img src="../IMGs/soluciones.jpg" alt="Soluciones financieras flexibles" width="220" height="130">
-                        </div>
-                        <h3>Soluciones flexibles</h3>
-                        <p>Creamos soluciones a la medida, pensando siempre en su bienestar.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-card__image">
+                        <i class="fas fa-credit-card"></i>
                     </div>
-                    <div class="reason-card">
-                        <div class="image-card">
-                            <img src="../IMGs/asesoramiento.jpg" alt="Asesoramiento financiero personalizado" width="220" height="130">
-                        </div>
-                        <h3>Asesoramiento</h3>
-                        <p>Te ayudamos a tomar decisiones financieras más inteligentes.</p>
+                    <div class="service-card__content">
+                        <h3 class="service-card__title">Cuentas y Tarjetas</h3>
+                        <p>Gestiona tu dinero con nuestras soluciones bancarias.</p>
+                        <ul class="service-card__list">
+                            <li class="service-card__item">Cuentas de ahorro sin comisiones</li>
+                            <li class="service-card__item">Tarjetas de crédito con beneficios</li>
+                            <li class="service-card__item">Seguros de protección</li>
+                            <li class="service-card__item">Banca digital 24/7</li>
+                        </ul>
+                        <a href="#" class="btn">Más información</a>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <section class="blog">
-            <h2>Visita nuestro Blog</h2>
-            <div class="blog-grid">
-                <article class="blog-card">
-                    <div class="image-blog">
-                        <img src="../IMGs/tasas.jpg" alt="Tasas de interés 2025" width="300" height="180">
+    <section class="rates">
+        <div class="u-container">
+            <div class="section-title">
+                <h2 class="section-title__heading">Tasas y tarifas</h2>
+                <p class="section-title__description">Transparencia en todas nuestras condiciones financieras</p>
+            </div>
+            
+            <div class="rates-table">
+                <table class="rates-table__inner">
+                    <thead>
+                        <tr>
+                            <th>Tipo de Crédito</th>
+                            <th>Plazo Máximo</th>
+                            <th>Monto Máximo</th>
+                            <th>Tasa de Interés Anual</th>
+                            <th>Beneficios</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Crédito Personal</td>
+                            <td>Hasta 48 meses</td>
+                            <td>S/50,000</td>
+                            <td><span class="rates-table__highlight">10.5%</span></td>
+                            <td>Aprobación rápida y flexible</td>
+                        </tr>
+                        <tr>
+                            <td>Crédito para Vivienda</td>
+                            <td>Hasta 15 años</td>
+                            <td>Según capacidad</td>
+                            <td><span class="rates-table__highlight">8.55%</span></td>
+                            <td>Cuotas Fijas</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+        <!-- Why Us - Nueva versión con imágenes -->
+    <section class="why-us">
+        <div class="u-container">
+            <div class="section-title">
+                <h2 class="section-title__heading">Nuestra ventaja competitiva</h2>
+                <p class="section-title__description">Lo que nos diferencia de la competencia</p>
+            </div>
+            
+            <div class="why-us__features">
+                <div class="why-us__feature">
+                    <div class="why-us__feature-image">
+                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Tasas claras">
                     </div>
-                    <div class="blog-card-content">
-                        <h3>Nuevas tasas de interés 2025</h3>
+                    <h3 class="why-us__feature-title">Tasas claras</h3>
+                    <p class="why-us__feature-description">Sin letra chica ni sorpresas.<br>Te explicamos todo desde el principio.</p>
+                </div>
+                
+                <div class="why-us__feature">
+                    <div class="why-us__feature-image">
+                        <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Confianza">
+                    </div>
+                    <h3 class="why-us__feature-title">Confianza</h3>
+                    <p class="why-us__feature-description">No nacimos ayer. Llevamos años en el mercado brindando seguridad.</p>
+                </div>
+                
+                <div class="why-us__feature">
+                    <div class="why-us__feature-image">
+                        <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Soluciones flexibles">
+                    </div>
+                    <h3 class="why-us__feature-title">Soluciones flexibles</h3>
+                    <p class="why-us__feature-description">Creamos soluciones a la medida,<br>pensando siempre en su bienestar.</p>
+                </div>
+                
+                <div class="why-us__feature">
+                    <div class="why-us__feature-image">
+                        <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Asesoramiento">
+                    </div>
+                    <h3 class="why-us__feature-title">Asesoramiento</h3>
+                    <p class="why-us__feature-description">Te ayudamos a tomar<br>decisiones financieras más inteligentes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section class="blog">
+        <div class="u-container">
+            <div class="section-title">
+                <h2 class="section-title__heading">Visita nuestro Blog</h2>
+                <p class="section-title__description">Artículos útiles para tu educación financiera</p>
+            </div>
+            
+            <div class="blog__grid">
+                <article class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Tasas de interés 2025">
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Nuevas tasas de interés 2025</h3>
                         <p>Descubre cómo benefician a tu préstamo personal.</p>
-                        <a href="tasarticle.html">Leer más...</a>
+                        <a href="#" class="blog-card__link">Leer más...</a>
                     </div>
                 </article>
                 <article class="blog-card">
-                    <div class="image-blog">
-                        <img src="../IMGs/ahorrojpg.jpg" alt="Consejos de ahorro 2025" width="300" height="180">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Consejos de ahorro 2025">
                     </div>
-                    <div class="blog-card-content">
-                        <h3>Consejos para ahorrar en 2025</h3>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Consejos para ahorrar en 2025</h3>
                         <p>Guía práctica para gestionar tus finanzas.</p>
-                        <a href="ahoarticle.html">Leer más...</a>
+                        <a href="#" class="blog-card__link">Leer más...</a>
                     </div>
                 </article>
                 <article class="blog-card">
-                    <div class="image-blog">
-                        <img src="../IMGs/prestamo.jpg" alt="Análisis de préstamos 2025" width="300" height="180">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Análisis de préstamos 2025">
                     </div>
-                    <div class="blog-card-content">
-                        <h3>¿Vale la pena pedir un préstamo en 2025?</h3>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">¿Vale la pena pedir un préstamo en 2025?</h3>
                         <p>Analiza los pros y contras de solicitar un préstamo.</p>
-                        <a href="presarticle.html">Leer más...</a>
+                        <a href="#" class="blog-card__link">Leer más...</a>
                     </div>
                 </article>
-            </div>
-        </section>
-
-        <section class="youtube-vid">
-            <h2>Conoce lo que hacemos:</h2>
-            <div class="video-container">
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/0SUf8nX6z2A"allowfullscreen loading="lazy"></iframe>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img class="logo" src="../IMGs/txtlogo.png" alt="Logo Zcero">
-                <p>Empieza desde Zcero. Crece sin límites.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Compañía</h3>
-                <ul>
-                    <li><a href="aboutus.html">Nosotros</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Dudas@eZCero.com</li>
-                    <li>555-9000</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Ubicación</h3>
-                <ul>
-                    <li><a>UTP, Chimbote</a></li>
-                    <li>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15756.842644603028!2d-78.53118970401306!3d-9.135436914839213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab85c1464b4aab%3A0xd19ed3540f83710c!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1747024290511!5m2!1ses-419!2spe"allowfullscreen loading="lazy"></iframe>
-                    </li>
-                </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Zcero. Todos los derechos reservados.</p>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video">
+        <div class="u-container">
+            <h2 class="video__title">Conoce lo que hacemos</h2>
+            <p class="section-title__description" style="color: rgba(255, 255, 255, 0.8); margin-bottom: 30px;">Descubre nuestra filosofía y cómo podemos ayudarte</p>
+            
+            <div class="video__container">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/0SUf8nX6z2A" 
+                        title="Video sobre ZCERO" 
+                        allow="autoplay; picture-in-picture" 
+                        allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="u-container">
+            <h2 class="cta__title">¿Listo para empezar con ZCERO?</h2>
+            <p class="cta__description">Descubre cómo podemos ayudarte a alcanzar tus metas financieras</p>
+            <div class="cta__buttons">
+                <a href="#" class="btn">Solicitar crédito</a>
+                <a href="#" class="btn btn--secondary">Habla con un asesor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="u-container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <div class="header__logo-icon">
+                            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                        </div>
+                        <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
+                    </div>
+                    <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Servicios</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Enlaces útiles</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone-alt footer__contact-icon"></i>
+                            <span>555-9000</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@eZCero.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock footer__contact-icon"></i>
+                            <span>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Funcionalidad del menú hamburguesa
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.getElementById('menuBtn');
+            const nav = document.querySelector('.nav');
+            
+            menuBtn.addEventListener('click', function() {
+                nav.classList.toggle('nav--active');
+                menuBtn.classList.toggle('active');
+            });
+            
+            // Cerrar menú al hacer clic en un enlace
+            const navLinks = document.querySelectorAll('.nav__link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    nav.classList.remove('nav--active');
+                    menuBtn.classList.remove('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>

@@ -1,102 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Zcero - Nuevas tasas de interés para créditos de vivienda y tarjetas en 2025">
+    <title>Nuevas Tasas 2025 | Créditos Vivienda y Tarjetas | Zcero</title>
     <link rel="stylesheet" href="../CCSs/styles.css">
-    <link rel="stylesheet" href="../CCSs/articlestyles.css">
-</head>
+    <link rel="stylesheet" href="../CCSs/tasarticle.css">
+    <link rel="preload" href="../CCSs/styles.css" as="style">
+    <link rel="preload" href="../IMGs/txtlogo.webp" as="image">
+    <link rel="preload" href="../IMGs/Tarjeta.webp" as="image">
+    <link rel="preload" href="../CCSs/tasarticle.css" as="style">
 <body>
-    <nav class="navbar">
-        <a href="index.html"><img class="logo" src="../IMGs/txtlogo.png"></a>
-        <ul class="nav-links">
-            <li><a href="blog.html" title="Blog">Blog</a></li>
-            <li><a href="aboutus.html" title="About">Nosotros</a></li>
-            <li class="dropdown">
-                <a href="requestcredit.html" target="_blank" title="Products">Servicios</a>
-                <ul class="dropdown-menu">
-                    <li><a href="requestcredit.html" target="_blank" title="Creditos">Creditos</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <article class="full-article">
-        <h1>Nuevas Tasas de Interés 2025: Créditos Vivienda y Tarjetas</h1>
-        <div class="article-meta">
-            <span>Por <strong>Zcero</strong> | 21 Abril 2025</span>
-        </div>
-
-        <div class="article-content">
-            <h2>1. Créditos para Vivienda</h2>
-            <p>Este año bajamos nuestras tasas <strong>0.75 puntos porcentuales</strong> gracias a nuestra alianza con el Fondo Mivivienda:</p>
+    <!-- Header actualizado para coincidir con el index -->
+    <header class="header">
+        <div class="u-container header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                </div>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+            </div>
             
-            <table class="rates-table">
-                <tr>
-                    <th>Monto</th>
-                    <th>Tasa Anual 2024</th>
-                    <th>Tasa Anual 2025</th>
-                </tr>
-                <tr>
-                    <td>Hasta S/ 150,000</td>
-                    <td>8.25%</td>
-                    <td class="highlight">7.50%</td>
-                </tr>
-                <tr>
-                    <td>S/ 150,001 - S/ 300,000</td>
-                    <td>8.75%</td>
-                    <td class="highlight">8.00%</td>
-                </tr>
-            </table>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link nav__link--active">Créditos</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+            </div>
+            
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-            <h2>2. Tarjetas de Crédito</h2>
-            <p>Nuevos beneficios con nuestras tarjetas:</p>
-            <ul>
-                <li><strong>Tasa reducida:</strong> Del 24% al 21% anual si pagas el mínimo + 10% extra.</li>
-                <li><strong>Período de gracia:</strong> 45 días (antes 30) en compras mayores a S/ 1,000.</li>
-            </ul>
-
-            <h2>¿Por qué bajamos las tasas?</h2>
-            <p>Gracias a nuestro <strong>programa de recuperación verde</strong> (inversiones en energía solar), redujimos costos operativos y lo trasladamos a ti. Además, ganamos el premio <em>"Mejor Cooperativa en Sostenibilidad 2024"</em>.</p>
-
-            <div class="article-warning">
-                <p>⚠️ <strong>Ojo:</strong> Estas tasas aplican solo para socios con historial crediticio de 6+ meses en Zcero.</p>
+    <!-- Hero Section para el artículo -->
+    <section class="article-hero">
+        <div class="u-container article-hero__content">
+            <h1 class="article-hero__title">Nuevas Tasas de Interés 2025</h1>
+            <p class="article-hero__description">Descubre cómo benefician a tu préstamo personal y tarjetas de crédito</p>
+            <div class="article-hero__meta">
+                <span>Por <strong>Zcero</strong> | 21 Abril 2025</span>
             </div>
         </div>
-    </article>
+    </section>
 
+    <!-- Contenido del artículo -->
+    <section class="article-content">
+        <div class="u-container">
+            <div class="article-main">
+                <h2>1. Créditos para Vivienda</h2>
+                <p>Este año bajamos nuestras tasas <strong>0.75 puntos porcentuales</strong> gracias a nuestra alianza con el Fondo Mivivienda:</p>
+                
+                <div class="rates-table">
+                    <table class="rates-table__inner">
+                        <thead>
+                            <tr>
+                                <th>Monto</th>
+                                <th>Tasa Anual 2024</th>
+                                <th>Tasa Anual 2025</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Hasta S/ 150,000</td>
+                                <td>8.25%</td>
+                                <td class="rates-table__highlight">7.50%</td>
+                            </tr>
+                            <tr>
+                                <td>S/ 150,001 - S/ 300,000</td>
+                                <td>8.75%</td>
+                                <td class="rates-table__highlight">8.00%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <h2>2. Tarjetas de Crédito</h2>
+                <p>Nuevos beneficios con nuestras tarjetas:</p>
+                <ul class="article-list">
+                    <li><strong>Tasa reducida:</strong> Del 24% al 21% anual si pagas el mínimo + 10% extra.</li>
+                    <li><strong>Período de gracia:</strong> 45 días (antes 30) en compras mayores a S/ 1,000.</li>
+                </ul>
+
+                <h2>¿Por qué bajamos las tasas?</h2>
+                <p>Gracias a nuestro <strong>programa de recuperación verde</strong> (inversiones en energía solar), redujimos costos operativos y lo trasladamos a ti. Además, ganamos el premio <em>"Mejor Cooperativa en Sostenibilidad 2024"</em>.</p>
+
+                <div class="article-warning">
+                    <p>⚠️ <strong>Ojo:</strong> Estas tasas aplican solo para socios con historial crediticio de 6+ meses en Zcero.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sección de artículos relacionados -->
+    <section class="related-articles">
+        <div class="u-container">
+            <div class="section-title">
+                <h2 class="section-title__heading">Artículos relacionados</h2>
+                <p class="section-title__description">Más información que podría interesarte</p>
+            </div>
+            
+            <div class="blog__grid">
+                <article class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Consejos de ahorro">
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Consejos para ahorrar en 2025</h3>
+                        <p>Guía práctica para gestionar tus finanzas.</p>
+                        <a href="ahoarticle.html" class="blog-card__link">Leer más...</a>
+                    </div>
+                </article>
+                
+                <article class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Análisis de préstamos">
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">¿Vale la pena pedir un préstamo en 2025?</h3>
+                        <p>Analiza los pros y contras de solicitar un préstamo.</p>
+                        <a href="presarticle.html" class="blog-card__link">Leer más...</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="u-container">
+            <h2 class="cta__title">¿Quieres aprovechar nuestras nuevas tasas?</h2>
+            <p class="cta__description">Solicita tu crédito hoy mismo y disfruta de las mejores condiciones del mercado</p>
+            <div class="cta__buttons">
+                <a href="requestcredit.html" class="btn">Solicitar crédito</a>
+                <a href="#" class="btn btn--secondary">Habla con un asesor</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img class="logo" src="../IMGs/txtlogo.png">
-                <p>Empieza desde Zcero. Crece sin limites.</p>
+        <div class="u-container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <div class="header__logo-icon">
+                            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                        </div>
+                        <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
+                    </div>
+                    <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Servicios</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Enlaces útiles</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone-alt footer__contact-icon"></i>
+                            <span>555-9000</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@eZCero.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock footer__contact-icon"></i>
+                            <span>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="footer-links">
-                <h3>Compañía</h3>
-                <ul>
-                    <li><a href="aboutus.html">Nosotros</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
             </div>
-            <div class="footer-links">
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Dudas@eZCero.com</li>
-                    <li>555-9000</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Ubicación</h3>
-                <ul>
-                    <li><a href="">UTP, Chimbote</a></li>
-                    <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15756.842644603028!2d-78.53118970401306!3d-9.135436914839213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab85c1464b4aab%3A0xd19ed3540f83710c!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1747024290511!5m2!1ses-419!2spe"></iframe></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>© 2025 Zcero. Todos los derechos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav-links');
+            const hamburger = document.querySelector('.hamburger');
+            
+            navLinks.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        }
+        
+        // Mobile menu toggle
+        document.querySelector('.header__menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav').classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

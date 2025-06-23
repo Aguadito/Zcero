@@ -1,92 +1,274 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="¿Vale la pena pedir un préstamo en 2025? Análisis de tasas de interés y consejos financieros de Zcero">
+    <title>¿Vale la pena pedir un préstamo en 2025? | Zcero</title>
     <link rel="stylesheet" href="../CCSs/styles.css">
-    <link rel="stylesheet" href="../CCSs/articlestyles.css">
+    <link rel="stylesheet" href="../CCSs/presarticle.css">
+    <link rel="preload" href="../CCSs/styles.css" as="style">
+    <link rel="preload" href="../IMGs/txtlogo.webp" as="image">
+    <link rel="preload" href="../IMGs/article-hero.webp" as="image">
+    <link rel="preload" href="../CCSs/presarticle.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <nav class="navbar">
-        <a href="index.html"><img class="logo" src="../IMGs/txtlogo.png"></a>
-        <ul class="nav-links">
-            <li><a href="blog.html" title="Blog">Blog</a></li>
-            <li><a href="aboutus.html" title="About">Nosotros</a></li>
-            <li class="dropdown">
-                <a href="requestcredit.html" target="_blank" title="Products">Servicios</a>
-                <ul class="dropdown-menu">
-                    <li><a href="requestcredit.html" target="_blank" title="Creditos">Creditos</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-
-    <article class="full-article">
-        <h1>¿Vale la pena pedir un préstamo en 2025?</h1>
-        <div class="article-meta">
-            <span>Por <strong>Equipo Zcero</strong> | 21 Abril 2025</span>
-        </div>
-
-        <div class="article-content">
-            <h2>¿Cómo están las tasas de interés en 2025?</h2>
-            <p>Las tasas de los préstamos personales han subido ligeramente respecto a 2024, ubicándose en promedio entre el <strong>18% y 24% anual</strong>, dependiendo del tipo de crédito y del perfil del solicitante. Sin embargo, <strong>las cooperativas de crédito suelen ofrecer mejores condiciones</strong> que los bancos comerciales.</p>
-
-            <h2>Cuándo sí vale la pena pedir un préstamo</h2>
-            <ul>
-                <li>Cuando necesitas financiar <strong>una inversión productiva</strong> (negocio, capacitación, herramienta de trabajo).</li>
-                <li>Si puedes pagar cuotas sin comprometer más del 30% de tus ingresos mensuales.</li>
-                <li>Si accedes a una tasa fija preferencial a través de tu cooperativa.</li>
-            </ul>
-            
-            <h2>Cuándo conviene esperar</h2>
-            <ul>
-                <li>Si tu situación laboral o ingresos son inestables.</li>
-                <li>Si planeas usar el dinero para gastos no urgentes o consumo impulsivo.</li>
-                <li>Si la tasa es variable y existe riesgo de que aumente.</li>
-            </ul>
-
-            <div class="article-tip">
-                <p>💡 <strong>Consejo:</strong> “Un préstamo bien utilizado puede ser una herramienta, pero mal planificado se convierte en una carga.”</p>
+    <header class="header">
+        <div class="u-container header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                </div>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
             </div>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
+                    <li class="nav__item"><a href="rates.html" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="contact.html" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <a href="login.html" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="register.html" class="header__action header__action--register">Abre tu cuenta</a>
+            </div>
+            
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
 
-            <h2>Consejo final</h2>
-            <p>Antes de endeudarte, revisa tu presupuesto, compara tasas y evalúa con honestidad tu capacidad de pago. Habla con un asesor: muchos ofrecen <strong>orientación financiera</strong> para ayudarte a tomar la mejor decisión.</p>
+    <!-- Hero del artículo - Utilizando la clase hero pero con variante para artículo -->
+    <section class="hero hero--article">
+        <div class="u-container hero__content">
+            <h1 class="hero__title">¿Vale la pena pedir un préstamo en 2025?</h1>
+            <p class="hero__description">Analiza los pros y contras de solicitar un préstamo en el contexto económico actual</p>
+            <div class="article-meta">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=80&w=80" alt="Equipo Zcero" class="article-meta__img">
+                <div class="article-meta__info">
+                    <span class="article-meta__author">Por <strong>Equipo Zcero</strong></span>
+                    <span class="article-meta__date">21 Abril 2025 | 8 min lectura</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido del artículo -->
+    <article class="article-content u-container">
+        <div class="article-intro">
+            <p>En un contexto económico cambiante, tomar la decisión de solicitar un préstamo requiere análisis cuidadoso. En este artículo te ayudamos a evaluar si un crédito en 2025 es la mejor opción para ti.</p>
+        </div>
+        
+        <div class="article-image">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=500&w=800" alt="Análisis de préstamos 2025">
+            <p class="article-image__caption">Las decisiones financieras requieren análisis cuidadoso de las condiciones actuales</p>
+        </div>
+        
+        <h2>¿Cómo están las tasas de interés en 2025?</h2>
+        <p>Las tasas de los préstamos personales han subido ligeramente respecto a 2024, ubicándose en promedio entre el <strong>18% y 24% anual</strong>, dependiendo del tipo de crédito y del perfil del solicitante. Sin embargo, <strong>las cooperativas de crédito suelen ofrecer mejores condiciones</strong> que los bancos comerciales.</p>
+        
+        <div class="article-data">
+            <div class="data-card">
+                <span class="data-card__value">18-24%</span>
+                <span class="data-card__label">Tasas promedio</span>
+            </div>
+            <div class="data-card">
+                <span class="data-card__value">10-15%</span>
+                <span class="data-card__label">Mejores tasas en cooperativas</span>
+            </div>
+            <div class="data-card">
+                <span class="data-card__value">+2.5%</span>
+                <span class="data-card__label">Incremento vs 2024</span>
+            </div>
+        </div>
+        
+        <h2>Cuándo sí vale la pena pedir un préstamo</h2>
+        <ul class="article-list">
+            <li>Cuando necesitas financiar <strong>una inversión productiva</strong> (negocio, capacitación, herramienta de trabajo).</li>
+            <li>Si puedes pagar cuotas sin comprometer más del 30% de tus ingresos mensuales.</li>
+            <li>Si accedes a una tasa fija preferencial a través de tu cooperativa.</li>
+            <li>Cuando el retorno de la inversión supera el costo del crédito.</li>
+        </ul>
+        
+        <div class="article-tip">
+            <div class="article-tip__icon">💡</div>
+            <div class="article-tip__content">
+                <p><strong>Consejo del experto:</strong> "Un préstamo bien utilizado puede ser una herramienta, pero mal planificado se convierte en una carga. Siempre proyecta tus cuotas a largo plazo."</p>
+                <span class="article-tip__author">- Carlos Mendoza, Asesor Financiero</span>
+            </div>
+        </div>
+        
+        <h2>Cuándo conviene esperar</h2>
+        <ul class="article-list">
+            <li>Si tu situación laboral o ingresos son inestables.</li>
+            <li>Si planeas usar el dinero para gastos no urgentes o consumo impulsivo.</li>
+            <li>Si la tasa es variable y existe riesgo de que aumente.</li>
+            <li>Si ya tienes otras deudas que comprometen más del 40% de tus ingresos.</li>
+        </ul>
+        
+        <div class="article-comparison">
+            <div class="comparison-card">
+                <h3 class="comparison-card__title">Buen momento</h3>
+                <ul>
+                    <li>Financiamiento productivo</li>
+                    <li>Tasa fija preferencial</li>
+                    <li>Ingresos estables</li>
+                    <li>Endeudamiento < 30%</li>
+                </ul>
+            </div>
+            <div class="comparison-vs">VS</div>
+            <div class="comparison-card comparison-card--bad">
+                <h3 class="comparison-card__title">Mal momento</h3>
+                <ul>
+                    <li>Gastos no esenciales</li>
+                    <li>Tasa variable alta</li>
+                    <li>Ingresos inestables</li>
+                    <li>Endeudamiento > 40%</li>
+                </ul>
+            </div>
+        </div>
+        
+        <h2>Consejo final</h2>
+        <p>Antes de endeudarte, revisa tu presupuesto, compara tasas y evalúa con honestidad tu capacidad de pago. Habla con un asesor: muchos ofrecen <strong>orientación financiera gratuita</strong> para ayudarte a tomar la mejor decisión.</p>
+        
+        <div class="article-cta">
+            <p>¿Necesitas asesoría personalizada?</p>
+            <a href="contact.html" class="btn">Habla con un experto</a>
+        </div>
+        
+        <div class="article-share">
+            <span>Comparte este artículo:</span>
+            <div class="share-icons">
+                <a href="#" class="share-icon"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="share-icon"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="share-icon"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="share-icon"><i class="fab fa-whatsapp"></i></a>
+            </div>
         </div>
     </article>
-
-
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-brand">
-                <img class="logo" src="../IMGs/txtlogo.png">
-                <p>Empieza desde Zcero. Crece sin limites.</p>
-            </div>
-            <div class="footer-links">
-                <h3>Compañía</h3>
-                <ul>
-                    <li><a href="aboutus.html">Nosotros</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Contacto</h3>
-                <ul>
-                    <li>Dudas@eZCero.com</li>
-                    <li>555-9000</li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h3>Ubicación</h3>
-                <ul>
-                    <li><a href="">UTP, Chimbote</a></li>
-                    <li><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15756.842644603028!2d-78.53118970401306!3d-9.135436914839213!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91ab85c1464b4aab%3A0xd19ed3540f83710c!2sUniversidad%20Tecnol%C3%B3gica%20Del%20Per%C3%BA!5e0!3m2!1ses-419!2spe!4v1747024290511!5m2!1ses-419!2spe"></iframe></li>
-                </ul>
+    
+    <!-- Artículos relacionados -->
+    <section class="related-articles">
+        <div class="u-container">
+            <h2 class="section-title__heading">Artículos relacionados</h2>
+            <div class="blog__grid">
+                <article class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Tasas de interés 2025">
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Nuevas tasas de interés 2025</h3>
+                        <p>Descubre cómo benefician a tu préstamo personal.</p>
+                        <a href="tasarticle.html" class="blog-card__link">Leer más...</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-card__image">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=400" alt="Consejos de ahorro 2025">
+                    </div>
+                    <div class="blog-card__content">
+                        <h3 class="blog-card__title">Consejos para ahorrar en 2025</h3>
+                        <p>Guía práctica para gestionar tus finanzas.</p>
+                        <a href="ahoarticle.html" class="blog-card__link">Leer más...</a>
+                    </div>
+                </article>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2025 Zcero. Todos los derechos reservados.</p>
+    </section>
+
+    <!-- Footer consistente con index.html -->
+    <footer class="footer">
+        <div class="u-container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <div class="header__logo-icon">
+                            <img src="../IMGs/logo-icon.webp" alt="Logo ZCERO" width="40" height="40">
+                        </div>
+                        <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
+                    </div>
+                    <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Servicios</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Enlaces útiles</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone-alt footer__contact-icon"></i>
+                            <span>555-9000</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@eZCero.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock footer__contact-icon"></i>
+                            <span>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
+            </div>
         </div>
     </footer>
+    <script>
+        // Script para menú móvil
+        document.querySelector('.header__menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Script para ajustar menú en resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                document.querySelector('.nav').style.display = '';
+            }
+        });
+    </script>
 </body>
 </html>

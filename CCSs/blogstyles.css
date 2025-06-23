@@ -1,215 +1,166 @@
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:30px;
-    border-radius: 3ch;
-    margin: 40px auto;
-    width: 80%;
-    height: 80px;
-    background: linear-gradient(190deg, #8ab6b1 5%, #748aa3 100%);
-    color: #333;
-}
-
-.logo {
-    width: 130px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-}
-
-.nav-links li {
-    margin-left: 90px;
-    position: relative;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #fffbef;
-    font-weight: 550;
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    opacity:0.7;
-}
-
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 190%;
-    left: 0;
-    background: linear-gradient(195deg, #8ab6b1 0%, #748aa3 100%);
-    min-width: 250px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    z-index: 1000;
-    list-style-type: none;
-}
-
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-.dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%; 
-    left: 0;
-    width: 100%;
-    height: 40px; 
-    pointer-events: auto;
-}
-
-.dropdown-menu li {
-    margin: 0;
-    padding: 12px 15px;
-    border-bottom: 0px solid #eee;
-}
-
-.dropdown-menu a {
-    color: #fffbef ;
-}
-
-.dropdown-menu a:hover {
-    transition: 0.3s;
-}
-
-.btn-login {
-    font-size: 17px;
-    background:linear-gradient(35deg,#748aa3, #678f94);
-    padding: 8px 16px;
-    border-radius: 20px;
-}
-
 .blog-hero {
-    background: linear-gradient(190deg, #8ab6b1 5%, #748aa3 100%);;
-    color: #fffbef;
-    padding: 190px 20px;
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 102, 204, 0.8) 100%);
+    color: white;
+    padding: 180px 0 100px;
     text-align: center;
-    margin-bottom: 150px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 80px; /* Compensar header fijo */
 }
 
 .blog-hero h1 {
-    font-size: 42px;
-    margin-bottom: 10px;
-}
-
-.articles {
-    max-width: 700px;
-    margin: 50px auto;
-}
-
-.art-lin1, .art-lin2, .art-lin3 {
-    text-decoration: none;
-    color: inherit;
-}
-
-.article-card {
-    display: flex;
-    background: #fffbef;
-    border-radius: 30px;
-    margin-bottom: 40px;
-}
-
-.article-image {
-    flex: 0.5;
-}
-
-.article-image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 10px 0px 0px 10px;
-}
-
-.article-content {
-    flex: 1;
-    padding: 30px;
-}
-
-.article-date {
-    color: #7f8c8d;
-    font-size: 14px;
-}
-
-.article-content h2 {
-    color: #2c3e50;
-    margin: 10px 0 15px;
-}
-
-.footer {
-    margin-top: 150px;
-    background-color: #7494a3;
-    color: #fffbef;
-    padding: 50px 0 0;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
-    gap: 30px;
-    padding: 0 50px;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.footer-brand {
-    flex: 1;
-    min-width: 250px;
-}
-
-.footer-brand .logo {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #fffbef;
-}
-
-.footer-brand p {
-    opacity: 0.8;
-}
-
-.footer-links {
-    flex: 1;
-    min-width: 150px;
-}
-
-.footer-links h3 {
-    font-size: 18px;
+    font-size: 48px;
     margin-bottom: 20px;
-    color: #fffbef;
+    font-weight: 700;
 }
 
-.footer-links ul {
-    list-style: none;
+.blog-hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto;
+    font-weight: 300;
+    opacity: 0.9;
 }
 
-.footer-links li {
-    margin-bottom: 10px;
+/* Sección de Artículos */
+.blog-articles {
+    padding: 100px 0;
 }
 
-.footer-links a {
-    color: #fffbef;
-    text-decoration: none;
-    opacity: 0.8;
-    transition: 0.3s;
-}
-
-.footer-links a:hover {
-    opacity: 1;
-    color: #fffbef;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding: 20px;
-    background-color: #7494a3;
+.articles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
     margin-top: 50px;
 }
 
-.footer-bottom p {
-    opacity: 0.7;
+.article-card {
+    display: block;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.article-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+}
+
+.article-card__image {
+    height: 220px;
+    overflow: hidden;
+}
+
+.article-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.article-card:hover .article-card__image img {
+    transform: scale(1.05);
+}
+
+.article-card__content {
+    padding: 25px;
+}
+
+.article-card__date {
+    display: block;
+    color: #0066cc;
     font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.article-card__title {
+    font-size: 22px;
+    color: #003366;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.article-card__excerpt {
+    color: #5a6d80;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.article-card__cta {
+    color: #00a859;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.article-card:hover .article-card__cta {
+    color: #008a4a;
+    transform: translateX(5px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .blog-hero {
+        padding: 150px 0 80px;
+    }
+    
+    .blog-hero h1 {
+        font-size: 40px;
+    }
+    
+    .blog-hero p {
+        font-size: 18px;
+    }
+    
+    .articles-grid {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-hero {
+        padding: 130px 0 70px;
+        margin-top: 70px;
+    }
+    
+    .blog-hero h1 {
+        font-size: 32px;
+    }
+    
+    .blog-hero p {
+        font-size: 16px;
+        padding: 0 20px;
+    }
+    
+    .articles-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 40px auto 0;
+    }
+}
+
+@media (max-width: 576px) {
+    .blog-hero {
+        padding: 120px 0 60px;
+    }
+    
+    .blog-hero h1 {
+        font-size: 28px;
+    }
+    
+    .article-card__content {
+        padding: 20px;
+    }
+    
+    .article-card__title {
+        font-size: 20px;
+    }
 }
