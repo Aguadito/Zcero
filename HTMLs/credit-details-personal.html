@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalles de tipos de crédito en ZCERO - Requisitos, bases de interés y beneficios">
+    <title>Detalles de Crédito | ZCERO</title>
+    <link rel="stylesheet" href="../CCSs/styles.css">
+    <link rel="stylesheet" href="../CCSs/credit-details.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="u-container header__container">
+            <div class="header__logo">
+                <div class="header__logo-icon">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                </div>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+            </div>
+            
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link nav__link--active">Créditos</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link"></a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                </ul>
+            </nav>
+            
+            <div class="header__actions">
+                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+            </div>
+            
+            <button class="header__menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section para Detalles de Crédito -->
+    <section class="hero credit-details-hero">
+        <div class="u-container">
+            <h1 class="hero__title">Crédito Personal</h1>
+            <p class="hero__description">Financia tus proyectos con tasas competitivas y plazos flexibles</p>
+        </div>
+    </section>
+
+    <!-- Contenido Principal -->
+    <section class="credit-details">
+        <div class="u-container">
+            <div class="credit-details__grid">
+                <!-- Información Detallada -->
+                <div class="credit-details__content">
+                    <!-- Requisitos -->
+                    <div class="credit-details__section">
+                        <h2><i class="fas fa-list-check"></i> Requisitos</h2>
+                        <ul class="requirements-list">
+                            <li><i class="fas fa-check-circle"></i> Ser mayor de 18 años</li>
+                            <li><i class="fas fa-check-circle"></i> DNI vigente</li>
+                            <li><i class="fas fa-check-circle"></i> Comprobante de ingresos (recibos de honorarios o boletas)</li>
+                            <li><i class="fas fa-check-circle"></i> Antigüedad laboral mínima de 6 meses</li>
+                            <li><i class="fas fa-check-circle"></i> Historial crediticio positivo</li>
+                        </ul>
+                    </div>
+
+                    <!-- Bases de Interés -->
+                    <div class="credit-details__section">
+                        <h2><i class="fas fa-percentage"></i> Bases de Interés</h2>
+                        <div class="interest-rates">
+                            <div class="interest-card">
+                                <div class="interest-value">10.5%</div>
+                                <div class="interest-label">Tasa efectiva anual</div>
+                            </div>
+                            <div class="interest-card">
+                                <div class="interest-value">0.87%</div>
+                                <div class="interest-label">Tasa mensual</div>
+                            </div>
+                        </div>
+                        <p class="interest-note">* Tasa aplicable para montos mayores a S/ 5,000. Montos menores tienen tasa de 12.5% anual.</p>
+                    </div>
+
+                    <!-- Plazos -->
+                    <div class="credit-details__section">
+                        <h2><i class="fas fa-calendar-days"></i> Plazos</h2>
+                        <div class="terms-grid">
+                            <div class="term-card">
+                                <div class="term-value">12</div>
+                                <div class="term-label">Meses</div>
+                            </div>
+                            <div class="term-card">
+                                <div class="term-value">24</div>
+                                <div class="term-label">Meses</div>
+                            </div>
+                            <div class="term-card">
+                                <div class="term-value">36</div>
+                                <div class="term-label">Meses</div>
+                            </div>
+                            <div class="term-card">
+                                <div class="term-value">48</div>
+                                <div class="term-label">Meses</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ejemplo de Cálculo -->
+                    <div class="credit-details__section">
+                        <h2><i class="fas fa-calculator"></i> Ejemplo de Cálculo</h2>
+                        <div class="calculation-example">
+                            <div class="calculation-item">
+                                <span>Monto solicitado:</span>
+                                <span>S/ 10,000</span>
+                            </div>
+                            <div class="calculation-item">
+                                <span>Plazo:</span>
+                                <span>24 meses</span>
+                            </div>
+                            <div class="calculation-item">
+                                <span>Tasa de interés anual:</span>
+                                <span>10.5%</span>
+                            </div>
+                            <div class="calculation-item highlight">
+                                <span>Cuota mensual:</span>
+                                <span>S/ 464.50</span>
+                            </div>
+                            <div class="calculation-item">
+                                <span>Total a pagar:</span>
+                                <span>S/ 11,148.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Beneficios -->
+                    <div class="credit-details__section">
+                        <h2><i class="fas fa-gift"></i> Beneficios</h2>
+                        <div class="benefits-grid">
+                            <div class="benefit-card">
+                                <i class="fas fa-bolt"></i>
+                                <h3>Aprobación rápida</h3>
+                                <p>Respuesta en 24 horas hábiles</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-sack-dollar"></i>
+                                <h3>Sin penalidades</h3>
+                                <p>Paga antes sin costo adicional</p>
+                            </div>
+                            <div class="benefit-card">
+                                <i class="fas fa-shield-alt"></i>
+                                <h3>Seguro incluido</h3>
+                                <p>Protección contra desempleo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Panel de Acciones -->
+                <div class="credit-details__sidebar">
+                    <div class="action-panel">
+                        <h3>Solicita tu crédito</h3>
+                        <p>Monto máximo: <strong>S/ 50,000</strong></p>
+                        <a href="requestcredit.html" class="btn btn--simulate">
+                            <i class="fas fa-calculator"></i> Simular mi crédito
+                        </a>
+                        <a href="requestcredit.html" class="btn">
+                            <i class="fas fa-file-signature"></i> Solicitar ahora
+                        </a>
+                        <a href="index.html#credit-types" class="btn btn--back">
+                            <i class="fas fa-arrow-left"></i> Volver a créditos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="u-container">
+            <div class="footer__grid">
+                <div class="footer__column">
+                    <div class="footer__logo">
+                        <div class="header__logo-icon">
+                            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                        </div>
+                        <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
+                    </div>
+                    <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Servicios</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Enlaces útiles</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Contacto</h3>
+                    <ul class="footer__list">
+                        <li class="footer__contact-item">
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-phone-alt footer__contact-icon"></i>
+                            <span>555-9000</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@eZCero.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock footer__contact-icon"></i>
+                            <span>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 13:00</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Script para menú móvil
+        document.querySelector('.header__menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('.nav');
+            nav.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

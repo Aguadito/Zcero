@@ -26,7 +26,7 @@
                     <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
                     <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Detalles</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
                 </ul>
             </nav>
@@ -101,67 +101,44 @@
             </div>
         </div>
     </section>
-
-    <!-- Services -->
-    <section class="services">
-        <div class="u-container">
-            <div class="section-title">
-                <h2 class="section-title__heading">Nuestros servicios financieros</h2>
-                <p class="section-title__description">Soluciones adaptadas a tus necesidades personales</p>
+    <section class="credit-types">
+    <div class="u-container">
+        <div class="section-title">
+        <h2 class="section-title__heading">Tipos de Crédito</h2>
+        <p class="section-title__description">Elija el crédito que mejor se adapte a sus necesidades</p>
+        </div>
+        
+        <div class="credit-types__grid">
+        <!-- Crédito Personal -->
+        <div class="credit-type-card" tabindex="0">
+            <div class="credit-type-card__icon">
+            <i class="fas fa-user"></i>
             </div>
-            
-            <div class="services__grid">
-                <div class="service-card">
-                    <div class="service-card__image">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="service-card__content">
-                        <h3 class="service-card__title">Crédito Personal</h3>
-                        <p>Financia tus proyectos personales con condiciones ventajosas.</p>
-                        <ul class="service-card__list">
-                            <li class="service-card__item">Hasta 48 meses de plazo</li>
-                            <li class="service-card__item">Monto máximo S/50,000</li>
-                            <li class="service-card__item">Tasa de interés anual 10.5%</li>
-                            <li class="service-card__item">Aprobación rápida y flexible</li>
-                        </ul>
-                        <a href="#" class="btn">Solicitar ahora</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__image">
-                        <i class="fas fa-home"></i>
-                    </div>
-                    <div class="service-card__content">
-                        <h3 class="service-card__title">Crédito para Vivienda</h3>
-                        <p>Haz realidad el sueño de tu vivienda con créditos flexibles.</p>
-                        <ul class="service-card__list">
-                            <li class="service-card__item">Hasta 15 años de plazo</li>
-                            <li class="service-card__item">Monto según capacidad</li>
-                            <li class="service-card__item">Tasa de interés anual 8.55%</li>
-                            <li class="service-card__item">Cuotas Fijas</li>
-                        </ul>
-                        <a href="#" class="btn">Calcular crédito</a>
-                    </div>
-                </div>
-                
-                <div class="service-card">
-                    <div class="service-card__image">
-                        <i class="fas fa-credit-card"></i>
-                    </div>
-                    <div class="service-card__content">
-                        <h3 class="service-card__title">Cuentas y Tarjetas</h3>
-                        <p>Gestiona tu dinero con nuestras soluciones bancarias.</p>
-                        <ul class="service-card__list">
-                            <li class="service-card__item">Cuentas de ahorro sin comisiones</li>
-                            <li class="service-card__item">Tarjetas de crédito con beneficios</li>
-                            <li class="service-card__item">Seguros de protección</li>
-                            <li class="service-card__item">Banca digital 24/7</li>
-                        </ul>
-                        <a href="#" class="btn">Más información</a>
-                    </div>
-                </div>
+            <h3 class="credit-type-card__title">Crédito Personal</h3>
+            <p class="credit-type-card__description">Financia tus proyectos personales con tasas competitivas y plazos flexibles.</p>
+            <ul class="credit-type-card__features">
+            <li>Hasta 48 meses de plazo</li>
+            <li>Monto máximo S/50,000</li>
+            <li>Tasa desde 10.5% anual</li>
+            </ul>
+            <a href="requestcredit.html" class="btn">Solicitar ahora</a>
+            <a href="credit-details-personal.html" class="btn">Ver detalles</a>
+        </div>
+        
+        <!-- Crédito Vivienda -->
+        <div class="credit-type-card" tabindex="0">
+            <div class="credit-type-card__icon">
+            <i class="fas fa-home"></i>
             </div>
+            <h3 class="credit-type-card__title">Crédito para Vivienda</h3>
+            <p class="credit-type-card__description">Haz realidad el sueño de tu casa propia con condiciones ventajosas.</p>
+            <ul class="credit-type-card__features">
+            <li>Hasta 15 años de plazo</li>
+            <li>Monto según capacidad</li>
+            <li>Tasa desde 8.55% anual</li>
+            </ul>
+            <a href="requestcredit.html" class="btn">Calcular crédito</a>
+            <a href="credit-details-vivienda.html" class="btn">Ver detalles</a>
         </div>
     </section>
 
@@ -413,5 +390,6 @@
             });
         });
     </script>
+    <script src="../js/credit-types.js"></script>
 </body>
 </html>

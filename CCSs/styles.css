@@ -284,60 +284,86 @@ h1, h2, h3, h4 {
     font-size: 22px;
 }
 
-/* Services BEM */
-.services {
-    padding: 100px 0;
+.credit-types {
+  padding: 100px 0;
 }
 
-.services__grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+.credit-types__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
 }
 
-.service-card {
-    background: white;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: var(--shadow);
+.credit-type-card {
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: all 0.3s ease;
 }
 
-.service-card__image {
-    height: 200px;
-    background-color: var(--secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-size: 60px;
+.credit-type-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
-.service-card__content {
-    padding: 25px;
+.credit-type-card:focus {
+  outline: 3px solid var(--accent);
+  transform: translateY(-5px);
 }
 
-.service-card__title {
-    margin-bottom: 15px;
-    font-size: 22px;
+.credit-type-card__icon {
+  background: var(--secondary);
+  color: white;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  font-size: 28px;
 }
 
-.service-card__list {
-    list-style: none;
-    margin: 20px 0;
+.credit-type-card__title {
+  margin-bottom: 15px;
+  font-size: 22px;
+  color: var(--primary);
 }
 
-.service-card__item {
-    padding: 8px 0;
-    padding-left: 25px;
-    position: relative;
+.credit-type-card__description {
+  color: var(--gray);
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-.service-card__item::before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: var(--accent);
-    font-weight: bold;
+.credit-type-card__features {
+  list-style: none;
+  margin: 0 0 25px;
+  padding: 0;
+  text-align: left;
+}
+
+.credit-type-card__features li {
+  padding: 8px 0;
+  position: relative;
+  padding-left: 25px;
+}
+
+.credit-type-card__features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .credit-types {
+    padding: 70px 0;
+  }
 }
 
 /* Rates BEM */

@@ -413,97 +413,24 @@
         </div>
     </footer>
 
-    <script>
-        // Funciones para mostrar/ocultar formularios
-        function showForm(type) {
-            hideForm(); // Ocultar cualquier formulario abierto
-            const form = document.getElementById(`form-${type}`);
-            if (form) {
-                form.style.display = 'block';
-                form.scrollIntoView({ behavior: 'smooth' });
-            }
-        }
-
-        function hideForm() {
-            const forms = document.querySelectorAll('.credit-form');
-            forms.forEach(form => {
-                form.style.display = 'none';
-            });
-        }
-
-        // Funciones para navegación de pasos - Vivienda
-        function nextStep(step) {
-            updateFormStep('vivienda', step);
-            updateSummary('vivienda');
-        }
-
-        function prevStep(step) {
-            updateFormStep('vivienda', step);
-        }
-
-        // Funciones para navegación de pasos - Personal
-        function nextStepPersonal(step) {
-            updateFormStep('personal', step);
-            updateSummary('personal');
-        }
-
-        function prevStepPersonal(step) {
-            updateFormStep('personal', step);
-        }
-
-        // Función genérica para actualizar pasos
-        function updateFormStep(formType, step) {
-            const form = document.getElementById(`form-${formType}`);
-            const steps = form.querySelectorAll('.form-step');
-            const progressSteps = form.querySelectorAll('.progress-step');
-
-            // Ocultar todos los pasos
-            steps.forEach(s => s.classList.remove('active'));
-            progressSteps.forEach(p => p.classList.remove('active'));
-
-            // Mostrar paso actual
-            const currentStep = form.querySelector(`.form-step[data-step="${step}"]`);
-            const currentProgress = form.querySelector(`.progress-step[data-step="${step}"]`);
-            
-            if (currentStep) currentStep.classList.add('active');
-            if (currentProgress) currentProgress.classList.add('active');
-
-            // Marcar pasos anteriores como completados
-            progressSteps.forEach(p => {
-                const stepNum = parseInt(p.dataset.step);
-                if (stepNum < step) {
-                    p.classList.add('completed');
-                } else if (stepNum > step) {
-                    p.classList.remove('completed');
-                }
-            });
-        }
-
-        // Función para actualizar resumen
-        function updateSummary(formType) {
-            const monto = document.getElementById(`monto-${formType[0]}`).value;
-            const plazo = document.getElementById(`plazo-${formType[0]}`).value;
-            
-            document.getElementById(`summary-monto-${formType[0]}`).textContent = `S/ ${monto}`;
-            
-            if (formType === 'vivienda') {
-                document.getElementById(`summary-plazo-${formType[0]}`).textContent = `${plazo} años`;
-            } else {
-                document.getElementById(`summary-plazo-${formType[0]}`).textContent = `${plazo} meses`;
-            }
-        }
-
-        // Event listeners para formularios
-        document.addEventListener('DOMContentLoaded', function() {
-            const forms = document.querySelectorAll('.credit-form form');
-            forms.forEach(form => {
-                form.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    alert('Solicitud enviada exitosamente. Te contactaremos pronto.');
-                    hideForm();
-                });
-            });
-        });
-    </script>
+     <div id="validation-messages" class="validation-messages" style="display:none;">
+        <div class="validation-error">
+            <i class="fas fa-exclamation-circle"></i>
+            <span id="error-text"></span>
+        </div>
+    </div>
+    
+    <div id="confirmation-overlay" class="confirmation-overlay" style="display: none;">
+        <div class="confirmation-box">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>¡Solicitud enviada con éxito!</h3>
+            <p>Tu solicitud ha sido recibida correctamente. Te contactaremos en breve.</p>
+            <button id="close-confirmation" class="btn">Aceptar</button>
+        </div>
+    </div>
+    
+    <script src="../js/requestcredit.js"></script>
 </body>
 </html>
