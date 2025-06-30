@@ -9,32 +9,30 @@
     <link rel="stylesheet" href="../CCSs/ahoarticle.css">
     <link rel="preload" href="../CCSs/styles.css" as="style">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header consistente con index.html -->
     <header class="header">
         <div class="u-container header__container">
             <div class="header__logo">
                 <div class="header__logo-icon">
-                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                    <img src="../IMGs/logowhite.webp" alt="Logo ZCERO" width="40" height="40">
                 </div>
-                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+                <h1 class="header__logo-text">ZCERO</h1>
             </div>
             
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
-                    <li class="nav__item"><a href="blog.html" class="nav__link nav__link--active">Blog</a></li>
+                    <li class="nav__item"><a href="../index.html" class="nav__link nav__link--active">Inicio</a></li>
+                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
                     <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                    <li class="nav__item"><a href="#footer" class="nav__link" onclick="desplazarSuavemente(event, '#footer')">Contacto</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header__actions">
-                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
-                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+                <a href="requestcredit.html" class="header__action header__action--register">Solicitar Credito</a>
             </div>
             
             <button class="header__menu-btn">
@@ -43,7 +41,6 @@
         </div>
     </header>
 
-    <!-- Hero mejorado para artículos - Estilo consistente con index.html -->
     <section class="hero hero--article">
         <div class="u-container">
             <h1 class="hero__title">Top 5 Consejos para Ahorrar en 2025</h1>
@@ -86,16 +83,10 @@
                 <li><i class="fas fa-check-circle"></i> Sin intereses si pagas el 100% al corte</li>
                 <li><i class="fas fa-check-circle"></i> Alertas cuando gastes más de tu presupuesto</li>
             </ul>
-
-            <div class="article-cta">
-                <p>🚀 <strong>Oferta exclusiva:</strong> Abre una cuenta de ahorros Zcero antes de julio 2025 y recibe <strong>5% menos interés</strong> en tu primer crédito</p>
-                <a href="#" class="btn">Abrir cuenta ahora</a>
-            </div>
         </div>
     </article>
 
-    <!-- Footer consistente con index.html -->
-    <footer class="footer">
+<footer class="footer" id="footer">
         <div class="u-container">
             <div class="footer__grid">
                 <div class="footer__column">
@@ -107,58 +98,75 @@
                     </div>
                     <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=es" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://pe.linkedin.com" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com" class="footer__social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
-                <div class="footer__column">
-                    <h3 class="footer__column-heading">Compañía</h3>
-                    <ul class="footer__list">
-                        <li class="footer__item"><a href="aboutus.html" class="footer__link">Nosotros</a></li>
-                        <li class="footer__item"><a href="blog.html" class="footer__link">Blog</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Trabaja con nosotros</a></li>
-                    </ul>
-                </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Servicios</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="requestcredit.html" class="footer__link">Créditos Personales</a></li>
-                        <li class="footer__item"><a href="requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
                     </ul>
                 </div>
-                
+
+                <div class="footer__column">
+                    <h3 class="footer__column-heading">Enlaces útiles</h3>
+                    <ul class="footer__list">
+                        <li class="footer__item"><a href="https://www.desmos.com/scientific?lang=es" class="footer__link">Calculadora</a></li>
+                        <li class="footer__item"><a href="HTMLs/tasarticle.html" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                    </ul>
+                </div>
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Contacto</h3>
                     <ul class="footer__list">
                         <li class="footer__contact-item">
-                            <i class="fas fa-envelope footer__contact-icon"></i>
-                            <span>Dudas@eZCero.com</span>
+                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
+                            <span>UTP, Chimbote</span>
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-phone-alt footer__contact-icon"></i>
                             <span>555-9000</span>
                         </li>
                         <li class="footer__contact-item">
-                            <i class="fas fa-map-marker-alt footer__contact-icon"></i>
-                            <span>UTP, Chimbote</span>
+                            <i class="fas fa-envelope footer__contact-icon"></i>
+                            <span>Dudas@ZCERO.com</span>
+                        </li>
+                        <li class="footer__contact-item">
+                            <i class="fas fa-clock footer__contact-icon"></i>
+                            <span>Lunes a Viernes: 9:00 - 18:00<br>Sábados: 10:00 - 13:00</span>
                         </li>
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
-                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | <a href="#">Términos y condiciones</a> | <a href="#">Política de privacidad</a></p>
+                <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Menú móvil
+        function desplazarSuavemente(event, destino) {
+        event.preventDefault();
+
+        const elementoDestino = document.querySelector(destino);
+
+        window.scrollTo({
+            top: elementoDestino.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+    </script>
+
+    <script>
         document.querySelector('.header__menu-btn').addEventListener('click', function() {
             const nav = document.querySelector('.nav');
             nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';

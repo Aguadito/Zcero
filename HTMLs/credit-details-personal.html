@@ -8,32 +8,29 @@
     <link rel="stylesheet" href="../CCSs/styles.css">
     <link rel="stylesheet" href="../CCSs/credit-details.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="u-container header__container">
             <div class="header__logo">
                 <div class="header__logo-icon">
-                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                    <img src="../IMGs/logowhite.webp" alt="Logo ZCERO" width="40" height="40">
                 </div>
-                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+                <h1 class="header__logo-text">ZCERO</h1>
             </div>
             
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
-                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="../index.html" class="nav__link nav__link--active">Inicio</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
-                    <li class="nav__item"><a href="requestcredit.html" class="nav__link nav__link--active">Créditos</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link"></a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
+                    <li class="nav__item"><a href="#footer" class="nav__link" onclick="desplazarSuavemente(event, '#footer')">Contacto</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header__actions">
-                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
-                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+                <a href="requestcredit.html" class="header__action header__action--register">Solicitar Credito</a>
             </div>
             
             <button class="header__menu-btn">
@@ -163,12 +160,12 @@
                         <h3>Solicita tu crédito</h3>
                         <p>Monto máximo: <strong>S/ 50,000</strong></p>
                         <a href="#" id="simulate-btn" class="btn btn--simulate">
-                            <i class="fas fa-calculator"></i> Simular mi crédito
+                            <i class="fas fa-calculator"></i> Simularmi crédito
                         </a>
                         <a href="requestcredit.html" class="btn">
                             <i class="fas fa-file-signature"></i> Solicitar ahora
                         </a>
-                        <a href="index.html#credit-types" class="btn btn--back">
+                        <a href="requestcredit.html" class="btn btn--back">
                             <i class="fas fa-arrow-left"></i> Volver a créditos
                         </a>
                     </div>
@@ -232,8 +229,7 @@
             </div>
         </div>
     </div>
-    <!-- Footer -->
-    <footer class="footer">
+     <footer class="footer" id="footer">
         <div class="u-container">
             <div class="footer__grid">
                 <div class="footer__column">
@@ -245,38 +241,32 @@
                     </div>
                     <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=es" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://pe.linkedin.com" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com" class="footer__social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Servicios</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Enlaces útiles</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="https://www.desmos.com/scientific?lang=es" class="footer__link">Calculadora</a></li>
+                        <li class="footer__item"><a href="HTMLs/tasarticle.html" class="footer__link">Tasas y tarifas</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Contacto</h3>
                     <ul class="footer__list">
@@ -290,7 +280,7 @@
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-envelope footer__contact-icon"></i>
-                            <span>Dudas@eZCero.com</span>
+                            <span>Dudas@ZCERO.com</span>
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-clock footer__contact-icon"></i>
@@ -299,7 +289,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
                 <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
             </div>

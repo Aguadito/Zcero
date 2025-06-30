@@ -51,12 +51,10 @@
     box-shadow: var(--shadow);
 }
 
-/* Emoji icons */
 .emoji-icon {
     font-size: 40px;
 }
 
-/* Mobile menu */
 .nav.active {
     display: block;
     position: absolute;

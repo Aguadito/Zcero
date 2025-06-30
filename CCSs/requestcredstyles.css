@@ -8,7 +8,6 @@
             --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
         }
 
-        /* Estilos específicos para la página de créditos */
         .credit-hero {
             background: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(0, 102, 204, 0.8) 100%);
             padding: 180px 0 120px;
@@ -303,13 +302,11 @@
             }
         }
 
-        /* Estilos para campos inválidos */
         .form-input.invalid {
             border-color: #f44336;
             background-color: #ffebee;
         }
 
-        /* Mensajes de error debajo de los campos */
         .error-message {
             color: #f44336;
             font-size: 14px;
@@ -362,7 +359,6 @@
             100% { transform: scale(1); opacity: 1; }
         }
         
-        /* Responsive */
         @media (max-width: 768px) {
             .credit-hero {
                 padding: 160px 0 80px;

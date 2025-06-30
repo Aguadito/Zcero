@@ -9,53 +9,40 @@
     <link rel="stylesheet" href="../CCSs/requestcredstyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" href="../CCSs/styles.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="u-container header__container">
             <div class="header__logo">
                 <div class="header__logo-icon">
-                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
+                    <img src="../IMGs/logowhite.webp" alt="Logo ZCERO" width="40" height="40">
                 </div>
-                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+                <h1 class="header__logo-text">ZCERO</h1>
             </div>
             
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
+                    <li class="nav__item"><a href="../index.html" class="nav__link nav__link--active">Inicio</a></li>
                     <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
-                    <li class="nav__item"><a href="requestcredit.html" class="nav__link nav__link--active">Créditos</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                    <li class="nav__item"><a href="#footer" class="nav__link" onclick="desplazarSuavemente(event, '#footer')">Contacto</a></li>
                 </ul>
             </nav>
-            
-            <div class="header__actions">
-                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
-                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
-            </div>
-            
+
             <button class="header__menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero credit-hero">
         <div class="u-container hero__content">
             <h2 class="hero__title">Créditos a tu <span class="hero__title-highlight">medida</span></h2>
             <p class="hero__description">Elige entre nuestras opciones de crédito personal o vivienda. Proceso rápido, seguro y completamente digital.</p>
         </div>
-        
-        <div class="hero__image-container">
-            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=300" alt="Créditos ZCERO" class="hero__image">
-        </div>
     </section>
 
-    <!-- Credit Options -->
     <section class="credit-options">
         <div class="u-container">
             <div class="section-title">
@@ -95,10 +82,8 @@
         </div>
     </section>
 
-    <!-- Credit Forms -->
     <section class="credit-forms">
         <div class="u-container">
-            <!-- Formulario Crédito Vivienda -->
             <div id="form-vivienda" class="credit-form" style="display: none;">
                 <div class="credit-form__header">
                     <h2 class="credit-form__title">Solicitud de Crédito de Vivienda</h2>
@@ -114,7 +99,6 @@
                 </div>
 
                 <form class="credit-form__content">
-                    <!-- Paso 1 -->
                     <div class="form-step active" data-step="1">
                         <h3 class="form-step__title">Datos Personales</h3>
                         <div class="form-grid">
@@ -140,7 +124,6 @@
                         </div>
                     </div>
 
-                    <!-- Paso 2 -->
                     <div class="form-step" data-step="2">
                         <h3 class="form-step__title">Detalles del Crédito</h3>
                         <div class="form-grid">
@@ -158,23 +141,15 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Ingresos mensuales (S/)</label>
-                                <input type="number" class="form-input" id="ingresos-v" min="0" step="100" required>
+                                <input type="number" class="form-input" id="ingresos-v" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Tipo de trabajo</label>
                                 <select class="form-input" id="trabajo-v">
                                     <option value="dependiente">Dependiente</option>
                                     <option value="independiente">Independiente</option>
+                                    <option value="empresario">Empresario</option>
                                 </select>
-                            </div>
-                            <div class="form-group" id="ruc-container-v" style="display:none">
-                                <label class="form-label">RUC</label>
-                                <input type="text" class="form-input" id="ruc-v" pattern="\d{11}" 
-                                    title="El RUC debe tener 11 dígitos">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Empresa</label>
-                                <input type="text" class="form-input" id="empresa-v">
                             </div>
                         </div>
                         <div class="form-buttons">
@@ -183,7 +158,6 @@
                         </div>
                     </div>
 
-                    <!-- Paso 3 -->
                     <div class="form-step" data-step="3">
                         <h3 class="form-step__title">Confirmación</h3>
                         <div class="form-summary">
@@ -218,7 +192,6 @@
                 </form>
             </div>
 
-            <!-- Formulario Crédito Personal -->
             <div id="form-personal" class="credit-form" style="display: none;">
                 <div class="credit-form__header">
                     <h2 class="credit-form__title">Solicitud de Crédito Personal</h2>
@@ -234,7 +207,6 @@
                 </div>
 
                 <form class="credit-form__content">
-                    <!-- Paso 1 -->
                     <div class="form-step active" data-step="1">
                         <h3 class="form-step__title">Datos Personales</h3>
                         <div class="form-grid">
@@ -260,7 +232,6 @@
                         </div>
                     </div>
 
-                    <!-- Paso 2 -->
                     <div class="form-step" data-step="2">
                         <h3 class="form-step__title">Detalles del Crédito</h3>
                         <div class="form-grid">
@@ -279,7 +250,7 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Ingresos mensuales (S/)</label>
-                                <input type="number" class="form-input" id="ingresos-p" min="0" step="100" required>
+                                <input type="number" class="form-input" id="ingresos-p" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Finalidad del crédito</label>
@@ -291,23 +262,6 @@
                                     <option value="otros">Otros</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label class="form-label">Tipo de trabajo</label>
-                                <select class="form-input" id="trabajo-p">
-                                    <option value="dependiente">Dependiente</option>
-                                    <option value="independiente">Independiente</option>
-                                </select>
-                            </div>
-
-                            <div class="form-group" id="ruc-container-p" style="display:none">
-                                <label class="form-label">RUC</label>
-                                <input type="text" class="form-input" id="ruc-v" pattern="\d{11}" 
-                                    title="El RUC debe tener 11 dígitos">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Empresa</label>
-                                <input type="text" class="form-input" id="empresa-v">
-                            </div>
                         </div>
                         <div class="form-buttons">
                             <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(1)">Atrás</button>
@@ -315,7 +269,6 @@
                         </div>
                     </div>
 
-                    <!-- Paso 3 -->
                     <div class="form-step" data-step="3">
                         <h3 class="form-step__title">Confirmación</h3>
                         <div class="form-summary">
@@ -352,20 +305,7 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="u-container">
-            <h2 class="cta__title">¿Necesitas ayuda con tu solicitud?</h2>
-            <p class="cta__description">Nuestros asesores están listos para ayudarte en cada paso del proceso</p>
-            <div class="cta__buttons">
-                <a href="#" class="btn">Hablar con un asesor</a>
-                <a href="#" class="btn btn--secondary">Ver preguntas frecuentes</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
+<footer class="footer" id="footer">
         <div class="u-container">
             <div class="footer__grid">
                 <div class="footer__column">
@@ -377,38 +317,32 @@
                     </div>
                     <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=es" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://pe.linkedin.com" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com" class="footer__social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Servicios</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Enlaces útiles</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="https://www.desmos.com/scientific?lang=es" class="footer__link">Calculadora</a></li>
+                        <li class="footer__item"><a href="HTMLs/tasarticle.html" class="footer__link">Tasas y tarifas</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Contacto</h3>
                     <ul class="footer__list">
@@ -422,7 +356,7 @@
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-envelope footer__contact-icon"></i>
-                            <span>Dudas@eZCero.com</span>
+                            <span>Dudas@ZCERO.com</span>
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-clock footer__contact-icon"></i>
@@ -431,14 +365,14 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
                 <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
             </div>
         </div>
     </footer>
 
-     <div id="validation-messages" class="validation-messages" style="display:none;">
+    <div id="validation-messages" class="validation-messages" style="display:none;">
         <div class="validation-error">
             <i class="fas fa-exclamation-circle"></i>
             <span id="error-text"></span>
@@ -456,6 +390,19 @@
         </div>
     </div>
     
+    <script>
+        function desplazarSuavemente(event, destino) {
+        event.preventDefault();
+
+        const elementoDestino = document.querySelector(destino);
+
+        window.scrollTo({
+            top: elementoDestino.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+    </script>
+
     <script src="../js/requestcredit.js"></script>
 </body>
 </html>

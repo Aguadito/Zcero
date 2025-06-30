@@ -247,24 +247,6 @@ function attachValidationListeners(formType) {
     });
 }
 
-function toggleRUCField(select, prefix) {
-    const rucContainer = document.getElementById(`ruc-container-${prefix}`);
-    if (select.value === 'independiente') {
-        rucContainer.style.display = 'block';
-        document.getElementById(`ruc-${prefix}`).required = true;
-    } else {
-        rucContainer.style.display = 'none';
-        document.getElementById(`ruc-${prefix}`).required = false;
-    }
-}
-
-// Inicialización corregida
-document.querySelectorAll('[id^="trabajo-"]').forEach(select => {
-    const prefix = select.id.split('-')[1];  // Extrae 'v' o 'p'
-    toggleRUCField(select, prefix);
-    select.addEventListener('change', () => toggleRUCField(select, prefix));
-});
-
 // Event listeners para formularios
 document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('.credit-form form');

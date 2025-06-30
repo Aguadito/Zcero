@@ -5,67 +5,63 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="ZCERO - Servicios de crédito personal y vivienda con tasas justas y atención personalizada">
     <title>ZCERO | Créditos Personales y Vivienda</title>
-    <link rel="stylesheet" href="../CCSs/styles.css">
+    <link rel="stylesheet" href="CCSs/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="preload" href="../CCSs/styles.css" as="style">
+    <link rel="preload" href="CCSs/styles.css" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
         <div class="u-container header__container">
             <div class="header__logo">
                 <div class="header__logo-icon">
-                    <img src="../IMGs/logo.webp" alt="Logo ZCERO" width="40" height="40">
+                    <img src="IMGs/logowhite.webp" alt="Logo ZCERO" width="40" height="40">
                 </div>
-                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
+                <h1 class="header__logo-text">ZCERO</h1>
             </div>
-            
+
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="#" class="nav__link nav__link--active">Inicio</a></li>
-                    <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
-                    <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
-                    <li class="nav__item"><a href="requestcredit.html" class="nav__link">Créditos</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Detalles</a></li>
-                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
+                    <li class="nav__item"><a href="HTMLs/blog.html" class="nav__link">Blog</a></li>
+                    <li class="nav__item"><a href="HTMLs/aboutus.html" class="nav__link">Nosotros</a></li>
+                    <li class="nav__item"><a href="HTMLs/requestcredit.html" class="nav__link">Créditos</a></li>
+                    <li class="nav__item"><a href="#footer" class="nav__link" onclick="desplazarSuavemente(event, '#footer')">Contacto</a></li>
                 </ul>
             </nav>
-            
+
             <div class="header__actions">
-                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
-                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+                <a href="HTMLs/requestcredit.html" class="header__action header__action--register">Solicitar Credito</a>
             </div>
-            
+
             <button class="header__menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="u-container hero__content">
             <h2 class="hero__title">Agil. <span class="hero__title-highlight">Confiable.</span> Hecho para ti.</h2>
             <p class="hero__description">Solicita tu crédito en minutos, sin complicaciones. Respaldamos tus proyectos con tasas justas, atención personalizada y el respaldo de una comunidad que cree en tu crecimiento.</p>
             <div class="hero__buttons">
-                <a href="#" class="btn">Solicitar crédito</a>
-                <a href="#" class="btn btn--secondary">Abrir una cuenta</a>
+                <a href="HTMLs/requestcredit.html" class="btn">Solicitar crédito</a>
             </div>
         </div>
-        
-        <div class="hero__image-container">
-            <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=300" alt="Servicios financieros ZCERO" class="hero__image">
+
+        <div class="hero__background">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=300" alt="Fondo financiero" class="hero__background-image">
+            <div class="hero__background-overlay"></div>
         </div>
+        
     </section>
 
-    <!-- Features -->
     <section class="features">
         <div class="u-container">
             <div class="section-title">
                 <h2 class="section-title__heading">¿Por qué elegirnos?</h2>
                 <p class="section-title__description">En ZCERO trabajamos para ofrecerte las mejores condiciones y un servicio cercano</p>
             </div>
-            
+
             <div class="features__grid">
                 <div class="feature-card">
                     <div class="feature-card__icon">
@@ -74,7 +70,7 @@
                     <h3 class="feature-card__title">Tasas competitivas</h3>
                     <p>Ofrecemos las tasas de interés más bajas del mercado para créditos personales y vivienda</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-card__icon">
                         <i class="fas fa-hand-holding-usd"></i>
@@ -82,7 +78,7 @@
                     <h3 class="feature-card__title">Beneficios exclusivos</h3>
                     <p>Como cliente, disfrutas de beneficios exclusivos y atención personalizada</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-card__icon">
                         <i class="fas fa-shield-alt"></i>
@@ -90,7 +86,7 @@
                     <h3 class="feature-card__title">Seguridad garantizada</h3>
                     <p>Tus operaciones están protegidas con los más altos estándares de seguridad</p>
                 </div>
-                
+
                 <div class="feature-card">
                     <div class="feature-card__icon">
                         <i class="fas fa-users"></i>
@@ -107,13 +103,13 @@
         <h2 class="section-title__heading">Tipos de Crédito</h2>
         <p class="section-title__description">Elija el crédito que mejor se adapte a sus necesidades</p>
         </div>
-        
+
         <div class="credit-types__grid">
-        <!-- Crédito Personal -->
         <div class="credit-type-card" tabindex="0">
             <div class="credit-type-card__icon">
             <i class="fas fa-user"></i>
             </div>
+
             <h3 class="credit-type-card__title">Crédito Personal</h3>
             <p class="credit-type-card__description">Financia tus proyectos personales con tasas competitivas y plazos flexibles.</p>
             <ul class="credit-type-card__features">
@@ -121,11 +117,10 @@
             <li>Monto máximo S/50,000</li>
             <li>Tasa desde 10.5% anual</li>
             </ul>
-            <a href="requestcredit.html" class="btn">Solicitar ahora</a>
-            <a href="credit-details-personal.html" class="btn">Ver detalles</a>
+            <a href="HTMLs/requestcredit.html" class="btn">Solicitar ahora</a>
+            <a href="HTMLs/credit-details-personal.html" class="btn">Ver detalles</a>
         </div>
-        
-        <!-- Crédito Vivienda -->
+
         <div class="credit-type-card" tabindex="0">
             <div class="credit-type-card__icon">
             <i class="fas fa-home"></i>
@@ -137,8 +132,8 @@
             <li>Monto según capacidad</li>
             <li>Tasa desde 8.55% anual</li>
             </ul>
-            <a href="requestcredit.html" class="btn">Calcular crédito</a>
-            <a href="credit-details-vivienda.html" class="btn">Ver detalles</a>
+            <a href="HTMLs/credit-details-vivienda.html" class="btn">Calcular crédito</a>
+            <a href="HTMLs/credit-details-vivienda.html" class="btn">Ver detalles</a>
         </div>
     </section>
 
@@ -148,7 +143,7 @@
                 <h2 class="section-title__heading">Tasas y tarifas</h2>
                 <p class="section-title__description">Transparencia en todas nuestras condiciones financieras</p>
             </div>
-            
+
             <div class="rates-table">
                 <table class="rates-table__inner">
                     <thead>
@@ -181,23 +176,24 @@
         </div>
     </section>
 
-        <!-- Why Us - Nueva versión con imágenes -->
     <section class="why-us">
         <div class="u-container">
             <div class="section-title">
                 <h2 class="section-title__heading">Nuestra ventaja competitiva</h2>
                 <p class="section-title__description">Lo que nos diferencia de la competencia</p>
             </div>
-            
-            <div class="why-us__features">
-                <div class="why-us__feature">
-                    <div class="why-us__feature-image">
-                        <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Tasas claras">
-                    </div>
+
+        <div class="why-us__carousel-container">
+            <div class="why-us__carousel">
+                <div class="why-us__features">
+                    <div class="why-us__feature">
+                        <div class="why-us__feature-image">
+                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Tasas claras">
+                        </div>
                     <h3 class="why-us__feature-title">Tasas claras</h3>
                     <p class="why-us__feature-description">Sin letra chica ni sorpresas.<br>Te explicamos todo desde el principio.</p>
                 </div>
-                
+
                 <div class="why-us__feature">
                     <div class="why-us__feature-image">
                         <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Confianza">
@@ -205,7 +201,7 @@
                     <h3 class="why-us__feature-title">Confianza</h3>
                     <p class="why-us__feature-description">No nacimos ayer. Llevamos años en el mercado brindando seguridad.</p>
                 </div>
-                
+
                 <div class="why-us__feature">
                     <div class="why-us__feature-image">
                         <img src="https://images.unsplash.com/photo-1586953208448-b95a79798f07?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Soluciones flexibles">
@@ -213,7 +209,7 @@
                     <h3 class="why-us__feature-title">Soluciones flexibles</h3>
                     <p class="why-us__feature-description">Creamos soluciones a la medida,<br>pensando siempre en su bienestar.</p>
                 </div>
-                
+
                 <div class="why-us__feature">
                     <div class="why-us__feature-image">
                         <img src="https://images.unsplash.com/photo-1600880292089-90a7e086ee0c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Asesoramiento">
@@ -222,17 +218,72 @@
                     <p class="why-us__feature-description">Te ayudamos a tomar<br>decisiones financieras más inteligentes.</p>
                 </div>
             </div>
+                <button class="carousel__btn carousel__btn--prev">‹</button>
+            <button class="carousel__btn carousel__btn--next">›</button>
+        </div>
+            <div class="carousel__dots"></div>
         </div>
     </section>
 
-    <!-- Blog -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.querySelector('.why-us__features');
+    const features = document.querySelectorAll('.why-us__feature');
+    const prevBtn = document.querySelector('.carousel__btn--prev');
+    const nextBtn = document.querySelector('.carousel__btn--next');
+    const dotsContainer = document.querySelector('.carousel__dots');
+    
+    let currentIndex = 0;
+    const itemsPerSlide = () => 
+        window.innerWidth >= 1200 ? 4 : 
+        window.innerWidth >= 992 ? 3 : 
+        window.innerWidth >= 768 ? 2 : 1;
+    
+    // Crear puntos
+    features.forEach((_, i) => {
+        if (i % itemsPerSlide() === 0) {
+            const dot = document.createElement('button');
+            dot.classList.add('carousel__dot');
+            if (i === 0) dot.classList.add('active');
+            dot.addEventListener('click', () => goToSlide(i / itemsPerSlide()));
+            dotsContainer.appendChild(dot);
+        }
+    });
+    
+    const dots = document.querySelectorAll('.carousel__dot');
+    
+    function updateCarousel() {
+        const offset = -currentIndex * 100;
+        carousel.style.transform = `translateX(${offset}%)`;
+        
+        dots.forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentIndex);
+        });
+    }
+    
+    function goToSlide(index) {
+        const maxIndex = Math.ceil(features.length / itemsPerSlide()) - 1;
+        currentIndex = Math.max(0, Math.min(index, maxIndex));
+        updateCarousel();
+    }
+    
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    
+    window.addEventListener('resize', () => {
+        currentIndex = 0;
+        updateCarousel();
+    });
+});
+    </script>
+
     <section class="blog">
         <div class="u-container">
             <div class="section-title">
                 <h2 class="section-title__heading">Visita nuestro Blog</h2>
                 <p class="section-title__description">Artículos útiles para tu educación financiera</p>
             </div>
-            
+
             <div class="blog__grid">
                 <article class="blog-card">
                     <div class="blog-card__image">
@@ -241,7 +292,7 @@
                     <div class="blog-card__content">
                         <h3 class="blog-card__title">Nuevas tasas de interés 2025</h3>
                         <p>Descubre cómo benefician a tu préstamo personal.</p>
-                        <a href="#" class="blog-card__link">Leer más...</a>
+                        <a href="HTMLs/tasarticle.html" class="blog-card__link">Leer más...</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -251,7 +302,7 @@
                     <div class="blog-card__content">
                         <h3 class="blog-card__title">Consejos para ahorrar en 2025</h3>
                         <p>Guía práctica para gestionar tus finanzas.</p>
-                        <a href="#" class="blog-card__link">Leer más...</a>
+                        <a href="HTMLs/ahoarticle.html" class="blog-card__link">Leer más...</a>
                     </div>
                 </article>
                 <article class="blog-card">
@@ -261,14 +312,13 @@
                     <div class="blog-card__content">
                         <h3 class="blog-card__title">¿Vale la pena pedir un préstamo en 2025?</h3>
                         <p>Analiza los pros y contras de solicitar un préstamo.</p>
-                        <a href="#" class="blog-card__link">Leer más...</a>
+                        <a href="HTMLs/presarticle.html" class="blog-card__link">Leer más...</a>
                     </div>
                 </article>
             </div>
         </div>
     </section>
 
-    <!-- Video Section -->
     <section class="video">
         <div class="u-container">
             <h2 class="video__title">Conoce lo que hacemos</h2>
@@ -283,63 +333,91 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta">
         <div class="u-container">
             <h2 class="cta__title">¿Listo para empezar con ZCERO?</h2>
             <p class="cta__description">Descubre cómo podemos ayudarte a alcanzar tus metas financieras</p>
             <div class="cta__buttons">
-                <a href="#" class="btn">Solicitar crédito</a>
-                <a href="#" class="btn btn--secondary">Habla con un asesor</a>
+                <a href="HTMLs/requestcredit.html" class="btn">Solicitar crédito</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <div id="offersModal" class="modal">
+    <div class="modal-content">
+    <span class="close-btn">&times;</span>
+    <h2>¡Ofertas especiales para ti!</h2>
+    <div class="offer-card">
+        <h3>Préstamo con premio</h3>
+        <p>Pide un prestamo de vivienda con nostros y te regalamos un set de cubiertos tramontina.</p>
+        <a href="HTMLs/requestcredit.html" ><button class="see-more-btn">Ver más</button></a>
+    </div>
+    <div class="offer-card">
+        <h3>Asegura tu hogar</h3>
+        <p>Asegura tu vivienda con nuestro prestamo de vivienda y te regalamos un set de cocina.</p>
+        <a href="HTMLs/requestcredit.html" ><button class="see-more-btn">Ver más</button></a>
+        
+    </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  if (!sessionStorage.getItem('modalShown')) {
+    document.getElementById('offersModal').style.display = 'block';
+    sessionStorage.setItem('modalShown', 'true');
+    
+    document.querySelector('.close-btn').onclick = function() {
+      document.getElementById('offersModal').style.display = 'none';
+    };
+    
+    window.onclick = function(event) {
+      if (event.target == document.getElementById('offersModal')) {
+        document.getElementById('offersModal').style.display = 'none';
+      }
+    };
+  }
+});
+</script>
+
+    <footer class="footer" id="footer">
         <div class="u-container">
             <div class="footer__grid">
                 <div class="footer__column">
                     <div class="footer__logo">
                         <div class="header__logo-icon">
-                            <img src="../IMGs/logowhite.webp" alt="Logo ZCERO" width="40" height="40">
+                            <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
                         </div>
                         <h1 class="footer__logo-text">ZC<span class="footer__logo-highlight">ERO</span></h1>
                     </div>
                     <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
                     <div class="footer__social">
-                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://x.com/?lang=es" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.instagram.com" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="https://pe.linkedin.com" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.youtube.com" class="footer__social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Servicios</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Enlaces útiles</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="https://www.desmos.com/scientific?lang=es" class="footer__link">Calculadora</a></li>
+                        <li class="footer__item"><a href="HTMLs/tasarticle.html" class="footer__link">Tasas y tarifas</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
-                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Contacto</h3>
                     <ul class="footer__list">
@@ -353,7 +431,7 @@
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-envelope footer__contact-icon"></i>
-                            <span>Dudas@eZCero.com</span>
+                            <span>Dudas@ZCERO.com</span>
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-clock footer__contact-icon"></i>
@@ -362,7 +440,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="footer__bottom">
                 <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
             </div>
@@ -370,17 +448,28 @@
     </footer>
 
     <script>
-        // Funcionalidad del menú hamburguesa
+        function desplazarSuavemente(event, destino) {
+        event.preventDefault();
+
+        const elementoDestino = document.querySelector(destino);
+
+        window.scrollTo({
+            top: elementoDestino.offsetTop,
+            behavior: 'smooth'
+        });
+    }
+    </script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             const menuBtn = document.getElementById('menuBtn');
             const nav = document.querySelector('.nav');
-            
+
             menuBtn.addEventListener('click', function() {
                 nav.classList.toggle('nav--active');
                 menuBtn.classList.toggle('active');
             });
-            
-            // Cerrar menú al hacer clic en un enlace
+
             const navLinks = document.querySelectorAll('.nav__link');
             navLinks.forEach(link => {
                 link.addEventListener('click', () => {

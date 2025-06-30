@@ -1,5 +1,4 @@
- /* Estilos específicos para el blog */
-        .blog-hero {
+.blog-hero {
             background: linear-gradient(190deg, #8ab6b1 5%, #748aa3 100%);
             color: #fffbef;
             padding: 190px 20px;
@@ -35,7 +34,6 @@
             margin-bottom: 10px;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             .blog-hero {
                 padding: 150px 30px;
