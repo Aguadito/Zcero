@@ -38,7 +38,33 @@
             </button>
         </div>
     </header>
-
+<!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="../index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/blog.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <section class="hero">
         <div class="u-container hero__content">
             <h2 class="hero__title">Agil. <span class="hero__title-highlight">Confiable.</span> Hecho para ti.</h2>
@@ -480,5 +506,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     </script>
     <script src="../js/credit-types.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

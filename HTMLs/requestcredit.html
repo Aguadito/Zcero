@@ -9,41 +9,53 @@
     <link rel="stylesheet" href="../CCSs/requestcredstyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preload" href="../CCSs/styles.css" as="style">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
-    <script src="JS/requestcredit.js"></script>
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
         <div class="u-container header__container">
             <div class="header__logo">
                 <div class="header__logo-icon">
-                    <img src="../IMGs/logowhite.webp" alt="Logo ZCERO" width="40" height="40">
+                    <img src="https://images.unsplash.com/photo-1613243555978-636c48dc653c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=100&w=100" alt="Logo ZCERO" width="40" height="40">
                 </div>
-                <h1 class="header__logo-text">ZCERO</h1>
+                <h1 class="header__logo-text">ZC<span class="header__logo-highlight">ERO</span></h1>
             </div>
             
             <nav class="nav">
                 <ul class="nav__list">
-                    <li class="nav__item"><a href="../index.html" class="nav__link nav__link--active">Inicio</a></li>
+                    <li class="nav__item"><a href="index.html" class="nav__link">Inicio</a></li>
                     <li class="nav__item"><a href="blog.html" class="nav__link">Blog</a></li>
                     <li class="nav__item"><a href="aboutus.html" class="nav__link">Nosotros</a></li>
-                    <li class="nav__item"><a href="#footer" class="nav__link" onclick="desplazarSuavemente(event, '#footer')">Contacto</a></li>
+                    <li class="nav__item"><a href="requestcredit.html" class="nav__link nav__link--active">Créditos</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Tasas</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link">Contacto</a></li>
                 </ul>
             </nav>
-
+            
+            <div class="header__actions">
+                <a href="#" class="header__action header__action--login">Acceso Clientes</a>
+                <a href="#" class="header__action header__action--register">Abre tu cuenta</a>
+            </div>
+            
             <button class="header__menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero credit-hero">
         <div class="u-container hero__content">
             <h2 class="hero__title">Créditos a tu <span class="hero__title-highlight">medida</span></h2>
             <p class="hero__description">Elige entre nuestras opciones de crédito personal o vivienda. Proceso rápido, seguro y completamente digital.</p>
         </div>
+        
+        <div class="hero__image-container">
+            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&w=300" alt="Créditos ZCERO" class="hero__image">
+        </div>
     </section>
 
+    <!-- Credit Options -->
     <section class="credit-options">
         <div class="u-container">
             <div class="section-title">
@@ -83,230 +95,261 @@
         </div>
     </section>
 
+    <!-- Credit Forms -->
     <section class="credit-forms">
         <div class="u-container">
-            <div id="form-vivienda" class="credit-form" style="display: none;">
-                <div class="credit-form__header">
-                    <h2 class="credit-form__title">Solicitud de Crédito de Vivienda</h2>
-                    <button class="credit-form__close" onclick="hideForm()">
-                        <i class="fas fa-times"></i>
-                    </button>
+
+<!-- Formulario Crédito Vivienda -->
+<div id="form-vivienda" class="credit-form" style="display: block;">
+    <div class="credit-form__header">
+        <h2 class="credit-form__title">Solicitud de Crédito de Vivienda</h2>
+        <button class="credit-form__close" onclick="hideForm()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="credit-form__progress">
+        <div class="progress-step active" data-step="1">1</div>
+        <div class="progress-step" data-step="2">2</div>
+        <div class="progress-step" data-step="3">3</div>
+    </div>
+
+    <form id="form-vivienda-form" class="credit-form__content" action="../php/guardar_vivienda.php" method="POST">
+
+        <!-- Paso 1 -->
+        <div class="form-step active" data-step="1">
+            <h3 class="form-step__title">Datos Personales</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Nombre completo</label>
+                    <input type="text" class="form-input" id="nombre-v" name="nombre_completo" required>
                 </div>
-                
-                <div class="credit-form__progress">
-                    <div class="progress-step active" data-step="1">1</div>
-                    <div class="progress-step" data-step="2">2</div>
-                    <div class="progress-step" data-step="3">3</div>
+                <div class="form-group">
+                    <label class="form-label">DNI</label>
+                    <input type="text" class="form-input" id="dni-v" name="dni" required>
                 </div>
-
-                <form class="credit-form__content">
-                    <div class="form-step active" data-step="1">
-                        <h3 class="form-step__title">Datos Personales</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Nombre completo</label>
-                                <input type="text" class="form-input" id="nombre-v" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">DNI</label>
-                                <input type="text" class="form-input" id="dni-v" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-input" id="email-v" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Teléfono</label>
-                                <input type="tel" class="form-input" id="telefono-v" required>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn" onclick="nextStep(2)">Siguiente</button>
-                        </div>
-                    </div>
-
-                    <div class="form-step" data-step="2">
-                        <h3 class="form-step__title">Detalles del Crédito</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Monto solicitado (S/)</label>
-                                <input type="number" class="form-input" id="monto-v" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Plazo</label>
-                                <select class="form-input" id="plazo-v">
-                                    <option value="10">10 años</option>
-                                    <option value="15">15 años</option>
-                                    <option value="20">20 años</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Ingresos mensuales (S/)</label>
-                                <input type="number" class="form-input" id="ingresos-v" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Tipo de trabajo</label>
-                                <select class="form-input" id="trabajo-v">
-                                    <option value="dependiente">Dependiente</option>
-                                    <option value="independiente">Independiente</option>
-                                    <option value="empresario">Empresario</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStep(1)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStep(3)">Siguiente</button>
-                        </div>
-                    </div>
-
-                    <div class="form-step" data-step="3">
-                        <h3 class="form-step__title">Confirmación</h3>
-                        <div class="form-summary">
-                            <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
-                            <div class="summary-grid">
-                                <div class="summary-item">
-                                    <strong>Tipo de crédito:</strong> Vivienda
-                                </div>
-                                <div class="summary-item">
-                                    <strong>Monto:</strong> <span id="summary-monto-v">S/ 0</span>
-                                </div>
-                                <div class="summary-item">
-                                    <strong>Plazo:</strong> <span id="summary-plazo-v">0 años</span>
-                                </div>
-                                <div class="summary-item">
-                                    <strong>Tasa estimada:</strong> 8.55% anual
-                                </div>
-                            </div>
-                            <div class="form-group checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="terms-v" required>
-                                    <span class="checkmark"></span>
-                                    Acepto los <a href="#" class="link">términos y condiciones</a>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStep(2)">Atrás</button>
-                            <button type="submit" class="btn">Enviar solicitud</button>
-                        </div>
-                    </div>
-                </form>
+                <div class="form-group">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-input" id="email-v" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Teléfono</label>
+                    <input type="tel" class="form-input" id="telefono-v" name="telefono" required>
+                </div>
             </div>
+            <div class="form-buttons">
+                <button type="button" class="btn" onclick="nextStep(2)">Siguiente</button>
+            </div>
+        </div>
 
-            <div id="form-personal" class="credit-form" style="display: none;">
-                <div class="credit-form__header">
-                    <h2 class="credit-form__title">Solicitud de Crédito Personal</h2>
-                    <button class="credit-form__close" onclick="hideForm()">
-                        <i class="fas fa-times"></i>
-                    </button>
+        <!-- Paso 2 -->
+        <div class="form-step" data-step="2">
+            <h3 class="form-step__title">Detalles del Crédito</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Monto solicitado (S/)</label>
+                    <input type="number" class="form-input" id="monto-v" name="monto_solicitado" required>
                 </div>
-                
-                <div class="credit-form__progress">
-                    <div class="progress-step active" data-step="1">1</div>
-                    <div class="progress-step" data-step="2">2</div>
-                    <div class="progress-step" data-step="3">3</div>
+                <div class="form-group">
+                    <label class="form-label">Plazo</label>
+                    <select class="form-input" id="plazo-v" name="plazo">
+                        <option value="10">10 años</option>
+                        <option value="15">15 años</option>
+                        <option value="20">20 años</option>
+                    </select>
                 </div>
+                <div class="form-group">
+                    <label class="form-label">Ingresos mensuales (S/)</label>
+                    <input type="number" class="form-input" id="ingresos-v" name="ingresos_mensuales" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Tipo de trabajo</label>
+                    <select class="form-input" id="trabajo-v" name="tipo_trabajo">
+                        <option value="dependiente">Dependiente</option>
+                        <option value="independiente">Independiente</option>
+                        <option value="empresario">Empresario</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn--secondary" onclick="prevStep(1)">Atrás</button>
+                <button type="button" class="btn" onclick="nextStep(3)">Siguiente</button>
+            </div>
+        </div>
 
-                <form class="credit-form__content">
-                    <div class="form-step active" data-step="1">
-                        <h3 class="form-step__title">Datos Personales</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Nombre completo</label>
-                                <input type="text" class="form-input" id="nombre-p" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">DNI</label>
-                                <input type="text" class="form-input" id="dni-p" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-input" id="email-p" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Teléfono</label>
-                                <input type="tel" class="form-input" id="telefono-p" required>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn" onclick="nextStepPersonal(2)">Siguiente</button>
-                        </div>
+        <!-- Paso 3 -->
+        <div class="form-step" data-step="3">
+            <h3 class="form-step__title">Confirmación</h3>
+            <div class="form-summary">
+                <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
+                <div class="summary-grid">
+                    <div class="summary-item">
+                        <strong>Tipo de crédito:</strong> Vivienda
                     </div>
+                    <div class="summary-item">
+                        <strong>Monto:</strong> <span id="summary-monto-v">S/ 0</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Plazo:</strong> <span id="summary-plazo-v">0 años</span>
+                    </div>
+                    <div class="summary-item">
+                        <strong>Tasa estimada:</strong> 8.55% anual
+                    </div>
+                </div>
+                <div class="form-group checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="terms-v" required>
+                        <span class="checkmark"></span>
+                        Acepto los <a href="#" class="link">términos y condiciones</a>
+                    </label>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn--secondary" onclick="prevStep(2)">Atrás</button>
+                <button type="submit" class="btn">Enviar solicitud</button>
+            </div>
+        </div>
+    </form>
 
-                    <div class="form-step" data-step="2">
-                        <h3 class="form-step__title">Detalles del Crédito</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Monto solicitado (S/)</label>
-                                <input type="number" class="form-input" id="monto-p" max="50000" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Plazo</label>
-                                <select class="form-input" id="plazo-p">
-                                    <option value="12">12 meses</option>
-                                    <option value="24">24 meses</option>
-                                    <option value="36">36 meses</option>
-                                    <option value="48">48 meses</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Ingresos mensuales (S/)</label>
-                                <input type="number" class="form-input" id="ingresos-p" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Finalidad del crédito</label>
-                                <select class="form-input" id="finalidad-p">
-                                    <option value="personal">Gastos personales</option>
-                                    <option value="educacion">Educación</option>
-                                    <option value="salud">Salud</option>
-                                    <option value="negocio">Negocio</option>
-                                    <option value="otros">Otros</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(1)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStepPersonal(3)">Siguiente</button>
-                        </div>
-                    </div>
+    <div id="mensaje-vivienda" style="display: none; color: green; font-weight: bold; margin-top: 10px;"></div>
+</div>
 
-                    <div class="form-step" data-step="3">
-                        <h3 class="form-step__title">Confirmación</h3>
-                        <div class="form-summary">
-                            <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
-                            <div class="summary-grid">
-                                <div class="summary-item">
-                                    <strong>Tipo de crédito:</strong> Personal
-                                </div>
-                                <div class="summary-item">
-                                    <strong>Monto:</strong> <span id="summary-monto-p">S/ 0</span>
-                                </div>
-                                <div class="summary-item">
-                                    <strong>Plazo:</strong> <span id="summary-plazo-p">0 meses</span>
-                                </div>
-                                <div class="summary-item">
-                                    <strong>Tasa estimada:</strong> 10.5% anual
-                                </div>
-                            </div>
-                            <div class="form-group checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" id="terms-p" required>
-                                    <span class="checkmark"></span>
-                                    Acepto los <a href="#" class="link">términos y condiciones</a>
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(2)">Atrás</button>
-                            <button type="submit" class="btn">Enviar solicitud</button>
-                        </div>
-                    </div>
-                </form>
+
+
+
+<!-- Formulario Crédito Personal -->
+<div id="form-personal" class="credit-form" style="display: none;">
+    <div class="credit-form__header">
+        <h2 class="credit-form__title">Solicitud de Crédito Personal</h2>
+        <button class="credit-form__close" onclick="hideForm()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <div class="credit-form__progress">
+        <div class="progress-step active" data-step="1">1</div>
+        <div class="progress-step" data-step="2">2</div>
+        <div class="progress-step" data-step="3">3</div>
+    </div>
+
+    <form id="form-personal-form" class="credit-form__content" action="../php/guardar_personal.php" method="POST">
+        <!-- Paso 1 -->
+        <div class="form-step active" data-step="1">
+            <h3 class="form-step__title">Datos Personales</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Nombre completo</label>
+                    <input type="text" class="form-input" id="nombre-p" name="nombre_completo" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">DNI</label>
+                    <input type="text" class="form-input" id="dni-p" name="dni" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Correo electrónico</label>
+                    <input type="email" class="form-input" id="email-p" name="correo" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Teléfono</label>
+                    <input type="tel" class="form-input" id="telefono-p" name="telefono" required>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn" onclick="nextStepPersonal(2)">Siguiente</button>
+            </div>
+        </div>
+
+        <!-- Paso 2 -->
+        <div class="form-step" data-step="2">
+            <h3 class="form-step__title">Detalles del Crédito</h3>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label class="form-label">Monto solicitado (S/)</label>
+                    <input type="number" class="form-input" id="monto-p" name="monto_solicitado" max="50000" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Plazo</label>
+                    <select class="form-input" id="plazo-p" name="plazo">
+                        <option value="12">12 meses</option>
+                        <option value="24">24 meses</option>
+                        <option value="36">36 meses</option>
+                        <option value="48">48 meses</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Ingresos mensuales (S/)</label>
+                    <input type="number" class="form-input" id="ingresos-p" name="ingresos_mensuales" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Finalidad del crédito</label>
+                    <select class="form-input" id="finalidad-p" name="finalidad_credito">
+                        <option value="personal">Gastos personales</option>
+                        <option value="educacion">Educación</option>
+                        <option value="salud">Salud</option>
+                        <option value="negocio">Negocio</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(1)">Atrás</button>
+                <button type="button" class="btn" onclick="nextStepPersonal(3)">Siguiente</button>
+            </div>
+        </div>
+
+<!-- Paso 3 -->
+<div class="form-step" data-step="3">
+    <h3 class="form-step__title">Confirmación</h3>
+    <div class="form-summary">
+        <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
+        <div class="summary-grid">
+            <div class="summary-item">
+                <strong>Tipo de crédito:</strong> Personal
+            </div>
+            <div class="summary-item">
+                <strong>Monto:</strong> <span id="summary-monto-p">S/ 0</span>
+            </div>
+            <div class="summary-item">
+                <strong>Plazo:</strong> <span id="summary-plazo-p">0 meses</span>
+            </div>
+            <div class="summary-item">
+                <strong>Tasa estimada:</strong> 10.5% anual
+            </div>
+        </div>
+        <div class="form-group checkbox-group">
+            <label class="checkbox-label">
+                <input type="checkbox" id="terms-p" required>
+                <span class="checkmark"></span>
+                Acepto los <a href="#" class="link">términos y condiciones</a>
+            </label>
+        </div>
+    </div>
+    <div class="form-buttons">
+        <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(2)">Atrás</button>
+        <button type="submit" class="btn">Enviar solicitud</button>
+    </div>
+</div>
+
+    </form>
+
+    <div id="mensaje-personal" style="display: none; color: green; font-weight: bold; margin-top: 10px;"></div>
+</div>
+
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="u-container">
+            <h2 class="cta__title">¿Necesitas ayuda con tu solicitud?</h2>
+            <p class="cta__description">Nuestros asesores están listos para ayudarte en cada paso del proceso</p>
+            <div class="cta__buttons">
+                <a href="#" class="btn">Hablar con un asesor</a>
+                <a href="#" class="btn btn--secondary">Ver preguntas frecuentes</a>
             </div>
         </div>
     </section>
 
-<footer class="footer" id="footer">
+    <!-- Footer -->
+    <footer class="footer">
         <div class="u-container">
             <div class="footer__grid">
                 <div class="footer__column">
@@ -318,32 +361,38 @@
                     </div>
                     <p class="footer__description">Empieza desde Zcero. Crece sin límites.</p>
                     <div class="footer__social">
-                        <a href="https://www.facebook.com" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://x.com/?lang=es" class="footer__social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="https://www.instagram.com" class="footer__social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="https://pe.linkedin.com" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="https://www.youtube.com" class="footer__social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="footer__social-link"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-
+                
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Servicios</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos Personales</a></li>
-                        <li class="footer__item"><a href="HTMLs/requestcredit.html" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos Personales</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Créditos para Vivienda</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Cuentas de Ahorro</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tarjetas de Crédito</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Inversiones</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Seguros</a></li>
                     </ul>
                 </div>
-
+                
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Enlaces útiles</h3>
                     <ul class="footer__list">
-                        <li class="footer__item"><a href="https://www.desmos.com/scientific?lang=es" class="footer__link">Calculadora</a></li>
-                        <li class="footer__item"><a href="HTMLs/tasarticle.html" class="footer__link">Tasas y tarifas</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Calculadoras</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Tasas y tarifas</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Preguntas frecuentes</a></li>
                         <li class="footer__item"><a href="#" class="footer__link">Atención al cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Portal del cliente</a></li>
+                        <li class="footer__item"><a href="#" class="footer__link">Documentación legal</a></li>
                     </ul>
                 </div>
-
+                
                 <div class="footer__column">
                     <h3 class="footer__column-heading">Contacto</h3>
                     <ul class="footer__list">
@@ -357,7 +406,7 @@
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-envelope footer__contact-icon"></i>
-                            <span>Dudas@ZCERO.com</span>
+                            <span>Dudas@eZCero.com</span>
                         </li>
                         <li class="footer__contact-item">
                             <i class="fas fa-clock footer__contact-icon"></i>
@@ -366,14 +415,14 @@
                     </ul>
                 </div>
             </div>
-
+            
             <div class="footer__bottom">
                 <p>&copy; 2025 ZCERO. Todos los derechos reservados. | Protección de datos | Aviso legal | Mapa del sitio</p>
             </div>
         </div>
     </footer>
 
-    <div id="validation-messages" class="validation-messages" style="display:none;">
+     <div id="validation-messages" class="validation-messages" style="display:none;">
         <div class="validation-error">
             <i class="fas fa-exclamation-circle"></i>
             <span id="error-text"></span>
@@ -391,19 +440,6 @@
         </div>
     </div>
     
-    <script>
-        function desplazarSuavemente(event, destino) {
-        event.preventDefault();
-
-        const elementoDestino = document.querySelector(destino);
-
-        window.scrollTo({
-            top: elementoDestino.offsetTop,
-            behavior: 'smooth'
-        });
-    }
-    </script>
-
     <script src="../js/requestcredit.js"></script>
 </body>
 </html>
