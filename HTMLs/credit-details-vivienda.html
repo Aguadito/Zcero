@@ -37,6 +37,34 @@
                 <i class="fas fa-bars"></i>
             </button>
         </div>
+    </header>  
+   <!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="../index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/tasarticle.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <!-- Hero Section para Crédito Vivienda -->
     <section class="hero credit-details-hero">
         <div class="u-container">
@@ -166,7 +194,25 @@
                         </div>
                     </div>
                 </div>
-                 <!-- Modal de Simulación -->
+                <!-- Panel de Acciones -->
+                <div class="credit-details__sidebar">
+                    <div class="action-panel">
+                        <h3>Solicita tu crédito</h3>
+                        <p>Monto máximo: <strong>S/ 500,000</strong></p>
+                        <a href="#" id="simulate-btn" class="btn btn--simulate">
+                            <i class="fas fa-calculator"></i> Simular mi crédito
+                        </a>
+                        <a href="requestcredit.html" class="btn">
+                            <i class="fas fa-file-signature"></i> Solicitar ahora
+                        </a>
+                        <a href="index.html#credit-types" class="btn btn--back">
+                            <i class="fas fa-arrow-left"></i> Volver a créditos
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div id="simulation-modal" class="simulation-modal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
@@ -222,26 +268,6 @@
             </div>
         </div>
     </div>
-                <!-- Panel de Acciones -->
-                <div class="credit-details__sidebar">
-                    <div class="action-panel">
-                        <h3>Solicita tu crédito</h3>
-                        <p>Monto máximo: <strong>S/ 500,000</strong></p>
-                        <a href="#" id="simulate-btn" class="btn btn--simulate">
-                            <i class="fas fa-calculator"></i> Simular mi crédito
-                        </a>
-                        <a href="requestcredit.html" class="btn">
-                            <i class="fas fa-file-signature"></i> Solicitar ahora
-                        </a>
-                        <a href="index.html#credit-types" class="btn btn--back">
-                            <i class="fas fa-arrow-left"></i> Volver a créditos
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <footer class="footer" id="footer">
         <div class="u-container">
             <div class="footer__grid">

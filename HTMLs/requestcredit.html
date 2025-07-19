@@ -35,7 +35,33 @@
             </button>
         </div>
     </header>
-
+    <!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="../index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/tasarticle.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <section class="hero credit-hero">
         <div class="u-container hero__content">
             <h2 class="hero__title">Créditos a tu <span class="hero__title-highlight">medida</span></h2>
@@ -96,44 +122,68 @@
                     <div class="progress-step active" data-step="1">1</div>
                     <div class="progress-step" data-step="2">2</div>
                     <div class="progress-step" data-step="3">3</div>
+                    <div class="progress-step" data-step="4">4</div>
+                    <div class="progress-step" data-step="5">5</div>
+                    <div class="progress-step" data-step="6">6</div>
                 </div>
 
-                <form class="credit-form__content">
+                <form id="credit-form__content" class="credit-form__content" action="../php/guardar_vivienda.php" method="POST"enctype="multipart/form-data">
                     <div class="form-step active" data-step="1">
                         <h3 class="form-step__title">Datos Personales</h3>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label class="form-label">Nombre completo</label>
-                                <input type="text" class="form-input" id="nombre-v" required>
+                                <input type="text" class="form-input" id="nombre-v" name="nombre_completo" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">DNI</label>
-                                <input type="text" class="form-input" id="dni-v" required>
+                                <input type="text" class="form-input" id="dni-v" name="dni" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ciudad</label>
+                                <input type="text" class="form-input" id="ciudad-v" name="ciudad" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-input" id="email-v" required>
+                                <input type="email" class="form-input" id="email-v" name="correo" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Teléfono</label>
-                                <input type="tel" class="form-input" id="telefono-v" required>
+                                <input type="tel" class="form-input" id="telefono-v" name="telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dirección completa</label>
+                                <input type="text" class="form-input" id="direccion-v" name="direccion" required>
                             </div>
                         </div>
                         <div class="form-buttons">
                             <button type="button" class="btn" onclick="nextStep(2)">Siguiente</button>
                         </div>
                     </div>
-
+                    
                     <div class="form-step" data-step="2">
-                        <h3 class="form-step__title">Detalles del Crédito</h3>
+                        <h3 class="form-step__title">Situacion Financiera</h3>
                         <div class="form-grid">
                             <div class="form-group">
+                                <label class="form-label">Dirección de la propiedad</label>
+                                <input type="text" class="form-input" id="direccion-propiedad-v" name="direccion_propiedad" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ciudad de la propiedad</label>
+                                <input type="text" class="form-input" id="ciudad-propiedad-v" name="ciudad_propiedad" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Valor estimado de la propiedad (S/)</label>
+                                <input type="number" class="form-input" id="valor-propiedad-v" name="valor_propiedad" required>
+                            </div>
+                            <div class="form-group">
                                 <label class="form-label">Monto solicitado (S/)</label>
-                                <input type="number" class="form-input" id="monto-v" required>
+                                <input type="number" class="form-input" id="monto-v"name="monto_solicitado" required>
+                                <div class="error-message" style="display: none;"></div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Plazo</label>
-                                <select class="form-input" id="plazo-v">
+                                <select class="form-input" id="plazo-v" name="plazo">
                                     <option value="10">10 años</option>
                                     <option value="15">15 años</option>
                                     <option value="20">20 años</option>
@@ -141,15 +191,28 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Ingresos mensuales (S/)</label>
-                                <input type="number" class="form-input" id="ingresos-v" required>
+                                <input type="number" class="form-input" id="ingresos-v" name="ingresos_mensuales" required>
+                                <div class="error-message" style="display: none;"></div>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Deudas actuales (S/)</label>
+                                <input type="number" class="form-input" id="deudas-v" name="deudas_actuales" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Otras obligaciones mensuales (S/)</label>
+                                <input type="number" class="form-input" id="obligaciones-v" name="otras_obligaciones" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Tipo de trabajo</label>
-                                <select class="form-input" id="trabajo-v">
+                                <select class="form-input" id="trabajo-v"   name="tipo_trabajo" required>
+                                    <option value="">Seleccione...</option>
                                     <option value="dependiente">Dependiente</option>
                                     <option value="independiente">Independiente</option>
-                                    <option value="empresario">Empresario</option>
                                 </select>
+                            </div>
+                            <div class="form-group" id="ruc-group" style="display: none;">
+                                <label class="form-label">RUC</label>
+                                <input type="text" class="form-input" id="ruc-v" name="ruc" placeholder="11 dígitos">
                             </div>
                         </div>
                         <div class="form-buttons">
@@ -157,23 +220,134 @@
                             <button type="button" class="btn" onclick="nextStep(3)">Siguiente</button>
                         </div>
                     </div>
-
                     <div class="form-step" data-step="3">
+                        <h3 class="form-step__title">Referencias Personales</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Referencia 1 - Nombre completo</label>
+                                <input type="text" class="form-input" id="ref1-nombre-v" name="referencia_personal1_nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Referencia 1 - Teléfono</label>
+                                <input type="tel" class="form-input" id="ref1-telefono-v" name="referencia_personal1_telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Referencia 2 - Nombre completo</label>
+                                <input type="text" class="form-input" id="ref2-nombre-v" name="referencia_personal2_nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Referencia 2 - Teléfono</label>
+                                <input type="tel" class="form-input" id="ref2-telefono-v" name="referencia_personal2_telefono" required>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn--secondary" onclick="prevStep(2)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStep(4)">Siguiente</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="4">
+                        <h3 class="form-step__title">Datos Bancarios y Autorizaciones</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Banco</label>
+                                <input type="text" class="form-input" id="banco-v" name="banco_nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tipo de cuenta</label>
+                                <select class="form-input" id="tipo-cuenta-v" name="banco_tipo_cuenta" required>
+                                    <option value="ahorros">Ahorros</option>
+                                    <option value="corriente">Corriente</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Número de cuenta</label>
+                                <input type="text" class="form-input" id="cuenta-v" name="banco_numero_cuenta" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent-credit-v" name="autorizo_consulta" required>
+                                <span class="checkmark"></span>
+                                Autorizo la consulta en centrales de riesgo
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent-debit-v" name="autorizo_debito">
+                                <span class="checkmark"></span>
+                                Autorizo débito automático de cuotas
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn--secondary" onclick="prevStep(3)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStep(5)">Siguiente</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="5">
+                        <h3 class="form-step__title">Documentos Requeridos</h3>
+                        <p>Por favor, adjunte los siguientes documentos:</p>
+                        
+                        <div class="form-grid">
+                            <!-- DNI -->
+                            <div class="form-group">
+                                <label class="form-label">DNI Escaneado (PDF/JPG/PNG)</label>
+                                <input type="file" class="form-input" id="dni-file-v" name="dni_file" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <div class="file-info" id="dni-file-info-v"></div>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <!-- Boletas de pago -->
+                            <div class="form-group">
+                                <label class="form-label">Boletas de Pago (PDF/JPG/PNG)</label>
+                                <input type="file" class="form-input" id="payslip-file-v" name="payslip_file" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <div class="file-info" id="payslip-file-info-v"></div>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn--secondary" onclick="prevStep(4)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStep(6)">Siguiente</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="6">
                         <h3 class="form-step__title">Confirmación</h3>
                         <div class="form-summary">
                             <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
-                            <div class="summary-grid">
-                                <div class="summary-item">
-                                    <strong>Tipo de crédito:</strong> Vivienda
+                            <div class="summary-details">
+                                <div class="detail-card">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <div>
+                                        <strong>Monto solicitado</strong>
+                                        <span id="summary-monto-display-v">S/ 0</span>
+                                    </div>
                                 </div>
-                                <div class="summary-item">
-                                    <strong>Monto:</strong> <span id="summary-monto-v">S/ 0</span>
+                                
+                                <div class="detail-card">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <div>
+                                        <strong>Plazo</strong>
+                                        <span id="summary-plazo-display-v">0 años</span>
+                                    </div>
                                 </div>
-                                <div class="summary-item">
-                                    <strong>Plazo:</strong> <span id="summary-plazo-v">0 años</span>
+                                
+                                <div class="detail-card">
+                                    <i class="fas fa-percentage"></i>
+                                    <div>
+                                        <strong>Tasa estimada</strong>
+                                        <span id="summary-tasa-display-v">0.00%</span>
+                                    </div>
                                 </div>
-                                <div class="summary-item">
-                                    <strong>Tasa estimada:</strong> 8.55% anual
+                                
+                                <div class="detail-card highlight">
+                                    <i class="fas fa-money-check-alt"></i>
+                                    <div>
+                                        <strong>Cuota estimada</strong>
+                                        <span id="summary-cuota-display-v">S/ 0.00</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group checkbox-group">
@@ -185,9 +359,10 @@
                             </div>
                         </div>
                         <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStep(2)">Atrás</button>
+                            <button type="button" class="btn btn--secondary" onclick="prevStep(5)">Atrás</button>
                             <button type="submit" class="btn">Enviar solicitud</button>
                         </div>
+                        <input type="hidden" id="original-values-v" name="original-values">
                     </div>
                 </form>
             </div>
@@ -204,27 +379,38 @@
                     <div class="progress-step active" data-step="1">1</div>
                     <div class="progress-step" data-step="2">2</div>
                     <div class="progress-step" data-step="3">3</div>
+                    <div class="progress-step" data-step="4">4</div>
+                    <div class="progress-step" data-step="5">5</div>
+                    <div class="progress-step" data-step="6">6</div>
                 </div>
 
-                <form class="credit-form__content">
+                <form id="credit-form__content"class="credit-form__content" action="../php/guardar_personal.php" method="POST"enctype="multipart/form-data">
                     <div class="form-step active" data-step="1">
                         <h3 class="form-step__title">Datos Personales</h3>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label class="form-label">Nombre completo</label>
-                                <input type="text" class="form-input" id="nombre-p" required>
+                                <input type="text" class="form-input" id="nombre-p" name="nombre_completo" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">DNI</label>
-                                <input type="text" class="form-input" id="dni-p" required>
+                                <input type="text" class="form-input" id="dni-p" name="dni" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Ciudad</label>
+                                <input type="text" class="form-input" id="ciudad-p" name="ciudad" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-input" id="email-p" required>
+                                <input type="email" class="form-input" id="email-p" name="correo" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Teléfono</label>
-                                <input type="tel" class="form-input" id="telefono-p" required>
+                                <input type="tel" class="form-input" id="telefono-p" name="telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Dirección completa</label>
+                                <input type="text" class="form-input" id="direccion-p" name="direccion" required>
                             </div>
                         </div>
                         <div class="form-buttons">
@@ -237,24 +423,34 @@
                         <div class="form-grid">
                             <div class="form-group">
                                 <label class="form-label">Monto solicitado (S/)</label>
-                                <input type="number" class="form-input" id="monto-p" max="50000" required>
+                                <input type="number" class="form-input" id="monto-p" name="monto_solicitado" max="50000" required>
+                                <div class="error-message" style="display: none;"></div>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Plazo</label>
-                                <select class="form-input" id="plazo-p">
+                                <select class="form-input" id="plazo-p" name="plazo">
                                     <option value="12">12 meses</option>
                                     <option value="24">24 meses</option>
                                     <option value="36">36 meses</option>
                                     <option value="48">48 meses</option>
                                 </select>
                             </div>
-                            <div class="form-group">
+                                <div class="form-group">
                                 <label class="form-label">Ingresos mensuales (S/)</label>
-                                <input type="number" class="form-input" id="ingresos-p" required>
+                                <input type="number" class="form-input" id="ingresos-p" name="ingresos_mensuales" required>
+                                <div class="error-message" style="display: none;"></div>
+                            </div>
+                             <div class="form-group">
+                                <label class="form-label">Deudas actuales (S/)</label>
+                                <input type="number" class="form-input" id="deudas-p" name="deudas_actuales" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Otras obligaciones mensuales (S/)</label>
+                                <input type="number" class="form-input" id="obligaciones-p" name="otras_obligaciones" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Finalidad del crédito</label>
-                                <select class="form-input" id="finalidad-p">
+                                <select class="form-input" id="finalidad-p" name="finalidad_credito">
                                     <option value="personal">Gastos personales</option>
                                     <option value="educacion">Educación</option>
                                     <option value="salud">Salud</option>
@@ -268,23 +464,135 @@
                             <button type="button" class="btn" onclick="nextStepPersonal(3)">Siguiente</button>
                         </div>
                     </div>
-
-                    <div class="form-step" data-step="3">
+                     <div class="form-step" data-step="3">
+                        <h3 class="form-step__title">Referencias Personales</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Referencia 1 - Nombre completo</label>
+                                <input type="text" class="form-input" id="ref1-nombre-p" name="referencia_personal1_nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Referencia 1 - Teléfono</label>
+                                <input type="tel" class="form-input" id="ref1-telefono-p" name="referencia_personal1_telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Referencia 2 - Nombre completo</label>
+                                <input type="text" class="form-input" id="ref2-nombre-p" name="referencia_personal2_nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Referencia 2 - Teléfono</label>
+                                <input type="tel" class="form-input" id="ref2-telefono-p" name="referencia_personal2_telefono" required>
+                            </div>
+                        </div>
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(3)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(4)">Siguiente</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="4">
+                        <h3 class="form-step__title">Datos Bancarios y Autorizaciones</h3>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label class="form-label">Banco</label>
+                                <input type="text" class="form-input" id="banco-p" name="banco_nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Tipo de cuenta</label>
+                                <select class="form-input" id="tipo-cuenta-p" name="banco_tipo_cuenta" required>
+                                    <option value="ahorros">Ahorros</option>
+                                    <option value="corriente">Corriente</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Número de cuenta</label>
+                                <input type="text" class="form-input" id="cuenta-p" name="banco_numero_cuenta" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent-credit-p" name="autorizo_consulta" required>
+                                <span class="checkmark"></span>
+                                Autorizo la consulta en centrales de riesgo
+                            </label>
+                        </div>
+                        
+                        <div class="form-group checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="consent-debit-p" name="autorizo_debito">
+                                <span class="checkmark"></span>
+                                Autorizo débito automático de cuotas
+                            </label>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(4)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(5)">Siguiente</button>
+                        </div>
+                    </div>
+                    <!-- En ambos formularios (vivienda y personal) después del paso 2 -->
+                    <div class="form-step" data-step="5">
+                        <h3 class="form-step__title">Documentos Requeridos</h3>
+                        <p>Por favor, adjunte los siguientes documentos:</p>
+                        
+                        <div class="form-grid">
+                            <!-- DNI -->
+                            <div class="form-group">
+                                <label class="form-label">DNI Escaneado (PDF/JPG/PNG)</label>
+                                <input type="file" class="form-input" id="dni-file-p" name="dni_file" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <div class="file-info" id="dni-file-info-p"></div>
+                                <div class="error-message"></div>
+                            </div>
+                            
+                            <!-- Boletas de pago -->
+                            <div class="form-group">
+                                <label class="form-label">Boletas de Pago (PDF/JPG/PNG)</label>
+                                <input type="file" class="form-input" id="payslip-file-p" name="payslip_file" accept=".pdf,.jpg,.jpeg,.png" required>
+                                <div class="file-info" id="payslip-file-info-p"></div>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-buttons">
+                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(4)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(6)">Siguiente</button>
+                        </div>
+                    </div>
+                    <div class="form-step" data-step="6">
                         <h3 class="form-step__title">Confirmación</h3>
                         <div class="form-summary">
                             <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
-                            <div class="summary-grid">
-                                <div class="summary-item">
-                                    <strong>Tipo de crédito:</strong> Personal
+                            <div class="summary-details">
+                                <div class="detail-card">
+                                    <i class="fas fa-file-invoice-dollar"></i>
+                                    <div>
+                                        <strong>Monto solicitado</strong>
+                                        <span id="summary-monto-display-p">S/ 0</span>
+                                    </div>
                                 </div>
-                                <div class="summary-item">
-                                    <strong>Monto:</strong> <span id="summary-monto-p">S/ 0</span>
+                                
+                                <div class="detail-card">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <div>
+                                        <strong>Plazo</strong>
+                                        <span id="summary-plazo-display-p">0 meses</span>
+                                    </div>
                                 </div>
-                                <div class="summary-item">
-                                    <strong>Plazo:</strong> <span id="summary-plazo-p">0 meses</span>
+                                
+                                <div class="detail-card">
+                                    <i class="fas fa-percentage"></i>
+                                    <div>
+                                        <strong>Tasa estimada</strong>
+                                        <span id="summary-tasa-display-p">0.00%</span>
+                                    </div>
                                 </div>
-                                <div class="summary-item">
-                                    <strong>Tasa estimada:</strong> 10.5% anual
+                                
+                                <div class="detail-card highlight">
+                                    <i class="fas fa-money-check-alt"></i>
+                                    <div>
+                                        <strong>Cuota estimada</strong>
+                                        <span id="summary-cuota-display-p">S/ 0.00</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="form-group checkbox-group">
@@ -296,9 +604,10 @@
                             </div>
                         </div>
                         <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(2)">Atrás</button>
+                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(5)">Atrás</button>
                             <button type="submit" class="btn">Enviar solicitud</button>
                         </div>
+                        <input type="hidden" id="original-values-p" name="original-values">
                     </div>
                 </form>
             </div>
@@ -380,14 +689,12 @@
     </div>
     
     <div id="confirmation-overlay" class="confirmation-overlay" style="display: none;">
-        <div class="confirmation-box">
+        <div class="confirmation-box confirmation-message">
             <div class="confirmation-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
-            <h3>¡Solicitud enviada con éxito!</h3>
-            <p>Tu solicitud ha sido recibida correctamente. Te contactaremos en breve.</p>
-            <button id="close-confirmation" class="btn">Aceptar</button>
         </div>
+        <button id="close-confirmation" class="btn">Aceptar</button>
     </div>
     
     <script>
@@ -404,5 +711,6 @@
     </script>
 
     <script src="../js/requestcredit.js"></script>
+    <script src="../JS/main.js"></script>
 </body>
 </html>

@@ -40,7 +40,33 @@
             </button>
         </div>
     </header>
-
+   <!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="../index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/tasarticle.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <section class="hero hero--article">
         <div class="u-container">
             <h1 class="hero__title">Top 5 Consejos para Ahorrar en 2025</h1>
@@ -165,12 +191,7 @@
         });
     }
     </script>
-
-    <script>
-        document.querySelector('.header__menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('.nav');
-            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
-        });
-    </script>
+    <script src="../JS/main.js"></script>
+</body>
 </body>
 </html>

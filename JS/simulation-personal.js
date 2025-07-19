@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Solicitar crédito
     requestBtn.addEventListener('click', function() {
-        window.location.href = 'requestcredit.html';
+        window.location.href = `requestcredit.html?type=personal&amount=${loanAmount}&term=${loanTerm}&rate=${interestRate}`;
     });
 
     // Función para calcular el préstamo
@@ -95,7 +95,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Formatear moneda
     function formatCurrency(amount) {
-        return `S/ ${amount.toFixed(2).replace(/\d(?=(\d{3})+\.)/g, '$&,')}`;
+            return `S/ ${amount.toLocaleString('es-PE', {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2
+        })}`;
     }
 
     // Calcular al cargar

@@ -222,20 +222,67 @@
             margin-bottom: 30px;
         }
 
-        .form-summary p {
-            margin-bottom: 20px;
-            color: var(--gray);
-        }
-
-        .summary-grid {
+        .summary-details {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 15px;
+            margin: 25px 0;
         }
 
-        .summary-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #eee;
+        .detail-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .detail-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .detail-card i {
+            font-size: 24px;
+            color: var(--accent);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 168, 89, 0.1);
+            border-radius: 50%;
+        }
+
+        .detail-card div {
+            flex: 1;
+        }
+
+        .detail-card strong {
+            display: block;
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 5px;
+        }
+
+        .detail-card span {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--dark);
+            display: block;
+        }
+
+        .detail-card.highlight {
+            border: 2px solid var(--accent);
+            background: rgba(0, 168, 89, 0.05);
+        }
+
+        .detail-card.highlight span {
+            color: var(--accent);
+            font-size: 20px;
         }
 
         .checkbox-group {
@@ -347,8 +394,43 @@
         .confirmation-icon i {
             animation: scaleUp 0.5s ease;
         }
+        /* Estilos para mensajes de error */
+        .error-message {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
 
-        @keyframes fadeIn {
+        /* Estilo para campos inválidos */
+        .form-input.invalid {
+            border-color: #f44336;
+            background-color: #ffebee;
+        }
+
+        /* Estilo para mensajes de error en checkbox */
+        .checkbox-group .error-message {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 5px;
+            display: block;
+        }
+        /* Estilo para campos normalizados */
+        .form-input.normalized {
+            text-transform: lowercase;
+        }
+
+        /* Animación para cambio de texto */
+        @keyframes fadeNormalization {
+            0% { background-color: #e8f5e9; }
+            100% { background-color: white; }
+        }
+
+        .form-input.normalized-effect {
+            animation: fadeNormalization 1.5s ease;
+        }
+
+                @keyframes fadeIn {
             from { opacity: 0; transform: translateY(-20px); }
             to { opacity: 1; transform: translateY(0); }
         }
@@ -358,7 +440,75 @@
             70% { transform: scale(1.2); }
             100% { transform: scale(1); opacity: 1; }
         }
-        
+
+        /* Estilos para campos numéricos */
+        .form-input[type="number"] {
+            -moz-appearance: textfield; /* Firefox */
+            appearance: textfield; /* Estándar */
+        }
+
+        /* Quitar flechas en Chrome, Safari, Edge, Opera */
+        .form-input[type="number"]::-webkit-outer-spin-button,
+        .form-input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Transición suave para mostrar/ocultar campos */
+        #ruc-group {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        .file-info {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .form-input[type="file"] {
+            padding: 10px;
+            background: #f8f9fa;
+            border: 1px dashed #ccc;
+        }
+
+        .form-input[type="file"]:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        .file-info {
+            padding: 8px 12px;
+            background: #e8f5e9;
+            border-radius: 4px;
+            margin-top: 5px;
+            display: block;
+        }
+        .field-group {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+        }
+
+        .field-group h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #2d3748;
+            font-size: 18px;
+        }
+
+        /* Estilo para advertencias financieras */
+        .financial-warning {
+            background-color: #fffaf0;
+            border-left: 4px solid #ecc94b;
+            padding: 12px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+
+        /* Ajustes para grupos de checkbox */
+        .checkbox-group {
+            margin: 15px 0;
+        }
         @media (max-width: 768px) {
             .credit-hero {
                 padding: 160px 0 80px;
@@ -375,5 +525,21 @@
             .form-buttons .btn {
                 width: 100%;
                 margin-bottom: 10px;
+            }
+            .summary-details {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .detail-card {
+                padding: 15px;
+            }
+            
+            .detail-card span {
+                font-size: 16px;
+            }
+            
+            .detail-card.highlight span {
+                font-size: 18px;
             }
         }

@@ -39,6 +39,33 @@
         </div>
     </header>
 
+    <!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="../index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/tasarticle.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <!-- Hero Section para Detalles de Crédito -->
     <section class="hero credit-details-hero">
         <div class="u-container">
@@ -295,14 +322,7 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Script para menú móvil
-        document.querySelector('.header__menu-btn').addEventListener('click', function() {
-            const nav = document.querySelector('.nav');
-            nav.classList.toggle('active');
-        });
-    </script>
     <script src="../js/simulation-personal.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

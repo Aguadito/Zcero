@@ -1,0 +1,18 @@
+# Activar el motor de reescritura
+RewriteEngine On
+
+# Redirigir errores 404 a una página personalizada
+ErrorDocument 404 /error.html
+
+# Permitir acceso a archivos JavaScript
+<Files "*.js">
+    Require all granted
+</Files>
+
+# Opcional: Redireccionar todas las solicitudes a HTTPS
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Opcional: Redirigir www a no-www
+# RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+# RewriteRule ^(.*)$ https://%1/$1 [R=301,L]

@@ -38,7 +38,33 @@
             </button>
         </div>
     </header>
-
+<!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="./index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/blog.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <section class="hero">
         <div class="u-container hero__content">
             <h2 class="hero__title">Agil. <span class="hero__title-highlight">Confiable.</span> Hecho para ti.</h2>
@@ -224,59 +250,6 @@
             <div class="carousel__dots"></div>
         </div>
     </section>
-
-    <script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.why-us__features');
-    const features = document.querySelectorAll('.why-us__feature');
-    const prevBtn = document.querySelector('.carousel__btn--prev');
-    const nextBtn = document.querySelector('.carousel__btn--next');
-    const dotsContainer = document.querySelector('.carousel__dots');
-    
-    let currentIndex = 0;
-    const itemsPerSlide = () => 
-        window.innerWidth >= 1200 ? 4 : 
-        window.innerWidth >= 992 ? 3 : 
-        window.innerWidth >= 768 ? 2 : 1;
-    
-    // Crear puntos
-    features.forEach((_, i) => {
-        if (i % itemsPerSlide() === 0) {
-            const dot = document.createElement('button');
-            dot.classList.add('carousel__dot');
-            if (i === 0) dot.classList.add('active');
-            dot.addEventListener('click', () => goToSlide(i / itemsPerSlide()));
-            dotsContainer.appendChild(dot);
-        }
-    });
-    
-    const dots = document.querySelectorAll('.carousel__dot');
-    
-    function updateCarousel() {
-        const offset = -currentIndex * 100;
-        carousel.style.transform = `translateX(${offset}%)`;
-        
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === currentIndex);
-        });
-    }
-    
-    function goToSlide(index) {
-        const maxIndex = Math.ceil(features.length / itemsPerSlide()) - 1;
-        currentIndex = Math.max(0, Math.min(index, maxIndex));
-        updateCarousel();
-    }
-    
-    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
-    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
-    
-    window.addEventListener('resize', () => {
-        currentIndex = 0;
-        updateCarousel();
-    });
-});
-    </script>
-
     <section class="blog">
         <div class="u-container">
             <div class="section-title">
@@ -360,26 +333,6 @@
     </div>
     </div>
 </div>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  if (!sessionStorage.getItem('modalShown')) {
-    document.getElementById('offersModal').style.display = 'block';
-    sessionStorage.setItem('modalShown', 'true');
-    
-    document.querySelector('.close-btn').onclick = function() {
-      document.getElementById('offersModal').style.display = 'none';
-    };
-    
-    window.onclick = function(event) {
-      if (event.target == document.getElementById('offersModal')) {
-        document.getElementById('offersModal').style.display = 'none';
-      }
-    };
-  }
-});
-</script>
-
     <footer class="footer" id="footer">
         <div class="u-container">
             <div class="footer__grid">
@@ -446,39 +399,8 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         </div>
     </footer>
-
-    <script>
-        function desplazarSuavemente(event, destino) {
-        event.preventDefault();
-
-        const elementoDestino = document.querySelector(destino);
-
-        window.scrollTo({
-            top: elementoDestino.offsetTop,
-            behavior: 'smooth'
-        });
-    }
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuBtn = document.getElementById('menuBtn');
-            const nav = document.querySelector('.nav');
-
-            menuBtn.addEventListener('click', function() {
-                nav.classList.toggle('nav--active');
-                menuBtn.classList.toggle('active');
-            });
-
-            const navLinks = document.querySelectorAll('.nav__link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    nav.classList.remove('nav--active');
-                    menuBtn.classList.remove('active');
-                });
-            });
-        });
-    </script>
-    <script src="../js/credit-types.js"></script>
+    <script src="js/credit-types.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/script_index.js"></script>
 </body>
 </html>

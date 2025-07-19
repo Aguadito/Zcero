@@ -11,6 +11,7 @@
     <link rel="preload" href="../IMGs/txtlogo.webp" as="image">
     <link rel="preload" href="../IMGs/Tarjeta.webp" as="image">
     <link rel="preload" href="../CCSs/tasarticle.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
 <body>
     <header class="header">
@@ -41,7 +42,33 @@
             </button>
         </div>
     </header>
-
+<!-- Menú móvil -->
+    <div class="menu-overlay"></div>
+    <nav class="nav--mobile">
+        <button class="nav__close-btn">
+            <i class="fas fa-times"></i>
+        </button>
+        <ul class="nav__list--mobile">
+            <li class="nav__item--mobile">
+                <a href="../index.html" class="nav__link--mobile nav__link--active">Inicio</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/tasarticle.html" class="nav__link--mobile">Blog</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/aboutus.html" class="nav__link--mobile">Nosotros</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile">Créditos</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="#footer" class="nav__link--mobile">Contacto</a>
+            </li>
+            <li class="nav__item--mobile">
+                <a href="../HTMLs/requestcredit.html" class="nav__link--mobile header__action--register">Solicitar Credito</a>
+            </li>
+        </ul>
+    </nav>
     <section class="article-hero">
         <div class="u-container article-hero__content">
             <h1 class="article-hero__title">Nuevas Tasas de Interés 2025</h1>
@@ -222,19 +249,6 @@
         });
     }
     </script>
-
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav-links');
-            const hamburger = document.querySelector('.hamburger');
-            
-            navLinks.classList.toggle('active');
-            hamburger.classList.toggle('active');
-        }
-
-        document.querySelector('.header__menu-btn').addEventListener('click', function() {
-            document.querySelector('.nav').classList.toggle('active');
-        });
-    </script>
+    <script src="../JS/main.js"></script>
 </body>
 </html>
