@@ -3,6 +3,8 @@
 // Funciones para mostrar/ocultar formularios
 function showForm(type) {
     hideForm();
+    clearAllErrors(type);  // Limpiar errores al cambiar de formulario
+    
     const form = document.getElementById(`form-${type}`);
     if (form) {
         form.style.display = 'block';
@@ -26,6 +28,8 @@ function hideForm() {
 // Funciones para navegación de pasos (Vivienda)
 function nextStep(step) {
     const formType = 'vivienda';
+    showValidationMessage('');  // Limpiar mensajes globales
+    
     let isValid = true;
     
     switch(step) {
@@ -41,9 +45,6 @@ function nextStep(step) {
         case 5:
             isValid = validateStep4(formType);
             break;
-        case 6:
-            isValid = validateStep5(formType) 
-            break;
     }
     
     if (!isValid) {
@@ -52,18 +53,21 @@ function nextStep(step) {
     }
     
     updateFormStep(formType, step);
-    if (step === 6) {
+    if (step === 5) {
         updateSummary(formType);
     }
 }
 
 function prevStep(step) {
+    showValidationMessage('');  // Limpiar mensajes globales
     updateFormStep('vivienda', step - 1);
 }
 
 // Funciones para navegación de pasos (Personal)
 function nextStepPersonal(step) {
     const formType = 'personal';
+    showValidationMessage('');  // Limpiar mensajes globales
+    
     let isValid = true;
     
     switch(step) {
@@ -79,9 +83,6 @@ function nextStepPersonal(step) {
         case 5:
             isValid = validateStep4(formType);
             break;
-        case 6:
-            isValid = validateStep5(formType) 
-            break;
     }
     
     if (!isValid) {
@@ -90,12 +91,13 @@ function nextStepPersonal(step) {
     }
     
     updateFormStep(formType, step);
-    if (step === 6) {
+    if (step === 5) {
         updateSummary(formType);
     }
 }
 
 function prevStepPersonal(step) {
+    showValidationMessage('');  // Limpiar mensajes globales
     updateFormStep('personal', step - 1);
 }
 
@@ -168,72 +170,11 @@ function updateSummary(formType) {
     if (tasaDisplay) tasaDisplay.textContent = `${(tasaAnual * 100).toFixed(2)}%`;
     if (cuotaDisplay) cuotaDisplay.textContent = `S/ ${cuota.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",")}`;
 }
-
-// Validación del paso 1 (Datos personales)
 function validateStep1(formType) {
-    const prefix = formType === 'vivienda' ? 'v' : 'p';
-    const fields = [
-        { id: `nombre-${prefix}`, name: 'nombre completo', pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/ },
-        { id: `dni-${prefix}`, name: 'DNI', pattern: /^\d{8}$/ },
-        { id: `email-${prefix}`, name: 'correo electrónico', pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ },
-        { id: `telefono-${prefix}`, name: 'teléfono', pattern: /^\d{9}$/ }
-    ];
-
-    // Campos adicionales solo para vivienda
-    if (formType === 'vivienda') {
-        fields.push(
-            { id: `ciudad-${prefix}`, name: 'ciudad', pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/ },
-            { id: `direccion-${prefix}`, name: 'dirección completa', minLength: 10 }
-        );
-    } else {
-        fields.push(
-            { id: `ciudad-${prefix}`, name: 'ciudad', pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/ }
-        );
-    }
-
-    let isValid = true;
-    clearErrorMessages(formType);
-
-    for (const field of fields) {
-        const input = document.getElementById(field.id);
-        if (!input) continue;
-        
-        const value = input.value.trim();
-
-        if (!value) {
-            showFieldError(input, `El campo ${field.name} es obligatorio`);
-            isValid = false;
-            continue;
-        }
-
-        if (field.pattern && !field.pattern.test(value)) {
-            if (field.id.includes('dni')) {
-                showFieldError(input, 'El DNI debe tener 8 dígitos numéricos');
-            } else if (field.id.includes('email')) {
-                showFieldError(input, 'Ingrese un correo electrónico válido');
-            } else if (field.id.includes('telefono')) {
-                showFieldError(input, 'El teléfono debe tener 9 dígitos');
-            } else if (field.id.includes('nombre') || field.id.includes('ciudad')) {
-                showFieldError(input, 'Solo se permiten letras y espacios (mínimo 3 caracteres)');
-            }
-            isValid = false;
-        }
-        
-        if (field.minLength && value.length < field.minLength) {
-            showFieldError(input, `Mínimo ${field.minLength} caracteres`);
-            isValid = false;
-        }
-    }
-
-    return isValid;
-}
-
-// Validación del paso 2 (Detalles financieros)
-function validateStep2(formType) {
     const prefix = formType === 'vivienda' ? 'v' : 'p';
     let isValid = true;
     
-    clearStep2Errors(formType);
+    clearStep1Errors(formType);
 
     // Campos básicos según el tipo de formulario
     let basicFields = [];
@@ -363,14 +304,13 @@ function validateStep2(formType) {
     return isValid;
 }
 
-// Validación del paso 3 (Referencias personales)
-function validateStep3(formType) {
+function validateStep2(formType) {
     if (formType !== 'vivienda' && formType !== 'personal') return true;
     
     const prefix = formType === 'vivienda' ? 'v' : 'p';
     let isValid = true;
+    clearReferenceErrors(prefix);
     
-    // Validar referencias
     const referenceFields = [
         { id: `ref1-nombre-${prefix}`, name: 'nombre de referencia 1', pattern: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]{3,}$/ },
         { id: `ref1-telefono-${prefix}`, name: 'teléfono de referencia 1', pattern: /^\d{9}$/ },
@@ -378,6 +318,19 @@ function validateStep3(formType) {
         { id: `ref2-telefono-${prefix}`, name: 'teléfono de referencia 2', pattern: /^\d{9}$/ }
     ];
     
+    // Validar que los números no sean iguales
+    const tel1 = document.getElementById(`ref1-telefono-${prefix}`).value.trim();
+    const tel2 = document.getElementById(`ref2-telefono-${prefix}`).value.trim();
+    
+    if (tel1 && tel2 && tel1 === tel2) {
+        showFieldError(
+            document.getElementById(`ref2-telefono-${prefix}`),
+            'Los teléfonos de referencia no pueden ser iguales'
+        );
+        isValid = false;
+    }
+    
+    // Validación de campos individuales
     referenceFields.forEach(field => {
         const input = document.getElementById(field.id);
         if (!input) return;
@@ -400,19 +353,19 @@ function validateStep3(formType) {
     return isValid;
 }
 
-// Validación del paso 4 (Datos bancarios)
-function validateStep4(formType) {
+function validateStep3(formType) {
     if (formType !== 'vivienda' && formType !== 'personal') return true;
     
     const prefix = formType === 'vivienda' ? 'v' : 'p';
     let isValid = true;
+    clearBankErrors(prefix);
     
-    // Validar datos bancarios
     const bankFields = [
         { id: `banco-${prefix}`, name: 'nombre del banco', minLength: 3 },
         { id: `cuenta-${prefix}`, name: 'número de cuenta' }
     ];
     
+    // Validar campos bancarios básicos
     bankFields.forEach(field => {
         const input = document.getElementById(field.id);
         if (!input) return;
@@ -430,12 +383,12 @@ function validateStep4(formType) {
         }
     });
     
-    // Validar número de cuenta (debe tener al menos 10 dígitos)
+    // Validar número de cuenta (CCI válido)
     const cuentaInput = document.getElementById(`cuenta-${prefix}`);
     if (cuentaInput && cuentaInput.value) {
         const cuentaValue = cuentaInput.value.replace(/\s/g, '');
-        if (!/^\d{10,}$/.test(cuentaValue)) {
-            showFieldError(cuentaInput, 'El número de cuenta debe tener al menos 10 dígitos');
+        if (!/^\d{10,20}$/.test(cuentaValue)) {
+            showFieldError(cuentaInput, 'El número de cuenta debe tener entre 10 y 20 dígitos');
             isValid = false;
         }
     }
@@ -450,32 +403,28 @@ function validateStep4(formType) {
     return isValid;
 }
 
-// Validación del paso 5 (Documentos)
-function validateStep5(formType) {
+function validateStep4(formType) {
     const prefix = formType === 'vivienda' ? 'v' : 'p';
     const dniFile = document.getElementById(`dni-file-${prefix}`);
     const payslipFile = document.getElementById(`payslip-file-${prefix}`);
     
     let isValid = true;
-
-    // Limpiar errores previos
     clearFileErrors(prefix);
     
     // Validar DNI
-    if (!validateFile(dniFile, `dni-file-info-${prefix}`)) {
+    if (!validateFile(dniFile, `dni-file-info-${prefix}`, ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'], 5)) {
         isValid = false;
     }
     
     // Validar boletas
-    if (!validateFile(payslipFile, `payslip-file-info-${prefix}`)) {
+    if (!validateFile(payslipFile, `payslip-file-info-${prefix}`, ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'], 5)) {
         isValid = false;
     }
     
     return isValid;
 }
 
-// Validación del paso 6 (Términos y condiciones)
-function validateStep6(formType) {
+function validateStep5(formType) {
     const prefix = formType === 'vivienda' ? 'v' : 'p';
     const termsCheckbox = document.getElementById(`terms-${prefix}`);
     
@@ -517,7 +466,7 @@ function showFieldError(input, message) {
 }
 
 // Limpiar errores del paso 2
-function clearStep2Errors(formType) {
+function clearStep1Errors(formType) {
     const prefix = formType === 'vivienda' ? 'v' : 'p';
     const fields = [
         `monto-${prefix}`, `plazo-${prefix}`, `ingresos-${prefix}`,
@@ -531,6 +480,50 @@ function clearStep2Errors(formType) {
         if (input) {
             input.classList.remove('invalid');
             let errorElement = input.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.style.display = 'none';
+            }
+        }
+    });
+}
+
+// Limpiar errores de referencias
+function clearReferenceErrors(prefix) {
+    const refFields = [
+        `ref1-nombre-${prefix}`, `ref1-telefono-${prefix}`,
+        `ref2-nombre-${prefix}`, `ref2-telefono-${prefix}`
+    ];
+    
+    refFields.forEach(fieldId => {
+        const input = document.getElementById(fieldId);
+        if (input) {
+            input.classList.remove('invalid');
+            const errorElement = input.nextElementSibling;
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.style.display = 'none';
+            }
+        }
+    });
+}
+
+// Limpiar errores bancarios
+function clearBankErrors(prefix) {
+    const bankFields = [
+        `banco-${prefix}`, `tipo-cuenta-${prefix}`, `cuenta-${prefix}`,
+        `consent-credit-${prefix}`
+    ];
+
+    bankFields.forEach(fieldId => {
+        const input = document.getElementById(fieldId);
+        if (input) {
+            input.classList.remove('invalid');
+            let errorElement = input.nextElementSibling;
+            
+            // Para checkboxes
+            if (input.type === 'checkbox') {
+                errorElement = input.parentNode.querySelector('.error-message');
+            }
+            
             if (errorElement && errorElement.classList.contains('error-message')) {
                 errorElement.style.display = 'none';
             }
@@ -559,6 +552,28 @@ function clearFileErrors(prefix) {
     });
 }
 
+// Limpiar todos los errores de un formulario
+function clearAllErrors(formType) {
+    const form = document.getElementById(`form-${formType}`);
+    
+    if (!form) return;
+    
+    // Limpiar errores de campos
+    const errorMessages = form.querySelectorAll('.error-message');
+    errorMessages.forEach(el => {
+        el.style.display = 'none';
+    });
+    
+    // Limpiar clases de error
+    const invalidInputs = form.querySelectorAll('.invalid');
+    invalidInputs.forEach(input => {
+        input.classList.remove('invalid');
+    });
+    
+    // Limpiar mensaje global
+    showValidationMessage('');
+}
+
 // Limpiar mensajes de error
 function clearErrorMessages(formType) {
     const prefix = formType === 'vivienda' ? 'v' : 'p';
@@ -579,8 +594,8 @@ function clearErrorMessages(formType) {
     });
 }
 
-// Función para validar archivos
-function validateFile(fileInput, infoElementId) {
+// Función mejorada para validar archivos
+function validateFile(fileInput, infoElementId, validTypes, maxSizeMB) {
     const file = fileInput.files[0];
     const infoElement = document.getElementById(infoElementId);
     let isValid = true;
@@ -603,15 +618,13 @@ function validateFile(fileInput, infoElementId) {
         isValid = false;
     } else {
         // Validar tipo de archivo
-        const validTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
-        const maxSizeMB = 5;
-        
         if (!validTypes.includes(file.type)) {
-            showFieldError(fileInput, 'Formato no válido. Use PDF, JPG o PNG');
+            const allowedTypes = validTypes.map(t => t.split('/')[1]).join(', ');
+            showFieldError(fileInput, `Formato no válido. Formatos permitidos: ${allowedTypes}`);
             isValid = false;
         }
         
-        // Validar tamaño (5MB máximo)
+        // Validar tamaño
         if (file.size > maxSizeMB * 1024 * 1024) {
             showFieldError(fileInput, `El archivo excede ${maxSizeMB}MB`);
             isValid = false;
@@ -620,6 +633,7 @@ function validateFile(fileInput, infoElementId) {
         // Mostrar información del archivo si es válido
         if (isValid && infoElement) {
             infoElement.textContent = `✅ ${file.name} (${(file.size/1024/1024).toFixed(2)} MB)`;
+            infoElement.style.color = 'green';
         } else if (!isValid && infoElement) {
             infoElement.textContent = '';
         }
@@ -634,15 +648,17 @@ function showValidationMessage(message) {
     const errorText = document.getElementById('error-text');
     
     if (container && errorText) {
-        errorText.textContent = message;
-        container.style.display = 'block';
-        
-        // Desplazar a la posición del mensaje
-        container.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        
-        setTimeout(() => {
+        if (message) {
+            errorText.textContent = message;
+            container.style.display = 'block';
+            container.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            setTimeout(() => {
+                container.style.display = 'none';
+            }, 5000);
+        } else {
             container.style.display = 'none';
-        }, 5000);
+        }
     }
 }
 
@@ -650,7 +666,8 @@ function showValidationMessage(message) {
 function showConfirmation() {
     const overlay = document.getElementById('confirmation-overlay');
     if (overlay) {
-        overlay.style.display = 'block';
+        window.scrollTo({ top: 0, behavior: 'instant' });
+        overlay.style.display = 'flex';
     }
 }
 
@@ -677,12 +694,14 @@ function clearForm(formType) {
     
     if (form) {
         form.reset();
+        clearAllErrors(formType);
     }
 
     // Limpiar información de archivos
     const fileInfoElements = document.querySelectorAll(`#form-${formType} .file-info`);
     fileInfoElements.forEach(el => {
         el.textContent = '';
+        el.style.color = '';
     });
 
     // Ocultar grupo RUC si es visible
@@ -700,27 +719,29 @@ function clearForm(formType) {
 // Adjuntar listeners de validación a los campos
 function attachValidationListeners(formType) {
     const prefix = formType === 'vivienda' ? 'v' : 'p';
-    const fields = [
-        `nombre-${prefix}`, `dni-${prefix}`, `email-${prefix}`, `telefono-${prefix}`
-    ];
-
-    if (formType === 'vivienda') {
-        fields.push(`ciudad-${prefix}`, `direccion-${prefix}`);
-    } else {
-        fields.push(`ciudad-${prefix}`);
-    }
-
-    fields.forEach(fieldId => {
-        const input = document.getElementById(fieldId);
-        if (input) {
-            input.addEventListener('input', function() {
-                this.classList.remove('invalid');
-                const errorElement = this.nextElementSibling;
-                if (errorElement && errorElement.classList.contains('error-message')) {
-                    errorElement.style.display = 'none';
-                }
-            });
-        }
+    
+    // Obtener todos los campos del formulario
+    const inputs = document.querySelectorAll(`#form-${formType} .form-input, 
+                                           #form-${formType} input[type="checkbox"],
+                                           #form-${formType} input[type="file"]`);
+    
+    inputs.forEach(input => {
+        input.addEventListener('input', function() {
+            this.classList.remove('invalid');
+            let errorElement;
+            
+            if (this.type === 'checkbox') {
+                errorElement = this.parentNode.querySelector('.error-message');
+            } else if (this.type === 'file') {
+                errorElement = this.nextElementSibling.nextElementSibling;
+            } else {
+                errorElement = this.nextElementSibling;
+            }
+            
+            if (errorElement && errorElement.classList.contains('error-message')) {
+                errorElement.style.display = 'none';
+            }
+        });
     });
 }
 
@@ -864,7 +885,7 @@ async function submitForm(formType) {
         const formData = new FormData(form);
         
         const endpoint = formType === 'vivienda' ? 
-            '../php/php/guardar_vivienda.php' : '../php/php/guardar_personal.php';
+            '../php/guardar_vivienda.php' : '../php/guardar_personal.php';
         
         const response = await fetch(endpoint, {
             method: 'POST',
@@ -981,13 +1002,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     showValidationMessage('Por favor, corrija los errores en el Paso 5');
                     allValid = false;
                 }
-                if (allValid) {
-                    allValid = validateStep6(formType);
-                    if (!allValid) {
-                        updateFormStep(formType, 6);
-                        showValidationMessage('Por favor, acepte los términos y condiciones');
-                    }
-                }
             } 
             // Validación para crédito personal
             else {
@@ -1014,11 +1028,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (allValid && !validateStep5(formType)) {
                     updateFormStep(formType, 5);
                     showValidationMessage('Por favor, corrija los errores en el Paso 5');
-                    allValid = false;
-                }
-                if (allValid && !validateStep6(formType)) {
-                    updateFormStep(formType, 6);
-                    showValidationMessage('Por favor, acepte los términos y condiciones');
                     allValid = false;
                 }
             }
@@ -1078,7 +1087,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('input[type="file"]').forEach(input => {
         input.addEventListener('change', function() {
             const infoElementId = this.id + '-info';
-            validateFile(this, infoElementId);
+            validateFile(this, infoElementId, ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'], 5);
         });
     });
 });

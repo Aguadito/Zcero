@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud Tarjeta Zcero</title>
+    <link rel="stylesheet" href="../CCSs/registerstyles.css">
+    <link rel="stylesheet" href="../CCSs/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
+<body>
+    <div class="container">
+        <div class="left-side">
+            <a href="../index.html">
+                    <img class="logo" src="../IMGs/logo.webp">
+                </a>
+            <h2>Zcero</h2>
+            <p>Registrate para solicitar nuestros servicios y vivir la experiencia Zcero.</p>
+        <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank"><img src="../IMGs/fc-removebg-preview (1).png"></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="../IMGs/lk-removebg-preview (1).png"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="../IMGs/ig-removebg-preview (1).png"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="../IMGs/yt-removebg-preview (1).png"></i></a>
+        </div>
+        </div>
+
+        <div class="right-side">
+            <h1>Registrate</h1>
+            <form id="registroForm">
+                <div class="input-group">
+                    <input type="text" id="nombre" required><label>Nombre Completo</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="dni" required> <label>DNI</label>
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" required><label>Email</label>
+                </div>
+                <div class="input-group">
+                    <input type="tel" id="telefono" required><label>Teléfono</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="direccion" required><label>Dirección</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="ciudad" required><label>Ciudad</label>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="codigoPostal" required><label>Código Postal</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="contrasena" required><label>Contraseña</label>
+                </div>
+                    <button type="submit">Continuar</button>
+                        <p id="mensajeRegistro"></p>
+                <div class="links">
+                    <a href="">Términos y Condiciones</a>
+                    <a href="">Política de Privacidad</a>
+                </div>
+                <div class="signup-link">
+                    ¿Ya tienes una cuenta? <a href="login.html">Inicia sesión</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="../js/register.js"></script>
+</body>
+</html>

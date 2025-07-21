@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesion :: Zcero</title>
+    <link rel="stylesheet" href="../CCSs/loginstyles.css">
+    <link rel="stylesheet" href="../CCSs/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Tagesschrift&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <div class="container-logo">
+                <a href="../index.html">
+                    <img class="logo" src="../IMGs/logo.webp">
+                </a>
+            </div>
+                <h2>Zcero</h2>
+                <p>Inicia sesión para acceder a los beneficios exclusivos que tenemos para tí</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com" target="_blank"><img src="../IMGs/fc-removebg-preview (1).png"></a>
+                <a href="https://www.facebook.com" target="_blank"><img src="../IMGs/lk-removebg-preview (1).png"></i></a>
+                <a href="https://www.youtube.com" target="_blank"><img src="../IMGs/ig-removebg-preview (1).png"></i></a>
+                <a href="https://www.linkedin.com" target="_blank"><img src="../IMGs/yt-removebg-preview (1).png"></i></a>
+            </div>
+        </div>
+
+        <div class="login-container">
+            <h1>Iniciar Sesion</h1>
+            <form id="login-form">
+                <div class="input-group">
+                    <input type="text" id="dni" name="dni" placeholder="DNI" required>
+                    <div class="error-message" id="dni-error"></div>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
+                    <div class="error-message" id="contrasena-error"></div>
+                </div>
+                <div class="forgot-password">
+                    <a href="forgot.html">¿Olvidaste tu contraseña?</a>
+                </div>
+                <div class="loading" id="loading">
+                    <div class="spinner"></div>
+                    <p>Verificando credenciales...</p>
+                </div>
+                    <button type="submit" id="login-btn">Iniciar Sesion</button>
+
+                    <div id="mensajeError"></div>
+                    <div id="mensajeExito"></div>
+                    
+                <div class="signup-link">¿No tienes una cuenta?<a href="register.html">Registrate ahora</a>
+                </div>
+            </form>
+        </div>
+        <script src="../js/login.js"></script>
+    </div>
+</body>
+</html>

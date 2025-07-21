@@ -362,19 +362,20 @@
         }
 
         .confirmation-overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.7);
-            display: flex;
-            justify-content: center;
-            align-items: center;
             z-index: 2000;
         }
 
         .confirmation-box {
+            position: relative;
             background: white;
             border-radius: 15px;
             padding: 40px;
@@ -382,7 +383,7 @@
             max-width: 500px;
             width: 90%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            animation: fadeIn 0.4s ease-out;
+            margin: auto;
         }
 
         .confirmation-icon {
@@ -390,9 +391,32 @@
             color: #00a859;
             margin-bottom: 20px;
         }
+        .confirmation-content h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #003366;
+        }
+        .confirmation-content p {
+            margin-bottom: 10px;
+            color: #5a6d80;
+            line-height: 1.5;
+        }
 
+        .confirmation-box .btn {
+            margin-top: 20px;
+            background: #00a859;
+            color: white;
+        }
         .confirmation-icon i {
             animation: scaleUp 0.5s ease;
+        }
+        .confirmation-box .btn:hover {
+            background: #008a4a;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         /* Estilos para mensajes de error */
         .error-message {

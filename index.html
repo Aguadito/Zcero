@@ -28,11 +28,28 @@
                     <li class="nav__item"><a href="#footer" class="nav__link" onclick="desplazarSuavemente(event, '#footer')">Contacto</a></li>
                 </ul>
             </nav>
-
+            <!-- Nuevos botones de autenticación -->
+            <div class="header__actions" id="auth-buttons">
+                <a href="HTMLs/login.html" class="header__action header__action--login">Iniciar Sesión</a>
+                <a href="HTMLs/register.html" class="header__action header__action--register">Registrarse</a>
+            </div>
+            
+            <!-- Menú de usuario (inicialmente oculto) -->
+            <div class="user-menu" id="user-menu" style="display: none;">
+                <button class="user-menu__toggle">
+                    <span id="user-name">Usuario</span>
+                    <i class="fas fa-caret-down"></i>
+                </button>
+                <div class="user-menu__dropdown">
+                    <a href="HTMLs/profile.html">Mi perfil</a>
+                    <a href="HTMLs/my-credits.html">Mis créditos</a>
+                    <a href="#" id="logout-link">Cerrar sesión</a>
+                </div>
+            </div>
             <div class="header__actions">
                 <a href="HTMLs/requestcredit.html" class="header__action header__action--register">Solicitar Credito</a>
             </div>
-
+            <li class="nav__item"><a href="HTMLs/admin/dashboard.html" class="nav__link">Admin</a></li>
             <button class="header__menu-btn">
                 <i class="fas fa-bars"></i>
             </button>
@@ -399,8 +416,8 @@
             </div>
         </div>
     </footer>
-    <script src="js/credit-types.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/script_index.js"></script>
+    <script src="../js/credit-types.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/script_index.js"></script>
 </body>
 </html>

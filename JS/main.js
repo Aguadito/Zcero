@@ -38,3 +38,45 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const authButtons = document.getElementById('auth-buttons');
+    const userMenu = document.getElementById('user-menu');
+    const userNameSpan = document.getElementById('user-name');
+    const logoutLink = document.getElementById('logout-link');
+
+    // Comprobar si el usuario está autenticado (simulado)
+    const isLoggedIn = sessionStorage.getItem('isLoggedIn');
+    const userName = sessionStorage.getItem('userName');
+
+    if (isLoggedIn === 'true') {
+        authButtons.style.display = 'none';
+        userMenu.style.display = 'block';
+        if (userName) {
+            userNameSpan.textContent = userName;
+        }
+    } else {
+        authButtons.style.display = 'flex';
+        userMenu.style.display = 'none';
+    }
+    
+    if (userId) {
+        // Mostrar menú de usuario
+        document.getElementById('auth-buttons').style.display = 'none';
+        document.getElementById('user-menu').style.display = 'block';
+        document.getElementById('user-name').textContent = sessionStorage.getItem('user_nombre');
+    }
+    
+    // Configurar logout
+    document.getElementById('logout-link').addEventListener('click', function() {
+        sessionStorage.clear();
+        window.location.href = 'index.html';
+    });
+    // Manejar el cierre de sesión
+    logoutLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        sessionStorage.removeItem('isLoggedIn');
+        sessionStorage.removeItem('userName');
+        window.location.href = 'index.html';
+    });
+});

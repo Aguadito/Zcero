@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$dni', '$nombre', '$correo', '$telefono', '$direccion', '$ciudad')";
 
     if ($conex->query($sql)) {
-        echo "✅ Persona guardada correctamente.";
+        echo "✅ socio guardada correctamente.";
     } else {
         echo "❌ Error: " . $conex->error;
     }

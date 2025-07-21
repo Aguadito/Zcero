@@ -117,23 +117,90 @@ h1, h2, h3, h4 {
 .header__actions {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .header__action {
-    margin-left: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
     font-weight: 600;
     text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
 }
 
 .header__action--login {
     color: var(--secondary);
+    border: 1px solid var(--secondary);
+}
+
+.header__action--login:hover {
+    background: rgba(0, 102, 204, 0.1);
 }
 
 .header__action--register {
     background: var(--secondary);
     color: white;
-    padding: 8px 20px;
+}
+
+.header__action--register:hover {
+    background: #0055a4;
+    transform: translateY(-2px);
+}
+
+/* Menú de usuario */
+.user-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.user-menu__toggle {
+    background: none;
+    border: none;
+    color: var(--dark);
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 8px 15px;
     border-radius: 20px;
+    transition: all 0.3s;
+}
+
+.user-menu__toggle:hover {
+    background: rgba(0, 102, 204, 0.1);
+}
+
+.user-menu__dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    padding: 10px 0;
+    min-width: 180px;
+    z-index: 100;
+    display: none;
+}
+
+.user-menu:hover .user-menu__dropdown {
+    display: block;
+}
+
+.user-menu__dropdown a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.3s;
+}
+
+.user-menu__dropdown a:hover {
+    background: rgba(0, 102, 204, 0.1);
+    color: var(--secondary);
 }
 
 .header__menu-btn {

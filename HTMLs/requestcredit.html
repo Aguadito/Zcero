@@ -124,44 +124,10 @@
                     <div class="progress-step" data-step="3">3</div>
                     <div class="progress-step" data-step="4">4</div>
                     <div class="progress-step" data-step="5">5</div>
-                    <div class="progress-step" data-step="6">6</div>
                 </div>
 
                 <form id="credit-form__content" class="credit-form__content" action="../php/guardar_vivienda.php" method="POST"enctype="multipart/form-data">
-                    <div class="form-step active" data-step="1">
-                        <h3 class="form-step__title">Datos Personales</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Nombre completo</label>
-                                <input type="text" class="form-input" id="nombre-v" name="nombre_completo" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">DNI</label>
-                                <input type="text" class="form-input" id="dni-v" name="dni" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Ciudad</label>
-                                <input type="text" class="form-input" id="ciudad-v" name="ciudad" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-input" id="email-v" name="correo" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Teléfono</label>
-                                <input type="tel" class="form-input" id="telefono-v" name="telefono" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Dirección completa</label>
-                                <input type="text" class="form-input" id="direccion-v" name="direccion" required>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn" onclick="nextStep(2)">Siguiente</button>
-                        </div>
-                    </div>
-                    
-                    <div class="form-step" data-step="2">
+                    <div class="form-step" data-step="1">
                         <h3 class="form-step__title">Situacion Financiera</h3>
                         <div class="form-grid">
                             <div class="form-group">
@@ -216,36 +182,35 @@
                             </div>
                         </div>
                         <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStep(1)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStep(3)">Siguiente</button>
+                            <button type="button" class="btn" onclick="nextStep(2)">Siguiente</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="3">
+                    <div class="form-step" data-step="2">
                         <h3 class="form-step__title">Referencias Personales</h3>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label class="form-label">Referencia 1 - Nombre completo</label>
-                                <input type="text" class="form-input" id="ref1-nombre-v" name="referencia_personal1_nombre" required>
+                                <input type="text" class="form-input" id="ref1-nombre-v" name="ref1_nombre" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Referencia 1 - Teléfono</label>
-                                <input type="tel" class="form-input" id="ref1-telefono-v" name="referencia_personal1_telefono" required>
+                                <input type="tel" class="form-input" id="ref1-telefono-v" name="ref1_telefono" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Referencia 2 - Nombre completo</label>
-                                <input type="text" class="form-input" id="ref2-nombre-v" name="referencia_personal2_nombre" required>
+                                <input type="text" class="form-input" id="ref2-nombre-v" name="ref2_nombre" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Referencia 2 - Teléfono</label>
-                                <input type="tel" class="form-input" id="ref2-telefono-v" name="referencia_personal2_telefono" required>
+                                <input type="tel" class="form-input" id="ref2-telefono-v" name="ref2_telefono" required>
                             </div>
                         </div>
                         <div class="form-buttons">
                             <button type="button" class="btn btn--secondary" onclick="prevStep(2)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStep(4)">Siguiente</button>
+                            <button type="button" class="btn" onclick="nextStep(3)">Siguiente</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="4">
+                    <div class="form-step" data-step="3">
                         <h3 class="form-step__title">Datos Bancarios y Autorizaciones</h3>
                         <div class="form-grid">
                             <div class="form-group">
@@ -283,10 +248,10 @@
                         
                         <div class="form-buttons">
                             <button type="button" class="btn btn--secondary" onclick="prevStep(3)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStep(5)">Siguiente</button>
+                            <button type="button" class="btn" onclick="nextStep(4)">Siguiente</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="5">
+                    <div class="form-step" data-step="4">
                         <h3 class="form-step__title">Documentos Requeridos</h3>
                         <p>Por favor, adjunte los siguientes documentos:</p>
                         
@@ -310,10 +275,10 @@
                         
                         <div class="form-buttons">
                             <button type="button" class="btn btn--secondary" onclick="prevStep(4)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStep(6)">Siguiente</button>
+                            <button type="button" class="btn" onclick="nextStep(5)">Siguiente</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="6">
+                    <div class="form-step" data-step="5">
                         <h3 class="form-step__title">Confirmación</h3>
                         <div class="form-summary">
                             <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
@@ -381,44 +346,10 @@
                     <div class="progress-step" data-step="3">3</div>
                     <div class="progress-step" data-step="4">4</div>
                     <div class="progress-step" data-step="5">5</div>
-                    <div class="progress-step" data-step="6">6</div>
                 </div>
 
                 <form id="credit-form__content"class="credit-form__content" action="../php/guardar_personal.php" method="POST"enctype="multipart/form-data">
-                    <div class="form-step active" data-step="1">
-                        <h3 class="form-step__title">Datos Personales</h3>
-                        <div class="form-grid">
-                            <div class="form-group">
-                                <label class="form-label">Nombre completo</label>
-                                <input type="text" class="form-input" id="nombre-p" name="nombre_completo" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">DNI</label>
-                                <input type="text" class="form-input" id="dni-p" name="dni" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Ciudad</label>
-                                <input type="text" class="form-input" id="ciudad-p" name="ciudad" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Correo electrónico</label>
-                                <input type="email" class="form-input" id="email-p" name="correo" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Teléfono</label>
-                                <input type="tel" class="form-input" id="telefono-p" name="telefono" required>
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Dirección completa</label>
-                                <input type="text" class="form-input" id="direccion-p" name="direccion" required>
-                            </div>
-                        </div>
-                        <div class="form-buttons">
-                            <button type="button" class="btn" onclick="nextStepPersonal(2)">Siguiente</button>
-                        </div>
-                    </div>
-
-                    <div class="form-step" data-step="2">
+                    <div class="form-step" data-step="1">
                         <h3 class="form-step__title">Detalles del Crédito</h3>
                         <div class="form-grid">
                             <div class="form-group">
@@ -460,36 +391,35 @@
                             </div>
                         </div>
                         <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(1)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStepPersonal(3)">Siguiente</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(2)">Siguiente</button>
                         </div>
                     </div>
-                     <div class="form-step" data-step="3">
+                    <div class="form-step" data-step="2">
                         <h3 class="form-step__title">Referencias Personales</h3>
                         <div class="form-grid">
                             <div class="form-group">
                                 <label class="form-label">Referencia 1 - Nombre completo</label>
-                                <input type="text" class="form-input" id="ref1-nombre-p" name="referencia_personal1_nombre" required>
+                                <input type="text" class="form-input" id="ref1-nombre-p" name="ref1_nombre" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Referencia 1 - Teléfono</label>
-                                <input type="tel" class="form-input" id="ref1-telefono-p" name="referencia_personal1_telefono" required>
+                                <input type="tel" class="form-input" id="ref1-telefono-p" name="ref1_telefono" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Referencia 2 - Nombre completo</label>
-                                <input type="text" class="form-input" id="ref2-nombre-p" name="referencia_personal2_nombre" required>
+                                <input type="text" class="form-input" id="ref2-nombre-p" name="ref2_nombre" required>
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Referencia 2 - Teléfono</label>
-                                <input type="tel" class="form-input" id="ref2-telefono-p" name="referencia_personal2_telefono" required>
+                                <input type="tel" class="form-input" id="ref2-telefono-p" name="ref2_telefono" required>
                             </div>
                         </div>
                         <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(3)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStepPersonal(4)">Siguiente</button>
+                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(2)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(3)">Siguiente</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="4">
+                    <div class="form-step" data-step="3">
                         <h3 class="form-step__title">Datos Bancarios y Autorizaciones</h3>
                         <div class="form-grid">
                             <div class="form-group">
@@ -526,12 +456,11 @@
                         </div>
                         
                         <div class="form-buttons">
-                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(4)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStepPersonal(5)">Siguiente</button>
+                            <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(3)">Atrás</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(4)">Siguiente</button>
                         </div>
                     </div>
-                    <!-- En ambos formularios (vivienda y personal) después del paso 2 -->
-                    <div class="form-step" data-step="5">
+                    <div class="form-step" data-step="4">
                         <h3 class="form-step__title">Documentos Requeridos</h3>
                         <p>Por favor, adjunte los siguientes documentos:</p>
                         
@@ -555,10 +484,10 @@
                         
                         <div class="form-buttons">
                             <button type="button" class="btn btn--secondary" onclick="prevStepPersonal(4)">Atrás</button>
-                            <button type="button" class="btn" onclick="nextStepPersonal(6)">Siguiente</button>
+                            <button type="button" class="btn" onclick="nextStepPersonal(5)">Siguiente</button>
                         </div>
                     </div>
-                    <div class="form-step" data-step="6">
+                    <div class="form-step" data-step="5">
                         <h3 class="form-step__title">Confirmación</h3>
                         <div class="form-summary">
                             <p>Revisa que todos tus datos sean correctos antes de enviar la solicitud.</p>
@@ -689,12 +618,17 @@
     </div>
     
     <div id="confirmation-overlay" class="confirmation-overlay" style="display: none;">
-        <div class="confirmation-box confirmation-message">
+        <div class="confirmation-box">
             <div class="confirmation-icon">
                 <i class="fas fa-check-circle"></i>
             </div>
+            <div class="confirmation-content">
+                <h3>¡Solicitud Enviada!</h3>
+                <p>Gracias por confiar en nosotros. Tu solicitud ha sido recibida con éxito.</p>
+                <p>Nuestro equipo se pondrá en contacto contigo en un plazo máximo de <strong>24 horas hábiles</strong>.</p>
+            </div>
+            <button id="close-confirmation" class="btn">Aceptar</button>
         </div>
-        <button id="close-confirmation" class="btn">Aceptar</button>
     </div>
     
     <script>

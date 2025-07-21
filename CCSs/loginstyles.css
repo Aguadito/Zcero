@@ -1,0 +1,346 @@
+body {
+    background: linear-gradient(135deg, #dad4c7, #fffdf8, #dad4c7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--dark);
+    line-height: 1.6;
+    font-weight: 400;
+}
+
+.container {
+    display: flex;
+    height: 550px;
+    width: 100%;
+    max-width: 1000px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container-logo{
+    margin-top: 20px;
+    text-align: center;
+}
+
+.logo{
+    max-width: 300px;
+    height: 150px;
+}
+
+h2{
+    text-align: center; 
+    margin-bottom: 10px; 
+    font-size: 45px;
+}
+
+p{
+    text-align: center;
+    margin-bottom: 90px;
+}
+
+.left-side {
+    background: linear-gradient(180deg, rgba(0, 51, 102, 0.863) 40%, rgb(75, 145, 214) 100%);
+    flex: 1;
+    padding: 40px;
+    color: var(--light);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    font-weight: 700;
+    
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.social-links img {
+    transition: all 0.5s ease;
+}
+
+.social-links img:hover {
+    transform: translateY(-3px);
+}
+
+.login-container {
+    flex: 1;
+    padding: 40px;
+    background-color: #fffdf8;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--primary);
+    margin-bottom: 30px;
+    font-size: 28px;
+    font-weight: 800;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-bottom: 2px solid var(--gray);
+    background-color: transparent;
+    outline: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.input-group label {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: var(--gray);
+    font-size: 16px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.input-group input:focus,
+.input-group input:valid {
+    border-bottom: 2px solid var(--accent);
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -10px;
+    left: 0;
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.forgot-password {
+    text-align: right;
+    margin-bottom: 30px;
+}
+
+.forgot-password a {
+    font-size: 14px;
+    color: var(--secondary);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-weight: 600;
+}
+
+.forgot-password a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+button {
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.863) 0%, rgb(75, 145, 214) 100%);
+    color: white;
+    padding: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    letter-spacing: 0.5px;
+}
+
+button:hover {
+    background: linear-gradient(135deg, rgba(0, 51, 102, 0.863), rgb(75, 145, 214) 100%);
+    box-shadow: 0 5px 15px rgba(0, 102, 204, 0.3);
+    transform: translateY(-3px);
+}
+
+button::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.7s;
+}
+
+button:hover::after {
+    left: 100%;
+}
+
+.signup-link {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: var(--gray);
+    font-weight: 500;
+}
+
+.signup-link a {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.signup-link a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+.error-message {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    min-height: 18px;
+}
+
+/* Estilos para el loading */
+.loading {
+    text-align: center;
+    margin: 20px 0;
+    color: var(--primary);
+    display: none;
+}
+
+.spinner {
+    width: 30px;
+    height: 30px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loading p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Estilos para inputs con error */
+.input-group input.error {
+    border-bottom: 2px solid #e74c3c !important;
+}
+
+.input-group input.success {
+    border-bottom: 2px solid #27ae60 !important;
+}
+
+/* Estilos para botón deshabilitado */
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6 !important;
+    transform: none !important;
+}
+
+/* Mensajes de estado */
+#mensajeError p, #mensajeExito p {
+    padding: 12px;
+    border-radius: 8px;
+    margin: 15px 0;
+    font-weight: 600;
+    text-align: center;
+}
+
+#mensajeError p {
+    background-color: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.3);
+    color: #e74c3c;
+}
+
+#mensajeExito p {
+    background-color: rgba(39, 174, 96, 0.1);
+    border: 1px solid rgba(39, 174, 96, 0.3);
+    color: #27ae60;
+}
+
+/* Responsividad */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+        max-width: 600px;
+    }
+    
+    .left-side {
+        padding: 30px 20px;
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .right-side {
+        padding: 40px 30px;
+        border-radius: 0 0 20px 20px;
+    }
+    
+    h2 {
+        font-size: 38px;
+    }
+    
+    p {
+        margin-bottom: 50px;
+    }
+    
+    .social-links {
+        margin-top: 40px;
+    }
+    
+    h1 {
+        font-size: 26px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        max-width: 220px;
+        height: 110px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    p {
+        font-size: 15px;
+        margin-bottom: 40px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+    
+    .input-group input {
+        padding: 14px;
+    }
+    
+    button {
+        padding: 16px;
+    }
+    
+    .social-links a {
+        font-size: 26px;
+    }
+}

@@ -1,8 +1,17 @@
 <?php
+session_start();
 include("con_bd.php");
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $persona_id = $_POST['persona_id'];
+    // CORREGIDO: Obtener socio_id de la sesión o del POST
+    if (isset($_POST['socio_id'])) {
+        $socio_id = $_POST['socio_id'];
+    } elseif (isset($_SESSION['user_id'])) {
+        $socio_id = $_SESSION['user_id'];
+    } else {
+        die("Error: No se pudo identificar al socio");
+    }
+    
     $tipo = $_POST['tipo'];
     $monto = $_POST['monto_solicitado'];
     $plazo = $_POST['plazo'];
@@ -38,13 +47,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         move_uploaded_file($payslipFile['tmp_name'], $payslipFileName);
     }
 
-    $sql = "INSERT INTO creditos (numero_credito, persona_id, tipo, monto_solicitado, plazo, ingresos_mensuales, deudas_actuales, otras_obligaciones, capacidad_pago, autorizo_consulta, autorizo_debito, fecha_reg, dni_file, payslip_file) 
-            VALUES ('$numero_credito', '$persona_id', '$tipo', '$monto', '$plazo', '$ingresos', '$deudas', '$obligaciones', '$capacidad_pago', '$autorizo_consulta', '$autorizo_debito', '$fecha_reg', '$dniFileName', '$payslipFileName')";
+    // CORREGIDO: usar socio_id en lugar de persona_id
+    $sql = "INSERT INTO creditos (numero_credito, socio_id, tipo, monto_solicitado, plazo, ingresos_mensuales, deudas_actuales, otras_obligaciones, capacidad_pago, autorizo_consulta, autorizo_debito, fecha_reg, dni_file, payslip_file) 
+            VALUES ('$numero_credito', '$socio_id', '$tipo', '$monto', '$plazo', '$ingresos', '$deudas', '$obligaciones', '$capacidad_pago', '$autorizo_consulta', '$autorizo_debito', '$fecha_reg', '$dniFileName', '$payslipFileName')";
 
     if ($conex->query($sql)) {
         echo "✅ Crédito guardado correctamente. Número: $numero_credito";
+        echo json_encode(['success' => true, 'numero_credito' => $numero_credito, 'credito_id' => $conex->insert_id]);
     } else {
         echo "❌ Error: " . $conex->error;
+        echo json_encode(['success' => false, 'error' => $conex->error]);
     }
 }
 ?>
